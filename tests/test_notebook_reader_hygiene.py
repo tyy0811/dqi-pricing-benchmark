@@ -8,7 +8,7 @@ from pathlib import Path
 
 TARGET_NOTEBOOKS = [
     Path("notebooks/06_resource_analysis.ipynb"),
-    Path("notebooks/08_paired_encoding_comparison.ipynb"),
+    Path("notebooks/08a_paired_encoding_comparison.ipynb"),
     Path("notebooks/09_decoder_phase_diagram.ipynb"),
     Path("notebooks/10_alpha_finite_size_validation.ipynb"),
     Path("notebooks/11_decision_faithfulness_dashboard.ipynb"),

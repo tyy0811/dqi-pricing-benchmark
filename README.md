@@ -82,7 +82,8 @@ python -m src.benchmark
 - `notebooks/01_reproduce_toy_dqi.ipynb` — Canonical toy DQI max-XORSAT reproduction with exact reference and knob study.
 - `notebooks/02_pricing_instance_demo.ipynb` — Human-readable pricing-model verification on frozen 3/4/5-feature instances.
 - `notebooks/04_pricing_pipeline.ipynb` — Pricing-to-DQI bridge: CP-SAT exact solve -> canonical surrogate artifact export.
-- `notebooks/08_paired_encoding_comparison.ipynb` — Reviewer-facing `ilp_derived_exact` versus WHT comparison on paired pricing artifacts.
+- `notebooks/08a_paired_encoding_comparison.ipynb` — Reviewer-facing `ilp_derived_exact` versus WHT comparison on paired pricing artifacts (Family P).
+- `notebooks/08b_coherent_validation.ipynb` — Coherent execution validation for Family C instances.
 - `notebooks/05_decoder_comparison.ipynb` — Brute-force vs BP1 decoder sensitivity with postselection and best-`F` impact diagnostics.
 - `notebooks/06_resource_analysis.ipynb` — Resource and cost diagnostics for the reviewer-facing mixture mainline.
 - `notebooks/07_qiskit_structural_parity.ipynb` — Structural Qiskit subset checks for the implemented circuit port.

@@ -8,7 +8,7 @@ The pricing pipeline produces usable benchmark surfaces and reviewer-facing note
 
 ## 2. Exact-reference / ILP-derived encoding beats WHT
 
-The paired encoding comparison shows the exact-reference / ILP-derived encoding as the stronger reviewer-facing baseline relative to WHT. See [08_paired_encoding_comparison.ipynb](/Users/zenith/Desktop/dqi-pricing-benchmark/notebooks/08_paired_encoding_comparison.ipynb).
+The paired encoding comparison shows the exact-reference / ILP-derived encoding as the stronger reviewer-facing baseline relative to WHT. See [08a_paired_encoding_comparison.ipynb](/Users/zenith/Desktop/dqi-pricing-benchmark/notebooks/08a_paired_encoding_comparison.ipynb).
 
 ## 3. Decoder robustness matters
 

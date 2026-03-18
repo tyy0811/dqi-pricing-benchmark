@@ -547,7 +547,7 @@ def test_notebook09_missing_structure_gain_columns_inserted_as_nan() -> None:
 
 def test_notebook08_loader_uses_legacy_fallback_when_master_unavailable(tmp_path: Path) -> None:
     load_cell = _find_code_cell(
-        "notebooks/08_paired_encoding_comparison.ipynb",
+        "notebooks/08a_paired_encoding_comparison.ipynb",
         "run_manifest = load_run_manifest",
     )
     records, display = _make_display_capture()
@@ -622,7 +622,7 @@ def test_notebook08_loader_uses_legacy_fallback_when_master_unavailable(tmp_path
 
 def test_notebook08_dynamic_pairing_keys_handle_missing_alpha_mode() -> None:
     match_cell = _find_code_cell(
-        "notebooks/08_paired_encoding_comparison.ipynb",
+        "notebooks/08a_paired_encoding_comparison.ipynb",
         "pair_key_candidates = [",
     )
     records, display = _make_display_capture()
@@ -664,19 +664,19 @@ def test_notebook08_dynamic_pairing_keys_handle_missing_alpha_mode() -> None:
 
 def test_notebook08_uses_comparison_key_pairs_when_available() -> None:
     load_cell = _find_code_cell(
-        "notebooks/08_paired_encoding_comparison.ipynb",
+        "notebooks/08a_paired_encoding_comparison.ipynb",
         "run_manifest = load_run_manifest",
     )
     match_cell = _find_code_cell(
-        "notebooks/08_paired_encoding_comparison.ipynb",
+        "notebooks/08a_paired_encoding_comparison.ipynb",
         "pair_key_candidates = [",
     )
     metric_cell = _find_code_cell(
-        "notebooks/08_paired_encoding_comparison.ipynb",
+        "notebooks/08a_paired_encoding_comparison.ipynb",
         "metric_panel = [",
     )
     delta_cell = _find_code_cell(
-        "notebooks/08_paired_encoding_comparison.ipynb",
+        "notebooks/08a_paired_encoding_comparison.ipynb",
         'if mix.empty or "encoding" not in mix.columns:',
     )
     records, display = _make_display_capture()
@@ -757,7 +757,7 @@ def test_notebook08_uses_comparison_key_pairs_when_available() -> None:
 
 def test_notebook08_rejects_duplicate_comparison_key_and_skips_pairing() -> None:
     match_cell = _find_code_cell(
-        "notebooks/08_paired_encoding_comparison.ipynb",
+        "notebooks/08a_paired_encoding_comparison.ipynb",
         "pair_key_candidates = [",
     )
     records, display = _make_display_capture()
@@ -822,7 +822,7 @@ def test_notebook08_rejects_duplicate_comparison_key_and_skips_pairing() -> None
 
 def test_notebook08_falls_back_when_comparison_key_is_partially_missing() -> None:
     match_cell = _find_code_cell(
-        "notebooks/08_paired_encoding_comparison.ipynb",
+        "notebooks/08a_paired_encoding_comparison.ipynb",
         "pair_key_candidates = [",
     )
     records, display = _make_display_capture()
@@ -883,7 +883,7 @@ def test_notebook08_falls_back_when_comparison_key_is_partially_missing() -> Non
 
 def test_notebook08_pairing_audit_shows_p7_unmatched_rows_when_no_completed_match_exists() -> None:
     match_cell = _find_code_cell(
-        "notebooks/08_paired_encoding_comparison.ipynb",
+        "notebooks/08a_paired_encoding_comparison.ipynb",
         "pair_key_candidates = [",
     )
     records, display = _make_display_capture()

@@ -22,8 +22,10 @@ Last validation pass: 2026-03-11
 
 ## Notebook Outputs
 
-- `notebooks/08_paired_encoding_comparison.ipynb`
+- `notebooks/08a_paired_encoding_comparison.ipynb`
   - One-line interpretation: ILP-vs-WHT paired comparisons are available on P3/P4/P5 with explicit unavailable annotations on unsupported metric slices.
+- `notebooks/08b_coherent_validation.ipynb`
+  - One-line interpretation: Coherent execution validation for Family C instances (C1, C2, C3).
 - `notebooks/09_decoder_phase_diagram.ipynb`
   - One-line interpretation: Decoder performance varies by structure regime, with unavailable/failed decoder slices retained visibly rather than dropped.
 - `notebooks/10_alpha_finite_size_validation.ipynb`
