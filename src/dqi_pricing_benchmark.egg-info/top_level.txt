@@ -1,0 +1,14 @@
+benchmark
+classical_baselines
+decoder_bp1
+decoder_bruteforce
+dicke_circuit
+dqi_circuit_qiskit
+dqi_pipeline
+dqi_state
+pricing_model_ortools
+problem_generator
+reduction
+weights
+weights_heuristic
+weights_paper

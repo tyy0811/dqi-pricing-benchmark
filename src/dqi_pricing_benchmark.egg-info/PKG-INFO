@@ -1,15 +1,33 @@
+Metadata-Version: 2.4
+Name: dqi-pricing-benchmark
+Version: 0.1.0
+Summary: Benchmark for DQI on discrete vehicle package pricing
+License: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.24
+Requires-Dist: scipy>=1.10
+Requires-Dist: ortools>=9.10
+Requires-Dist: pytest>=7.0
+Provides-Extra: qiskit
+Requires-Dist: qiskit>=1.0; extra == "qiskit"
+Provides-Extra: full
+Requires-Dist: qiskit>=1.0; extra == "full"
+Requires-Dist: matplotlib>=3.7; extra == "full"
+Requires-Dist: pandas>=2.0; extra == "full"
+
 # DQI Pricing Benchmark
 
-Pricing-to-DQI benchmark with exact-reference (ILP-derived) encoding as the mainline path, mixture-mode evaluation as the default execution mode, WHT as an exploratory surrogate, decoder diagnostics, and Qiskit structural subset validation.
+A small, reproducible benchmark mapping discrete vehicle package pricing into **max-XORSAT** form for evaluation with **Decoded Quantum Interferometry (DQI)**.
 
 ## Overview
 
 This benchmark implements:
 
-1. **Pricing benchmark with exact reference artifacts**: discrete vehicle-package pricing with exact ground truth and reviewer-facing `ilp_derived_exact` comparisons
-2. **Mixture-mode DQI mainline**: paper-derived alpha and decoder diagnostics on the default reviewer-facing execution path
-3. **Exploratory WHT surrogate path**: Walsh-Hadamard truncation used as an explicit exploratory approximation layer
-4. **Structural validation utilities**: Qiskit subset checks plus classical baselines for correctness and scope control
+1. **Discrete pricing model**: 5 features x 3 tiers encoded as 10 bits, with customer segment demand and bundle constraints
+2. **Walsh-Hadamard surrogate**: Fourier truncation of the true objective F(x) to produce sparse parity surrogate G(x) in (B, v) format
+3. **Paper-faithful DQI pipeline**: Five-step algorithm from Jordan et al. (2024): Dicke superposition -> phase kick -> syndrome -> decode -> Hadamard
+4. **Classical baselines**: Brute-force, simulated annealing for comparison
 
 **Primary reference**: Jordan et al., "Optimization by Decoded Quantum Interferometry," [arXiv:2408.08292](https://arxiv.org/abs/2408.08292) (2024)
 
@@ -20,18 +38,6 @@ This benchmark implements:
 > **At this size, classical solvers are exact and faster; this benchmark is about pipeline correctness and paper-faithful implementation, not claiming quantum advantage.**
 
 > **We cap m <= 20 because the DQI error register scales with the number of parity terms.**
-
-## Mainline vs Exploratory
-
-- **Mainline benchmark path**: mixture execution on pricing artifacts with exact-reference / ILP-derived encoding (`ilp_derived_exact`) and decoder diagnostics.
-- **Exploratory surrogate path**: WHT-truncated parity artifacts used to study approximation behavior and benchmark transfer.
-
-## Scope Note
-
-- **Mainline**: mixture execution on pricing artifacts with exact-reference / ILP-derived encoding.
-- **Exploratory**: WHT-truncated surrogate artifacts.
-- **Appendix only**: coherent and alpha finite-size analyses on tiny supported instances.
-- **Structural only**: Qiskit subset checks, not decode-inclusive end-to-end parity.
 
 ## Implementation Notes
 
@@ -81,14 +87,9 @@ python -m src.benchmark
 
 - `notebooks/01_reproduce_toy_dqi.ipynb` — Canonical toy DQI max-XORSAT reproduction with exact reference and knob study.
 - `notebooks/02_pricing_instance_demo.ipynb` — Human-readable pricing-model verification on frozen 3/4/5-feature instances.
+- `notebooks/03_paper_faithful_dqi.ipynb` — Small-instance five-step DQI microscope with exact anchors and alpha ablations.
 - `notebooks/04_pricing_pipeline.ipynb` — Pricing-to-DQI bridge: CP-SAT exact solve -> canonical surrogate artifact export.
-- `notebooks/08_paired_encoding_comparison.ipynb` — Reviewer-facing `ilp_derived_exact` versus WHT comparison on paired pricing artifacts.
 - `notebooks/05_decoder_comparison.ipynb` — Brute-force vs BP1 decoder sensitivity with postselection and best-`F` impact diagnostics.
-- `notebooks/06_resource_analysis.ipynb` — Resource and cost diagnostics for the reviewer-facing mixture mainline.
-- `notebooks/07_qiskit_structural_parity.ipynb` — Structural Qiskit subset checks for the implemented circuit port.
-- `notebooks/09_3-period_pricing_extension.ipynb` — Pricing benchmark extension beyond the base frozen instances.
-- `notebooks/10_alpha_finite_size_validation.ipynb` — Appendix-only alpha finite-size validation on tiny supported instances.
-- `notebooks/03_paper_faithful_dqi.ipynb` — Appendix-only paper-faithful DQI microscope for tiny exact-mode examples.
 
 Notebook 04 requires OR-Tools and intentionally hard-fails if missing because its core purpose is the CP-SAT handoff.
 

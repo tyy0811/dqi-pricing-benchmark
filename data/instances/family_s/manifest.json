@@ -1,0 +1,235 @@
+{
+  "canonical_instance_order": [
+    "S_dense_low_collision",
+    "S_dense_high_collision",
+    "S_sparse_low_collision",
+    "S_sparse_high_collision",
+    "S_balanced_rank_full",
+    "S_rank_deficient",
+    "S_column_skewed_dense",
+    "S_near_uniform_sparse"
+  ],
+  "description": "Canonical synthetic structure-sweep family for benchmark diagnostics.",
+  "family": "S",
+  "generator_version": "1.0",
+  "instances": [
+    {
+      "ell_default": 2,
+      "family": "S",
+      "generation_params": {
+        "column_skew": 0.05,
+        "dependent_rows": 0,
+        "duplicate_rows": 0,
+        "enforce_full_rank": true,
+        "row_weight_jitter": 1,
+        "target_rank_max": null,
+        "target_row_weight": 5,
+        "unique_base_rows": true
+      },
+      "instance_id": "S_dense_low_collision",
+      "intended_structure_tags": [
+        "dense",
+        "low_collision",
+        "balanced_columns",
+        "near_full_rank"
+      ],
+      "m_rows": 10,
+      "n_bits": 8,
+      "objective_type": "max_xorsat_synthetic",
+      "path": "S_dense_low_collision.json",
+      "seed": 1101,
+      "source_type": "synthetic_structured_bv"
+    },
+    {
+      "ell_default": 2,
+      "family": "S",
+      "generation_params": {
+        "column_skew": 0.75,
+        "dependent_rows": 2,
+        "duplicate_rows": 3,
+        "enforce_full_rank": false,
+        "row_weight_jitter": 1,
+        "target_rank_max": 6,
+        "target_row_weight": 5,
+        "unique_base_rows": false
+      },
+      "instance_id": "S_dense_high_collision",
+      "intended_structure_tags": [
+        "dense",
+        "high_collision",
+        "high_ambiguity",
+        "rank_reduced",
+        "column_skewed"
+      ],
+      "m_rows": 10,
+      "n_bits": 8,
+      "objective_type": "max_xorsat_synthetic",
+      "path": "S_dense_high_collision.json",
+      "seed": 1102,
+      "source_type": "synthetic_structured_bv"
+    },
+    {
+      "ell_default": 2,
+      "family": "S",
+      "generation_params": {
+        "column_skew": 0.0,
+        "dependent_rows": 0,
+        "duplicate_rows": 0,
+        "enforce_full_rank": true,
+        "row_weight_jitter": 0,
+        "target_rank_max": null,
+        "target_row_weight": 2,
+        "unique_base_rows": true
+      },
+      "instance_id": "S_sparse_low_collision",
+      "intended_structure_tags": [
+        "sparse",
+        "low_collision",
+        "near_uniform_columns",
+        "near_full_rank"
+      ],
+      "m_rows": 12,
+      "n_bits": 10,
+      "objective_type": "max_xorsat_synthetic",
+      "path": "S_sparse_low_collision.json",
+      "seed": 1103,
+      "source_type": "synthetic_structured_bv"
+    },
+    {
+      "ell_default": 2,
+      "family": "S",
+      "generation_params": {
+        "column_skew": 0.65,
+        "dependent_rows": 3,
+        "duplicate_rows": 4,
+        "enforce_full_rank": false,
+        "row_weight_jitter": 0,
+        "target_rank_max": 6,
+        "target_row_weight": 2,
+        "unique_base_rows": false
+      },
+      "instance_id": "S_sparse_high_collision",
+      "intended_structure_tags": [
+        "sparse",
+        "high_collision",
+        "high_ambiguity",
+        "rank_reduced",
+        "column_skewed"
+      ],
+      "m_rows": 12,
+      "n_bits": 10,
+      "objective_type": "max_xorsat_synthetic",
+      "path": "S_sparse_high_collision.json",
+      "seed": 1104,
+      "source_type": "synthetic_structured_bv"
+    },
+    {
+      "ell_default": 2,
+      "family": "S",
+      "generation_params": {
+        "column_skew": 0.1,
+        "dependent_rows": 0,
+        "duplicate_rows": 0,
+        "enforce_full_rank": true,
+        "row_weight_jitter": 1,
+        "target_rank_max": null,
+        "target_row_weight": 3,
+        "unique_base_rows": true
+      },
+      "instance_id": "S_balanced_rank_full",
+      "intended_structure_tags": [
+        "balanced",
+        "full_rank",
+        "medium_density",
+        "low_to_medium_collision"
+      ],
+      "m_rows": 8,
+      "n_bits": 8,
+      "objective_type": "max_xorsat_synthetic",
+      "path": "S_balanced_rank_full.json",
+      "seed": 1105,
+      "source_type": "synthetic_structured_bv"
+    },
+    {
+      "ell_default": 2,
+      "family": "S",
+      "generation_params": {
+        "column_skew": 0.2,
+        "dependent_rows": 4,
+        "duplicate_rows": 2,
+        "enforce_full_rank": false,
+        "row_weight_jitter": 1,
+        "target_rank_max": 5,
+        "target_row_weight": 3,
+        "unique_base_rows": false
+      },
+      "instance_id": "S_rank_deficient",
+      "intended_structure_tags": [
+        "rank_deficient",
+        "high_ambiguity",
+        "medium_density"
+      ],
+      "m_rows": 10,
+      "n_bits": 8,
+      "objective_type": "max_xorsat_synthetic",
+      "path": "S_rank_deficient.json",
+      "seed": 1106,
+      "source_type": "synthetic_structured_bv"
+    },
+    {
+      "ell_default": 2,
+      "family": "S",
+      "generation_params": {
+        "column_skew": 0.85,
+        "dependent_rows": 2,
+        "duplicate_rows": 1,
+        "enforce_full_rank": false,
+        "row_weight_jitter": 1,
+        "target_rank_max": 8,
+        "target_row_weight": 5,
+        "unique_base_rows": false
+      },
+      "instance_id": "S_column_skewed_dense",
+      "intended_structure_tags": [
+        "dense",
+        "column_skewed",
+        "medium_to_high_collision"
+      ],
+      "m_rows": 12,
+      "n_bits": 10,
+      "objective_type": "max_xorsat_synthetic",
+      "path": "S_column_skewed_dense.json",
+      "seed": 1107,
+      "source_type": "synthetic_structured_bv"
+    },
+    {
+      "ell_default": 2,
+      "family": "S",
+      "generation_params": {
+        "column_skew": 0.02,
+        "dependent_rows": 1,
+        "duplicate_rows": 1,
+        "enforce_full_rank": true,
+        "row_weight_jitter": 1,
+        "target_rank_max": null,
+        "target_row_weight": 2,
+        "unique_base_rows": true
+      },
+      "instance_id": "S_near_uniform_sparse",
+      "intended_structure_tags": [
+        "sparse",
+        "near_uniform_columns",
+        "medium_collision",
+        "near_full_rank"
+      ],
+      "m_rows": 10,
+      "n_bits": 10,
+      "objective_type": "max_xorsat_synthetic",
+      "path": "S_near_uniform_sparse.json",
+      "seed": 1108,
+      "source_type": "synthetic_structured_bv"
+    }
+  ],
+  "manifest_version": "1",
+  "schema_version": "1.0"
+}

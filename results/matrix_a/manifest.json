@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "matrix": "matrix_a",
+  "generated_at": "2026-03-16T18:13:05+00:00",
+  "config": {
+    "features": [
+      3,
+      4,
+      5
+    ],
+    "n_dqi_samples": 1000,
+    "sa_iter": 10000,
+    "top_k_by_surrogate": 10,
+    "seed": 42,
+    "include_stage1_paired_encoding": true,
+    "encodings": [
+      "wht_truncated",
+      "ilp_derived"
+    ],
+    "decoders": [
+      "bruteforce",
+      "bp1"
+    ],
+    "alpha_modes": [
+      "uniform",
+      "paper",
+      "heuristic"
+    ],
+    "execution_mode": "mixture",
+    "smoke": false
+  },
+  "aggregated_csv": "results/tables/matrix_a_summary.csv",
+  "run_count": 39,
+  "run_files": [
+    "results/matrix_a/runs/matrix_a_P3_wht_bruteforce_uniform_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P3_wht_bruteforce_paper_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P3_wht_bruteforce_heuristic_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P3_wht_bp1_uniform_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P3_wht_bp1_paper_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P3_wht_bp1_heuristic_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P3_wht_bruteforce_paper_coherent_seed42.json",
+    "results/matrix_a/runs/matrix_a_P3_ilp_bruteforce_uniform_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P3_ilp_bruteforce_paper_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P3_ilp_bruteforce_heuristic_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P3_ilp_bp1_uniform_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P3_ilp_bp1_paper_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P3_ilp_bp1_heuristic_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P4_wht_bruteforce_uniform_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P4_wht_bruteforce_paper_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P4_wht_bruteforce_heuristic_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P4_wht_bp1_uniform_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P4_wht_bp1_paper_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P4_wht_bp1_heuristic_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P4_wht_bruteforce_paper_coherent_seed42.json",
+    "results/matrix_a/runs/matrix_a_P4_ilp_bruteforce_uniform_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P4_ilp_bruteforce_paper_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P4_ilp_bruteforce_heuristic_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P4_ilp_bp1_uniform_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P4_ilp_bp1_paper_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P4_ilp_bp1_heuristic_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P5_wht_bruteforce_uniform_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P5_wht_bruteforce_paper_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P5_wht_bruteforce_heuristic_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P5_wht_bp1_uniform_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P5_wht_bp1_paper_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P5_wht_bp1_heuristic_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P5_wht_bruteforce_paper_coherent_seed42.json",
+    "results/matrix_a/runs/matrix_a_P5_ilp_bruteforce_uniform_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P5_ilp_bruteforce_paper_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P5_ilp_bruteforce_heuristic_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P5_ilp_bp1_uniform_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P5_ilp_bp1_paper_mixture_seed42.json",
+    "results/matrix_a/runs/matrix_a_P5_ilp_bp1_heuristic_mixture_seed42.json"
+  ]
+}

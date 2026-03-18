@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "matrix": "matrix_b",
+  "generated_at": "2026-03-16T17:59:16+00:00",
+  "config": {
+    "instance_ids": [
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "alpha_modes": [
+      "uniform",
+      "paper",
+      "heuristic"
+    ],
+    "execution_modes": [
+      "mixture",
+      "coherent"
+    ],
+    "decoders": [
+      "oracle",
+      "bp1"
+    ],
+    "decoder_labels": [
+      "oracle",
+      "bp1"
+    ],
+    "encodings": [
+      "wht_exact",
+      "ilp_derived_exact_where_feasible"
+    ],
+    "n_dqi_samples": 256,
+    "top_k_by_surrogate": 10,
+    "seed": 42,
+    "ell": null,
+    "smoke": false
+  },
+  "aggregated_csv": "results/tables/matrix_b_summary.csv",
+  "run_count": 48,
+  "run_files": [
+    "results/matrix_b/runs/matrix_b_C1_wht_exact_oracle_uniform_mixture_seed42.json",
+    "results/matrix_b/runs/matrix_b_C1_wht_exact_bp1_uniform_mixture_seed43.json",
+    "results/matrix_b/runs/matrix_b_C1_wht_exact_oracle_uniform_coherent_seed42.json",
+    "results/matrix_b/runs/matrix_b_C1_wht_exact_bp1_uniform_coherent_seed43.json",
+    "results/matrix_b/runs/matrix_b_C1_wht_exact_oracle_paper_mixture_seed42.json",
+    "results/matrix_b/runs/matrix_b_C1_wht_exact_bp1_paper_mixture_seed43.json",
+    "results/matrix_b/runs/matrix_b_C1_wht_exact_oracle_paper_coherent_seed42.json",
+    "results/matrix_b/runs/matrix_b_C1_wht_exact_bp1_paper_coherent_seed43.json",
+    "results/matrix_b/runs/matrix_b_C1_wht_exact_oracle_heuristic_mixture_seed42.json",
+    "results/matrix_b/runs/matrix_b_C1_wht_exact_bp1_heuristic_mixture_seed43.json",
+    "results/matrix_b/runs/matrix_b_C1_wht_exact_oracle_heuristic_coherent_seed42.json",
+    "results/matrix_b/runs/matrix_b_C1_wht_exact_bp1_heuristic_coherent_seed43.json",
+    "results/matrix_b/runs/matrix_b_C2_wht_exact_oracle_uniform_mixture_seed42.json",
+    "results/matrix_b/runs/matrix_b_C2_wht_exact_bp1_uniform_mixture_seed43.json",
+    "results/matrix_b/runs/matrix_b_C2_wht_exact_oracle_uniform_coherent_seed42.json",
+    "results/matrix_b/runs/matrix_b_C2_wht_exact_bp1_uniform_coherent_seed43.json",
+    "results/matrix_b/runs/matrix_b_C2_wht_exact_oracle_paper_mixture_seed42.json",
+    "results/matrix_b/runs/matrix_b_C2_wht_exact_bp1_paper_mixture_seed43.json",
+    "results/matrix_b/runs/matrix_b_C2_wht_exact_oracle_paper_coherent_seed42.json",
+    "results/matrix_b/runs/matrix_b_C2_wht_exact_bp1_paper_coherent_seed43.json",
+    "results/matrix_b/runs/matrix_b_C2_wht_exact_oracle_heuristic_mixture_seed42.json",
+    "results/matrix_b/runs/matrix_b_C2_wht_exact_bp1_heuristic_mixture_seed43.json",
+    "results/matrix_b/runs/matrix_b_C2_wht_exact_oracle_heuristic_coherent_seed42.json",
+    "results/matrix_b/runs/matrix_b_C2_wht_exact_bp1_heuristic_coherent_seed43.json",
+    "results/matrix_b/runs/matrix_b_C2_ilp_derived_exact_oracle_uniform_mixture_seed42.json",
+    "results/matrix_b/runs/matrix_b_C2_ilp_derived_exact_bp1_uniform_mixture_seed43.json",
+    "results/matrix_b/runs/matrix_b_C2_ilp_derived_exact_oracle_uniform_coherent_seed42.json",
+    "results/matrix_b/runs/matrix_b_C2_ilp_derived_exact_bp1_uniform_coherent_seed43.json",
+    "results/matrix_b/runs/matrix_b_C2_ilp_derived_exact_oracle_paper_mixture_seed42.json",
+    "results/matrix_b/runs/matrix_b_C2_ilp_derived_exact_bp1_paper_mixture_seed43.json",
+    "results/matrix_b/runs/matrix_b_C2_ilp_derived_exact_oracle_paper_coherent_seed42.json",
+    "results/matrix_b/runs/matrix_b_C2_ilp_derived_exact_bp1_paper_coherent_seed43.json",
+    "results/matrix_b/runs/matrix_b_C2_ilp_derived_exact_oracle_heuristic_mixture_seed42.json",
+    "results/matrix_b/runs/matrix_b_C2_ilp_derived_exact_bp1_heuristic_mixture_seed43.json",
+    "results/matrix_b/runs/matrix_b_C2_ilp_derived_exact_oracle_heuristic_coherent_seed42.json",
+    "results/matrix_b/runs/matrix_b_C2_ilp_derived_exact_bp1_heuristic_coherent_seed43.json",
+    "results/matrix_b/runs/matrix_b_C3_wht_exact_oracle_uniform_mixture_seed42.json",
+    "results/matrix_b/runs/matrix_b_C3_wht_exact_bp1_uniform_mixture_seed43.json",
+    "results/matrix_b/runs/matrix_b_C3_wht_exact_oracle_uniform_coherent_seed42.json",
+    "results/matrix_b/runs/matrix_b_C3_wht_exact_bp1_uniform_coherent_seed43.json",
+    "results/matrix_b/runs/matrix_b_C3_wht_exact_oracle_paper_mixture_seed42.json",
+    "results/matrix_b/runs/matrix_b_C3_wht_exact_bp1_paper_mixture_seed43.json",
+    "results/matrix_b/runs/matrix_b_C3_wht_exact_oracle_paper_coherent_seed42.json",
+    "results/matrix_b/runs/matrix_b_C3_wht_exact_bp1_paper_coherent_seed43.json",
+    "results/matrix_b/runs/matrix_b_C3_wht_exact_oracle_heuristic_mixture_seed42.json",
+    "results/matrix_b/runs/matrix_b_C3_wht_exact_bp1_heuristic_mixture_seed43.json",
+    "results/matrix_b/runs/matrix_b_C3_wht_exact_oracle_heuristic_coherent_seed42.json",
+    "results/matrix_b/runs/matrix_b_C3_wht_exact_bp1_heuristic_coherent_seed43.json"
+  ]
+}

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dqi-pricing-benchmark"
+version = "0.1.0"
+description = "Benchmark for DQI on discrete vehicle package pricing"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "ortools>=9.10",
+    "pytest>=7.0",
+]
+
+[project.optional-dependencies]
+qiskit = [
+    "qiskit>=1.0",
+]
+full = [
+    "qiskit>=1.0",
+    "matplotlib>=3.7",
+    "pandas>=2.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

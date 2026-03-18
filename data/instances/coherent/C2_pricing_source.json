@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "instance_id": "C2_pricing_source",
+  "pricing_problem": {
+    "features": [
+      {
+        "name": "C2 Feature A",
+        "prices": [
+          200,
+          400,
+          600
+        ]
+      },
+      {
+        "name": "C2 Feature B",
+        "prices": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "segments": [
+      {
+        "name": "C2 Segment All",
+        "budget_cap": 1400,
+        "weight": 1.0
+      }
+    ],
+    "bundle_constraints": [],
+    "max_luxury": 2,
+    "penalty_invalid": 500.0,
+    "penalty_bundle": 500.0,
+    "penalty_luxury_cap": 1500.0
+  }
+}

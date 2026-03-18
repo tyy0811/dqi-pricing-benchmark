@@ -1,0 +1,126 @@
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:239: IOError: sysctlbyname failed for 'hw.l1dcachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:239: IOError: sysctlbyname failed for 'hw.l2cachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:239: IOError: sysctlbyname failed for 'hw.l3cachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:239: IOError: sysctlbyname failed for 'hw.optional.sse4_2'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:239: IOError: sysctlbyname failed for 'hw.optional.avx1_0'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:239: IOError: sysctlbyname failed for 'hw.optional.avx2_0'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:239: IOError: sysctlbyname failed for 'hw.optional.bmi1'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:239: IOError: sysctlbyname failed for 'hw.optional.bmi2'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:239: IOError: sysctlbyname failed for 'hw.optional.avx512f'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:239: IOError: sysctlbyname failed for 'hw.optional.avx512cd'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:239: IOError: sysctlbyname failed for 'hw.optional.avx512dq'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:239: IOError: sysctlbyname failed for 'hw.optional.avx512bw'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:239: IOError: sysctlbyname failed for 'hw.optional.avx512vl'. Detail: [errno 1] Operation not permitted
+Running fresh Stage 2 benchmark...
+
+============================================================
+Running benchmark: 3 features, 6 bits
+============================================================
+
+Ground truth F*: 3000.00
+Surrogate rho(F,G_w): 0.8746
+Energy eta: 0.9812
+Structure: row_w_mean=1.833, col_w_mean=3.667, syndrome_density=1.000000, collision_rate=0.000000
+Note: paper mode is theorem-derived; heuristic mode is an explicit proxy baseline.
+Alpha diagnostics: L2=0.0986577, L1=0.139353, effectively_equal=False
+
+DQI (uniform):  F = 3000.00, ratio = 1.0000, G_w = 47517.19, G_u = 6, sat = 9/12, success = 1.0000
+  top-G_w F stats: mean=3000.00, median=3000.00, max=3000.00
+  x_F_opt: F=3000.00, G_w=47517.19, G_u=2
+  x_Gw_best_sampled: F=3000.00, G_w=47517.19, G_u=2
+
+DQI (paper):  F = 3000.00, ratio = 1.0000, G_w = 47517.19, G_u = 6, sat = 9/12, success = 1.0000
+  top-G_w F stats: mean=3000.00, median=3000.00, max=3000.00
+  x_F_opt: F=3000.00, G_w=47517.19, G_u=2
+  x_Gw_best_sampled: F=3000.00, G_w=47517.19, G_u=2
+
+DQI (heuristic):  F = 3000.00, ratio = 1.0000, G_w = 47517.19, G_u = 6, sat = 9/12, success = 1.0000
+  top-G_w F stats: mean=3000.00, median=3000.00, max=3000.00
+  x_F_opt: F=3000.00, G_w=47517.19, G_u=2
+  x_Gw_best_sampled: F=3000.00, G_w=47517.19, G_u=2
+DQI (paper coherent): unsupported (coherent_hilbert_cap_exceeded; joint_state_size=524288, cap=4096)
+  Pairwise diagnostics: ΔF(paper-heur)=0.0, Δsucc(paper-heur)=0.0, TVD(paper mix vs coh)=None
+  Decoder sensitivity (paper+mixture):
+    bruteforce: F=3000.0, success=1.0, decode_success=0.203125
+    bp1: F=3000.0, success=1.0, decode_success=1.0
+BF:             F = 3000.00 (exact)
+CP-SAT:         F = 3000.00, ratio = 1.0000, time = 1.8971s, exact = True
+SA:             F = 3000.00, ratio = 1.0000
+  Run diagnostics: Alpha vectors differ, but these frozen instances are insensitive on headline metrics and success probability.
+  Key note: dqi_optimal is a backward-compatible key for dqi_heuristic_mixture.
+
+============================================================
+Running benchmark: 4 features, 8 bits
+============================================================
+
+Ground truth F*: 2800.00
+Surrogate rho(F,G_w): 0.8952
+Energy eta: 0.9076
+Structure: row_w_mean=1.917, col_w_mean=2.875, syndrome_density=0.500000, collision_rate=0.310345
+Note: paper mode is theorem-derived; heuristic mode is an explicit proxy baseline.
+Alpha diagnostics: L2=0.121116, L1=0.187345, effectively_equal=False
+
+DQI (uniform):  F = 2800.00, ratio = 1.0000, G_w = 72890.86, G_u = 6, sat = 9/12, success = 0.5303
+  top-G_w F stats: mean=1930.00, median=2050.00, max=2050.00
+  x_F_opt: F=2800.00, G_w=68173.98, G_u=6
+  x_Gw_best_sampled: F=1600.00, G_w=72890.86, G_u=2
+
+DQI (paper):  F = 2800.00, ratio = 1.0000, G_w = 72890.86, G_u = 6, sat = 9/12, success = 0.3977
+  top-G_w F stats: mean=1930.00, median=2050.00, max=2050.00
+  x_F_opt: F=2800.00, G_w=68173.98, G_u=6
+  x_Gw_best_sampled: F=1600.00, G_w=72890.86, G_u=2
+
+DQI (heuristic):  F = 2800.00, ratio = 1.0000, G_w = 72890.86, G_u = 6, sat = 9/12, success = 0.4408
+  top-G_w F stats: mean=1805.00, median=1825.00, max=2050.00
+  x_F_opt: F=2800.00, G_w=68173.98, G_u=6
+  x_Gw_best_sampled: F=1600.00, G_w=72890.86, G_u=2
+DQI (paper coherent): unsupported (coherent_hilbert_cap_exceeded; joint_state_size=4194304, cap=4096)
+  Pairwise diagnostics: ΔF(paper-heur)=0.0, Δsucc(paper-heur)=-0.04310473068434473, TVD(paper mix vs coh)=None
+  Decoder sensitivity (paper+mixture):
+    bruteforce: F=2800.0, success=0.39772727272727293, decode_success=0.15625
+    bp1: F=2800.0, success=0.9053030303030304, decode_success=0.375
+BF:             F = 2800.00 (exact)
+CP-SAT:         F = 2800.00, ratio = 1.0000, time = 0.0209s, exact = True
+SA:             F = 2800.00, ratio = 1.0000
+  Run diagnostics: At least one alpha mode produces distinct headline outcomes on this instance.
+  Key note: dqi_optimal is a backward-compatible key for dqi_heuristic_mixture.
+
+============================================================
+Running benchmark: 5 features, 10 bits
+============================================================
+
+Ground truth F*: 3000.00
+Surrogate rho(F,G_w): 0.9008
+Energy eta: 0.9083
+Structure: row_w_mean=1.800, col_w_mean=2.700, syndrome_density=0.500000, collision_rate=0.520979
+Note: paper mode is theorem-derived; heuristic mode is an explicit proxy baseline.
+Alpha diagnostics: L2=0.15253, L1=0.245477, effectively_equal=False
+
+DQI (uniform):  F = 2400.00, ratio = 0.8000, G_w = 91523.06, G_u = 7, sat = 11/15, success = 0.0753
+  top-G_w F stats: mean=1765.00, median=1750.00, max=2100.00
+  x_F_opt: F=3000.00, G_w=89098.62, G_u=7
+  x_Gw_best_sampled: F=2100.00, G_w=91523.06, G_u=5
+
+DQI (paper):  F = 2400.00, ratio = 0.8000, G_w = 91523.06, G_u = 7, sat = 11/15, success = 0.0376
+  top-G_w F stats: mean=1765.00, median=1750.00, max=2100.00
+  x_F_opt: F=3000.00, G_w=89098.62, G_u=7
+  x_Gw_best_sampled: F=2100.00, G_w=91523.06, G_u=5
+
+DQI (heuristic):  F = 2400.00, ratio = 0.8000, G_w = 91523.06, G_u = 7, sat = 11/15, success = 0.0724
+  top-G_w F stats: mean=1765.00, median=1750.00, max=2100.00
+  x_F_opt: F=3000.00, G_w=89098.62, G_u=7
+  x_Gw_best_sampled: F=2100.00, G_w=91523.06, G_u=5
+DQI (paper coherent): unsupported (coherent_hilbert_cap_exceeded; joint_state_size=134217728, cap=4096)
+  Pairwise diagnostics: ΔF(paper-heur)=0.0, Δsucc(paper-heur)=-0.0347781319800673, TVD(paper mix vs coh)=None
+  Decoder sensitivity (paper+mixture):
+    bruteforce: F=2400.0, success=0.037637362637362594, decode_success=0.1337890625
+    bp1: F=3000.0, success=0.8181318681318682, decode_success=0.375
+BF:             F = 3000.00 (exact)
+CP-SAT:         F = 3000.00, ratio = 1.0000, time = 0.0378s, exact = True
+SA:             F = 2500.00, ratio = 0.8333
+  Run diagnostics: At least one alpha mode produces distinct headline outcomes on this instance.
+  Key note: dqi_optimal is a backward-compatible key for dqi_heuristic_mixture.
+Saved Stage 2 benchmark artifacts in results/runs/20260311_112455
+Running fresh Stage 3 resource analysis script...
+Saved Stage 3 resource artifact: results/runs/20260311_112455/resources_scaling.json
+Wrote run manifest

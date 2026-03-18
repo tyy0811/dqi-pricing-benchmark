@@ -1,0 +1,527 @@
+{
+  "paired_artifact_version": "1.0",
+  "instance_id": "pricing_3feat_6bit",
+  "pairing_kind": "pricing_wht_vs_ilp_exact",
+  "source_metadata": {
+    "instance_id": "pricing_3feat_6bit",
+    "pricing_instance_path": "data/instances/pricing_3feat_6bit.json"
+  },
+  "encodings": {
+    "wht_truncated": {
+      "artifact_version": "1.0",
+      "mode": "exploratory_wht_topk",
+      "story_role": "exploratory",
+      "benchmark_status": "non_mainline_surrogate",
+      "bit_order": "msb_first",
+      "n": 6,
+      "m": 15,
+      "k_requested": 15,
+      "k_selected": 15,
+      "exclude_constant": true,
+      "B": [
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "term_weights": [
+        9646.875,
+        9326.5625,
+        7932.8125,
+        7825.0,
+        7500.0,
+        7414.0625,
+        7367.1875,
+        5579.6875,
+        5448.4375,
+        1657.8125,
+        1584.375,
+        1553.125,
+        445.3125,
+        392.1875,
+        351.5625
+      ],
+      "indices": [
+        2,
+        48,
+        8,
+        32,
+        12,
+        4,
+        16,
+        3,
+        1,
+        50,
+        51,
+        49,
+        60,
+        15,
+        38
+      ],
+      "coefficients": [
+        9646.875,
+        -9326.5625,
+        7932.8125,
+        7825.0,
+        -7500.0,
+        7414.0625,
+        7367.1875,
+        -5579.6875,
+        5448.4375,
+        1657.8125,
+        1584.375,
+        -1553.125,
+        -445.3125,
+        -392.1875,
+        -351.5625
+      ],
+      "truncation_metadata": {
+        "sort_key": "abs_coeff_desc",
+        "tie_break": "stable_numpy_argsort"
+      },
+      "diagnostics": {
+        "energy_fraction": 0.9952354905295574,
+        "spearman_rho": 0.9401129423004854
+      },
+      "source_metadata": {
+        "instance_id": "pricing_3feat_6bit",
+        "pricing_instance_path": "data/instances/pricing_3feat_6bit.json",
+        "created_by": "solve_pricing_pair",
+        "created_at": "2026-03-17T15:09:29+00:00"
+      },
+      "f_hat": [
+        -22728.125,
+        5448.4375,
+        9646.875,
+        -5579.6875,
+        7414.0625,
+        -268.75,
+        260.9375,
+        325.0,
+        7932.8125,
+        215.625,
+        -207.8125,
+        -271.875,
+        -7500.0,
+        323.4375,
+        -218.75,
+        -392.1875,
+        7367.1875,
+        -218.75,
+        214.0625,
+        275.0,
+        -271.875,
+        -217.1875,
+        309.375,
+        260.9375,
+        218.75,
+        164.0625,
+        -256.25,
+        -207.8125,
+        329.6875,
+        165.625,
+        -160.9375,
+        -221.875,
+        7825.0,
+        260.9375,
+        -256.25,
+        -217.1875,
+        214.0625,
+        259.375,
+        -351.5625,
+        -203.125,
+        -160.9375,
+        -206.25,
+        298.4375,
+        150.0,
+        -271.875,
+        -207.8125,
+        203.125,
+        164.0625,
+        -9326.5625,
+        -1553.125,
+        1657.8125,
+        1584.375,
+        281.25,
+        214.0625,
+        -206.25,
+        -170.3125,
+        -228.125,
+        -160.9375,
+        153.125,
+        117.1875,
+        -445.3125,
+        -268.75,
+        164.0625,
+        237.5
+      ]
+    },
+    "ilp_derived": {
+      "schema_version": "1.0",
+      "encoding_type": "ilp_exact_reference",
+      "encoding_label": "toy_pricing_ilp_full_spectrum_reference",
+      "reference_path": "model_table_full_wht",
+      "spectrum_source": "full_exact_wht_of_F_table",
+      "exact_full_spectrum": true,
+      "exact_reconstructable": true,
+      "source_instance_id": "pricing_3feat_6bit",
+      "source_model_hash": "42df22f72dc0efa26a8d869f54058ceaa9cfc28786323837ac72a471639d2df0",
+      "source_table_hash": "f3e25a54afc9c09892afbcd3cdcbb323105ca4660cd8d569e7389a1886390ce2",
+      "objective_semantics": "maximize_F_over_feature_major_msb_first_bitstrings",
+      "bit_order": "msb_first",
+      "bitstring_convention": "feature_major_msb_first",
+      "feature_order": [
+        "Heated Seats",
+        "Panoramic Roof",
+        "Premium Audio"
+      ],
+      "term_indexing_convention": "integer_mask_msb_first_excluding_constant",
+      "parity_semantics": "row_i_applies_sign_factor_minus_one_pow_dot_Bi_x",
+      "weight_sign_convention": "v=0_positive_coeff_v=1_negative_coeff",
+      "n_bits": 6,
+      "m_terms": 63,
+      "constant_offset": -22728.125,
+      "B": [
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "term_weights": [
+        9646.875,
+        9326.5625,
+        7932.8125,
+        7825.0,
+        7500.0,
+        7414.0625,
+        7367.1875,
+        5579.6875,
+        5448.4375,
+        1657.8125,
+        1584.375,
+        1553.125,
+        445.3125,
+        392.1875,
+        351.5625
+      ],
+      "indices": [
+        2,
+        48,
+        8,
+        32,
+        12,
+        4,
+        16,
+        3,
+        1,
+        50,
+        51,
+        49,
+        60,
+        15,
+        38
+      ],
+      "coefficients": [
+        9646.875,
+        -9326.5625,
+        7932.8125,
+        7825.0,
+        -7500.0,
+        7414.0625,
+        7367.1875,
+        -5579.6875,
+        5448.4375,
+        1657.8125,
+        1584.375,
+        -1553.125,
+        -445.3125,
+        -392.1875,
+        -351.5625
+      ],
+      "artifact_hash": "11c588e4db9c7ee82620dd57d9e1e44a2d4dc654942ec8abeee2014e30df2847",
+      "artifact_version": "1.0",
+      "mode": "ilp_derived_exact_reference",
+      "n": 6,
+      "m": 15,
+      "diagnostics": {
+        "exact_full_spectrum_source": true,
+        "selected_term_fraction": 0.23809523809523808,
+        "reference_path": "model_table_full_wht",
+        "source_table_hash": "f3e25a54afc9c09892afbcd3cdcbb323105ca4660cd8d569e7389a1886390ce2"
+      },
+      "source_metadata": {
+        "instance_id": "pricing_3feat_6bit",
+        "pricing_instance_path": "data/instances/pricing_3feat_6bit.json",
+        "ilp_source_instance_id": "pricing_3feat_6bit",
+        "source_model_hash": "42df22f72dc0efa26a8d869f54058ceaa9cfc28786323837ac72a471639d2df0"
+      },
+      "full_m_terms": 63
+    }
+  }
+}

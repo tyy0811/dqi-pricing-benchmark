@@ -1,0 +1,49 @@
+{
+  "manifest_version": "1.0",
+  "schema_version": "1.0",
+  "family": "coherent_tiny_reference",
+  "description": "Fixed coherent tiny-instance family for Stage 2 Matrix B.",
+  "canonical_instance_order": [
+    "C1",
+    "C2",
+    "C3"
+  ],
+  "instances": [
+    {
+      "instance_id": "C1",
+      "family": "C",
+      "json_path": "C1.json",
+      "npz_path": "C1.npz",
+      "n_bits": 4,
+      "m_rows": 4,
+      "ell_default": 1,
+      "coherent_supported": true,
+      "json_sha256": "81aaa8a2860f4af6a8a72eee4e40efc7ee46b39befa8de5d59d0dd86dfadb3ef",
+      "npz_sha256": "7c556e694ac73b3514e5a83180d7c2936c80367c5b4b0aeae7c862ecff88cbdf"
+    },
+    {
+      "instance_id": "C2",
+      "family": "C",
+      "json_path": "C2.json",
+      "npz_path": "C2.npz",
+      "n_bits": 4,
+      "m_rows": 6,
+      "ell_default": 1,
+      "coherent_supported": true,
+      "json_sha256": "362629ea871988257a30eac1a5adbe9eadba2663a06b71f7771b3ec3f227f4d7",
+      "npz_sha256": "449a44ffe471bd28f950c0b3d08fa0553b8415c6139531e921e3344449d6ffe4"
+    },
+    {
+      "instance_id": "C3",
+      "family": "C",
+      "json_path": "C3.json",
+      "npz_path": "C3.npz",
+      "n_bits": 6,
+      "m_rows": 8,
+      "ell_default": 2,
+      "coherent_supported": true,
+      "json_sha256": "e36985a48b791edc9adf615ef7e856bad325190d04757396c03fa07509825b64",
+      "npz_sha256": "f13f478ba7ff8f1d7471364602d59ef07a0d2949d8056efc9e325fd82ed7939e"
+    }
+  ]
+}

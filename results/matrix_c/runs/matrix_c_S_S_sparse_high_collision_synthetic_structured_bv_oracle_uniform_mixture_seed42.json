@@ -1,0 +1,258 @@
+{
+  "schema_version": "1.0",
+  "matrix": "matrix_c",
+  "run_id": "matrix_c_S_S_sparse_high_collision_synthetic_structured_bv_oracle_uniform_mixture_seed42",
+  "run_timestamp_utc": "2026-03-16T18:00:53+00:00",
+  "run_status": "failed",
+  "run_error": "DQI sampling failed: zero surviving amplitude after decode/uncompute (zero postselection mass).",
+  "instance_id": "S_sparse_high_collision",
+  "family": "S",
+  "encoding": "synthetic_structured_bv",
+  "decoder": "oracle",
+  "alpha_mode": "uniform",
+  "execution_mode": "mixture",
+  "seed": 42,
+  "best_sampled_F": null,
+  "best_sampled_G": null,
+  "top1_regret": null,
+  "topk_regret": null,
+  "optimum_recall_at_k": null,
+  "best_top_G_sampled_F": null,
+  "spearman_rho_F_G": null,
+  "retained_energy_eta": null,
+  "decision_distortion": null,
+  "decode_success": null,
+  "postselection_success": null,
+  "runtime_sec": null,
+  "attempted_execution": null,
+  "boundary_reason": null,
+  "error_type": null,
+  "error_message": null,
+  "estimated_qubits": null,
+  "estimated_memory_gb": null,
+  "wall_clock_s": null,
+  "peak_memory_mb": null,
+  "resource_decode_uncompute_model": "lookup_table_reversible",
+  "resource_decode_uncompute_status": "analytic_estimate_conservative",
+  "resource_decode_uncompute_confidence": "analytic_upper_bound",
+  "resource_total_gate_est_with_decode": 3666.0,
+  "resource_total_depth_est_with_decode": 1202.0,
+  "resource_total_qubits_est_with_decode": 49.0,
+  "resource_prefix_gate_est": 94.0,
+  "resource_prefix_depth_est": 15.0,
+  "resource_decode_model_gate_est": 3572.0,
+  "resource_decode_model_depth_est": 1187.0,
+  "resource_weight_register_qubits": 2.0,
+  "resource_coherent_weight_register_gate_est": 48.0,
+  "resource_coherent_weight_register_depth_est": 10.0,
+  "qiskit_subset_resource_report": {
+    "scope": {
+      "scope": "structural_subset_only",
+      "includes": [
+        "approximate_low_weight_superposition",
+        "phase_kick",
+        "syndrome_compute",
+        "final_hadamards"
+      ],
+      "excludes": [
+        "decode_uncompute"
+      ],
+      "decode_uncompute_included": false,
+      "postselection_stage_present": false,
+      "distribution_basis": "syndrome_register_after_final_hadamards",
+      "subset_path": "implemented_structural_only",
+      "parity_claim": "no_full_end_to_end_parity_claim"
+    },
+    "includes": [
+      "approximate_low_weight_superposition",
+      "phase_kick",
+      "syndrome_compute",
+      "final_hadamards"
+    ],
+    "excludes": [
+      "decode_uncompute"
+    ],
+    "decode_uncompute_included": false,
+    "subset_path": "implemented_structural_only",
+    "distribution_basis": "syndrome_register_after_final_hadamards",
+    "postselection_stage_present": false,
+    "parity_claim": "no_full_end_to_end_parity_claim",
+    "status": "ok",
+    "reason": null,
+    "transpiled_depth": 18,
+    "cx_count": 24,
+    "qubit_count": 22,
+    "gate_counts": {
+      "rz": 33,
+      "cx": 24,
+      "sx": 13,
+      "measure": 10,
+      "barrier": 3
+    }
+  },
+  "qiskit_transpiled_structural_count": {
+    "category": "qiskit_transpiled_structural_count",
+    "status": "ok",
+    "reason": null,
+    "scope": {
+      "scope": "structural_subset_only",
+      "includes": [
+        "approximate_low_weight_superposition",
+        "phase_kick",
+        "syndrome_compute",
+        "final_hadamards"
+      ],
+      "excludes": [
+        "decode_uncompute"
+      ],
+      "decode_uncompute_included": false,
+      "postselection_stage_present": false,
+      "distribution_basis": "syndrome_register_after_final_hadamards",
+      "subset_path": "implemented_structural_only",
+      "parity_claim": "no_full_end_to_end_parity_claim",
+      "dicke_prep_status": "approximate_structural",
+      "category": "implemented_subset_only"
+    },
+    "qubit_count": 22,
+    "transpiled_depth": 18,
+    "cx_count": 24,
+    "gate_counts": {
+      "rz": 33,
+      "cx": 24,
+      "sx": 13,
+      "measure": 10,
+      "barrier": 3
+    },
+    "basis_gates": [
+      "cx",
+      "rz",
+      "sx",
+      "x"
+    ],
+    "optimization_level": 1
+  },
+  "qiskit_subset_transpiled_depth": 18,
+  "qiskit_subset_cx_count": 24,
+  "qiskit_subset_qubit_count": 22,
+  "qiskit_subset_status": "ok",
+  "resource_qiskit_subset_resource_report": {
+    "scope": {
+      "scope": "structural_subset_only",
+      "includes": [
+        "approximate_low_weight_superposition",
+        "phase_kick",
+        "syndrome_compute",
+        "final_hadamards"
+      ],
+      "excludes": [
+        "decode_uncompute"
+      ],
+      "decode_uncompute_included": false,
+      "postselection_stage_present": false,
+      "distribution_basis": "syndrome_register_after_final_hadamards",
+      "subset_path": "implemented_structural_only",
+      "parity_claim": "no_full_end_to_end_parity_claim"
+    },
+    "includes": [
+      "approximate_low_weight_superposition",
+      "phase_kick",
+      "syndrome_compute",
+      "final_hadamards"
+    ],
+    "excludes": [
+      "decode_uncompute"
+    ],
+    "decode_uncompute_included": false,
+    "subset_path": "implemented_structural_only",
+    "distribution_basis": "syndrome_register_after_final_hadamards",
+    "postselection_stage_present": false,
+    "parity_claim": "no_full_end_to_end_parity_claim",
+    "status": "ok",
+    "reason": null,
+    "transpiled_depth": 18,
+    "cx_count": 24,
+    "qubit_count": 22,
+    "gate_counts": {
+      "rz": 33,
+      "cx": 24,
+      "sx": 13,
+      "measure": 10,
+      "barrier": 3
+    }
+  },
+  "resource_qiskit_transpiled_structural_count": {
+    "category": "qiskit_transpiled_structural_count",
+    "status": "ok",
+    "reason": null,
+    "scope": {
+      "scope": "structural_subset_only",
+      "includes": [
+        "approximate_low_weight_superposition",
+        "phase_kick",
+        "syndrome_compute",
+        "final_hadamards"
+      ],
+      "excludes": [
+        "decode_uncompute"
+      ],
+      "decode_uncompute_included": false,
+      "postselection_stage_present": false,
+      "distribution_basis": "syndrome_register_after_final_hadamards",
+      "subset_path": "implemented_structural_only",
+      "parity_claim": "no_full_end_to_end_parity_claim",
+      "dicke_prep_status": "approximate_structural",
+      "category": "implemented_subset_only"
+    },
+    "qubit_count": 22,
+    "transpiled_depth": 18,
+    "cx_count": 24,
+    "gate_counts": {
+      "rz": 33,
+      "cx": 24,
+      "sx": 13,
+      "measure": 10,
+      "barrier": 3
+    },
+    "basis_gates": [
+      "cx",
+      "rz",
+      "sx",
+      "x"
+    ],
+    "optimization_level": 1
+  },
+  "resource_qiskit_subset_transpiled_depth": 18.0,
+  "resource_qiskit_subset_cx_count": 24.0,
+  "resource_qiskit_subset_qubit_count": 22.0,
+  "resource_qiskit_subset_status": "ok",
+  "structure_row_weight_mean": 2.0,
+  "structure_row_weight_max": 2.0,
+  "structure_col_weight_mean": 2.4,
+  "structure_col_weight_max": 9.0,
+  "structure_rank": 5.0,
+  "structure_rank_deficiency": 5.0,
+  "structure_short_cycle_proxy": 0.13636363636363635,
+  "structure_decodable_syndrome_fraction": 0.0,
+  "structure_ambiguous_syndrome_count": 19.0,
+  "structure_collision_rate": 1.0,
+  "structure_distance_proxy": 2.0,
+  "runtime": null,
+  "decoder_internal_mode": "bruteforce",
+  "decoder_alias_of": "bruteforce",
+  "gain_over_bp1": null,
+  "gain_over_bruteforce": null,
+  "metric_availability": {
+    "best_sampled_F": "unavailable",
+    "best_sampled_G": "unavailable",
+    "top1_regret": "unavailable",
+    "topk_regret": "unavailable",
+    "optimum_recall_at_k": "unavailable",
+    "best_top_G_sampled_F": "unavailable",
+    "spearman_rho_F_G": "unavailable",
+    "retained_energy_eta": "unavailable",
+    "decision_distortion": "unavailable",
+    "decode_success": "unavailable",
+    "postselection_success": "unavailable",
+    "runtime_sec": "unavailable"
+  }
+}

@@ -1,0 +1,785 @@
+{
+  "generated_at": "2026-03-11T10:25:40+00:00",
+  "reports": [
+    {
+      "instance_id": "pricing_3feat_6bit",
+      "n": 6,
+      "m": 12,
+      "k_selected": 12,
+      "ell": 1,
+      "dicke_method": "bartschi_eidenbenz_scs_upper_bound",
+      "dicke_cnot_est": 11,
+      "dicke_single_qubit_rot_est": 11,
+      "dicke_depth_est": 12,
+      "syndrome_cnot_count": 22,
+      "phase_z_count": 4,
+      "final_h_count": 6,
+      "total_gate_est": 54,
+      "total_depth_est": 15,
+      "decode_uncompute_gate_est": 1716,
+      "decode_uncompute_depth_est": 819,
+      "decode_uncompute_ancilla_est": 22,
+      "decode_uncompute_model": "lookup_table_reversible",
+      "decode_uncompute_status": "analytic_estimate_conservative",
+      "decode_uncompute_confidence": "analytic_upper_bound",
+      "total_gate_est_with_decode": 1770,
+      "total_depth_est_with_decode": 834,
+      "total_gate_est_with_decode_and_weight_register_est": 1786,
+      "total_depth_est_with_decode_and_weight_register_est": 839,
+      "n_problem_qubits": 6,
+      "m_error_qubits": 12,
+      "n_syndrome_qubits": 6,
+      "ancilla_qubits_est": 0,
+      "total_qubits_est": 18,
+      "total_qubits_est_with_decode": 40,
+      "total_qubits_est_with_decode_and_weight_register_est": 41,
+      "weight_register_qubits": 1,
+      "weight_register_overhead_status": "analytic_upper_bound",
+      "coherent_weight_register_gate_est": 16,
+      "coherent_weight_register_depth_est": 5,
+      "coherent_weight_register_ancilla_est": 0,
+      "row_weight_mean": 1.8333333333333333,
+      "row_weight_max": 4,
+      "col_weight_mean": 3.6666666666666665,
+      "col_weight_max": 5,
+      "syndrome_density": 1.0,
+      "number_of_unique_syndromes_decodable_at_ell": 13,
+      "decoder_collision_rate": 0.0,
+      "estimated_lookup_table_size": 13,
+      "structure_metrics": {
+        "row_weight_mean": 1.8333333333333333,
+        "row_weight_max": 4,
+        "col_weight_mean": 3.6666666666666665,
+        "col_weight_max": 5,
+        "syndrome_density": 1.0,
+        "number_of_unique_syndromes_decodable_at_ell": 13,
+        "decoder_collision_rate": 0.0,
+        "estimated_lookup_table_size": 13,
+        "ambiguous_syndrome_count": 0,
+        "syndrome_space_size": 64,
+        "rank_B_gf2": 6,
+        "ell": 1,
+        "m": 12,
+        "n": 6
+      },
+      "decode_cost_drivers": {
+        "estimated_lookup_table_size": 13,
+        "number_of_unique_syndromes_decodable_at_ell": 13,
+        "decoder_collision_rate": 0.0,
+        "collision_guard_gate_est": 0,
+        "collision_guard_depth_est": 0
+      },
+      "implemented_resources": {
+        "dicke_prep": {
+          "gate_est": 22,
+          "depth_est": 12,
+          "ancilla_est": 0,
+          "confidence": "analytic_upper_bound"
+        },
+        "phase_kick": {
+          "gate_est": 4,
+          "depth_est": 1,
+          "ancilla_est": 0,
+          "confidence": "exact_formula"
+        },
+        "syndrome_compute": {
+          "gate_est": 22,
+          "depth_est": 1,
+          "ancilla_est": 0,
+          "confidence": "exact_formula"
+        },
+        "hadamards": {
+          "gate_est": 6,
+          "depth_est": 1,
+          "ancilla_est": 0,
+          "confidence": "exact_formula"
+        }
+      },
+      "estimated_resources": {
+        "decode_uncompute": {
+          "model": "lookup_table_reversible",
+          "status": "analytic_estimate_conservative",
+          "gate_est": 1716,
+          "depth_est": 819,
+          "ancilla_est": 22,
+          "confidence": "analytic_upper_bound",
+          "details": {
+            "mapping_size": 13,
+            "decodable_syndromes": 13,
+            "ambiguous_syndromes": 0,
+            "syndrome_space_size": 64,
+            "assumptions": [
+              "Serial reversible lookup over populated syndrome rows",
+              "n-bit comparators per row with explicit uncompute",
+              "m-bit controlled write for uniquely decodable rows",
+              "Conservative analytic estimate, not compiled gate synthesis"
+            ]
+          },
+          "cost_drivers": {
+            "estimated_lookup_table_size": 13,
+            "number_of_unique_syndromes_decodable_at_ell": 13,
+            "decoder_collision_rate": 0.0,
+            "collision_guard_gate_est": 0,
+            "collision_guard_depth_est": 0
+          }
+        },
+        "coherent_weight_register_overhead": {
+          "weight_register_qubits": 1,
+          "gate_est": 16,
+          "depth_est": 5,
+          "ancilla_est": 0,
+          "status": "analytic_upper_bound",
+          "confidence": "analytic_upper_bound",
+          "details": {
+            "assumptions": [
+              "Generic q-qubit amplitude preparation upper bound (not transpiled)",
+              "No explicit ancilla assumed for the coarse upper-bound model"
+            ]
+          }
+        }
+      },
+      "total_resources": {
+        "total_without_decode": {
+          "gate_est": 54,
+          "depth_est": 15,
+          "qubits_est": 18,
+          "confidence": "mixed"
+        },
+        "total_with_decode": {
+          "gate_est": 1770,
+          "depth_est": 834,
+          "qubits_est": 40,
+          "confidence": "mixed"
+        },
+        "total_with_decode_and_weight_register_est": {
+          "gate_est": 1786,
+          "depth_est": 839,
+          "qubits_est": 41,
+          "confidence": "mixed"
+        }
+      },
+      "analytic_estimate": {
+        "category": "analytic_estimate",
+        "status": "ok",
+        "scope": "full_pipeline_estimate_with_decode_model",
+        "total_resources": {
+          "total_without_decode": {
+            "gate_est": 54,
+            "depth_est": 15,
+            "qubits_est": 18,
+            "confidence": "mixed"
+          },
+          "total_with_decode": {
+            "gate_est": 1770,
+            "depth_est": 834,
+            "qubits_est": 40,
+            "confidence": "mixed"
+          },
+          "total_with_decode_and_weight_register_est": {
+            "gate_est": 1786,
+            "depth_est": 839,
+            "qubits_est": 41,
+            "confidence": "mixed"
+          }
+        }
+      },
+      "qiskit_transpiled_structural_count": {
+        "category": "qiskit_transpiled_structural_count",
+        "status": "ok",
+        "reason": null,
+        "scope": {
+          "includes": [
+            "dicke_prep_approximate",
+            "phase_kick",
+            "syndrome_compute",
+            "final_hadamards"
+          ],
+          "excludes": [
+            "decode_uncompute"
+          ],
+          "decode_uncompute_included": false,
+          "dicke_prep_status": "approximate_structural",
+          "category": "implemented_subset_only"
+        },
+        "qubit_count": 18,
+        "transpiled_depth": 16,
+        "cx_count": 22,
+        "gate_counts": {
+          "cx": 22,
+          "rz": 20,
+          "sx": 8,
+          "measure": 6,
+          "barrier": 3
+        },
+        "basis_gates": [
+          "cx",
+          "rz",
+          "sx",
+          "x"
+        ],
+        "optimization_level": 1
+      },
+      "resource_category_note": "analytic_estimate and qiskit_transpiled_structural_count are different categories and are not direct substitutes.",
+      "decode_uncompute_details": {
+        "mapping_size": 13,
+        "decodable_syndromes": 13,
+        "ambiguous_syndromes": 0,
+        "syndrome_space_size": 64,
+        "assumptions": [
+          "Serial reversible lookup over populated syndrome rows",
+          "n-bit comparators per row with explicit uncompute",
+          "m-bit controlled write for uniquely decodable rows",
+          "Conservative analytic estimate, not compiled gate synthesis"
+        ]
+      },
+      "register_assumptions": {
+        "m_error_qubits": "error register holding weight-t error patterns",
+        "n_syndrome_qubits": "syndrome register, output of B^T @ y mod 2",
+        "ancilla_qubits_est": "additional ancilla for Dicke prep if needed (0 for SCS)",
+        "decode_uncompute_ancilla_est": "additional workspace for decode/uncompute model (lookup_table_reversible)",
+        "weight_register_qubits": "explicit coherent weight-register size for t in [0, ell]"
+      },
+      "included_stages": [
+        "dicke_prep",
+        "phase_kick",
+        "syndrome_compute",
+        "decode_uncompute",
+        "final_hadamard"
+      ],
+      "excluded_stages": [],
+      "artifact_version": null,
+      "repo_commit": null,
+      "assumptions": [
+        "Dicke prep: deterministic SCS construction (B\u00e4rtschi-Eidenbenz 2019)",
+        "Superposition: naive sum over t=0..ell, not optimized weighted prep",
+        "Syndrome: one CNOT per nonzero entry in B",
+        "Phase kick: one Z per nonzero entry in v",
+        "Decode/uncompute: explicit lookup_table_reversible estimate (analytic_estimate_conservative)",
+        "Coherent weight register: analytic_upper_bound overhead model",
+        "Qiskit structural counts cover only implemented subset (decode/uncompute excluded)."
+      ],
+      "reference": "arXiv:1904.07358",
+      "display_name": "pricing_3feat_6bit"
+    },
+    {
+      "instance_id": "pricing_4feat_8bit",
+      "n": 8,
+      "m": 12,
+      "k_selected": 12,
+      "ell": 2,
+      "dicke_method": "bartschi_eidenbenz_scs_upper_bound",
+      "dicke_cnot_est": 31,
+      "dicke_single_qubit_rot_est": 22,
+      "dicke_depth_est": 12,
+      "syndrome_cnot_count": 23,
+      "phase_z_count": 3,
+      "final_h_count": 8,
+      "total_gate_est": 87,
+      "total_depth_est": 15,
+      "decode_uncompute_gate_est": 8976,
+      "decode_uncompute_depth_est": 3909,
+      "decode_uncompute_ancilla_est": 26,
+      "decode_uncompute_model": "lookup_table_reversible",
+      "decode_uncompute_status": "analytic_estimate_conservative",
+      "decode_uncompute_confidence": "analytic_upper_bound",
+      "total_gate_est_with_decode": 9063,
+      "total_depth_est_with_decode": 3924,
+      "total_gate_est_with_decode_and_weight_register_est": 9111,
+      "total_depth_est_with_decode_and_weight_register_est": 3934,
+      "n_problem_qubits": 8,
+      "m_error_qubits": 12,
+      "n_syndrome_qubits": 8,
+      "ancilla_qubits_est": 0,
+      "total_qubits_est": 20,
+      "total_qubits_est_with_decode": 46,
+      "total_qubits_est_with_decode_and_weight_register_est": 48,
+      "weight_register_qubits": 2,
+      "weight_register_overhead_status": "analytic_upper_bound",
+      "coherent_weight_register_gate_est": 48,
+      "coherent_weight_register_depth_est": 10,
+      "coherent_weight_register_ancilla_est": 0,
+      "row_weight_mean": 1.9166666666666667,
+      "row_weight_max": 4,
+      "col_weight_mean": 2.875,
+      "col_weight_max": 5,
+      "syndrome_density": 0.5,
+      "number_of_unique_syndromes_decodable_at_ell": 40,
+      "decoder_collision_rate": 0.3103448275862069,
+      "estimated_lookup_table_size": 58,
+      "structure_metrics": {
+        "row_weight_mean": 1.9166666666666667,
+        "row_weight_max": 4,
+        "col_weight_mean": 2.875,
+        "col_weight_max": 5,
+        "syndrome_density": 0.5,
+        "number_of_unique_syndromes_decodable_at_ell": 40,
+        "decoder_collision_rate": 0.3103448275862069,
+        "estimated_lookup_table_size": 58,
+        "ambiguous_syndrome_count": 18,
+        "syndrome_space_size": 256,
+        "rank_B_gf2": 7,
+        "ell": 2,
+        "m": 12,
+        "n": 8
+      },
+      "decode_cost_drivers": {
+        "estimated_lookup_table_size": 58,
+        "number_of_unique_syndromes_decodable_at_ell": 40,
+        "decoder_collision_rate": 0.3103448275862069,
+        "collision_guard_gate_est": 864,
+        "collision_guard_depth_est": 9
+      },
+      "implemented_resources": {
+        "dicke_prep": {
+          "gate_est": 53,
+          "depth_est": 12,
+          "ancilla_est": 0,
+          "confidence": "analytic_upper_bound"
+        },
+        "phase_kick": {
+          "gate_est": 3,
+          "depth_est": 1,
+          "ancilla_est": 0,
+          "confidence": "exact_formula"
+        },
+        "syndrome_compute": {
+          "gate_est": 23,
+          "depth_est": 1,
+          "ancilla_est": 0,
+          "confidence": "exact_formula"
+        },
+        "hadamards": {
+          "gate_est": 8,
+          "depth_est": 1,
+          "ancilla_est": 0,
+          "confidence": "exact_formula"
+        }
+      },
+      "estimated_resources": {
+        "decode_uncompute": {
+          "model": "lookup_table_reversible",
+          "status": "analytic_estimate_conservative",
+          "gate_est": 8976,
+          "depth_est": 3909,
+          "ancilla_est": 26,
+          "confidence": "analytic_upper_bound",
+          "details": {
+            "mapping_size": 58,
+            "decodable_syndromes": 40,
+            "ambiguous_syndromes": 18,
+            "syndrome_space_size": 256,
+            "assumptions": [
+              "Serial reversible lookup over populated syndrome rows",
+              "n-bit comparators per row with explicit uncompute",
+              "m-bit controlled write for uniquely decodable rows",
+              "Conservative analytic estimate, not compiled gate synthesis"
+            ]
+          },
+          "cost_drivers": {
+            "estimated_lookup_table_size": 58,
+            "number_of_unique_syndromes_decodable_at_ell": 40,
+            "decoder_collision_rate": 0.3103448275862069,
+            "collision_guard_gate_est": 864,
+            "collision_guard_depth_est": 9
+          }
+        },
+        "coherent_weight_register_overhead": {
+          "weight_register_qubits": 2,
+          "gate_est": 48,
+          "depth_est": 10,
+          "ancilla_est": 0,
+          "status": "analytic_upper_bound",
+          "confidence": "analytic_upper_bound",
+          "details": {
+            "assumptions": [
+              "Generic q-qubit amplitude preparation upper bound (not transpiled)",
+              "No explicit ancilla assumed for the coarse upper-bound model"
+            ]
+          }
+        }
+      },
+      "total_resources": {
+        "total_without_decode": {
+          "gate_est": 87,
+          "depth_est": 15,
+          "qubits_est": 20,
+          "confidence": "mixed"
+        },
+        "total_with_decode": {
+          "gate_est": 9063,
+          "depth_est": 3924,
+          "qubits_est": 46,
+          "confidence": "mixed"
+        },
+        "total_with_decode_and_weight_register_est": {
+          "gate_est": 9111,
+          "depth_est": 3934,
+          "qubits_est": 48,
+          "confidence": "mixed"
+        }
+      },
+      "analytic_estimate": {
+        "category": "analytic_estimate",
+        "status": "ok",
+        "scope": "full_pipeline_estimate_with_decode_model",
+        "total_resources": {
+          "total_without_decode": {
+            "gate_est": 87,
+            "depth_est": 15,
+            "qubits_est": 20,
+            "confidence": "mixed"
+          },
+          "total_with_decode": {
+            "gate_est": 9063,
+            "depth_est": 3924,
+            "qubits_est": 46,
+            "confidence": "mixed"
+          },
+          "total_with_decode_and_weight_register_est": {
+            "gate_est": 9111,
+            "depth_est": 3934,
+            "qubits_est": 48,
+            "confidence": "mixed"
+          }
+        }
+      },
+      "qiskit_transpiled_structural_count": {
+        "category": "qiskit_transpiled_structural_count",
+        "status": "ok",
+        "reason": null,
+        "scope": {
+          "includes": [
+            "dicke_prep_approximate",
+            "phase_kick",
+            "syndrome_compute",
+            "final_hadamards"
+          ],
+          "excludes": [
+            "decode_uncompute"
+          ],
+          "decode_uncompute_included": false,
+          "dicke_prep_status": "approximate_structural",
+          "category": "implemented_subset_only"
+        },
+        "qubit_count": 20,
+        "transpiled_depth": 16,
+        "cx_count": 23,
+        "gate_counts": {
+          "rz": 25,
+          "cx": 23,
+          "sx": 11,
+          "measure": 8,
+          "barrier": 3
+        },
+        "basis_gates": [
+          "cx",
+          "rz",
+          "sx",
+          "x"
+        ],
+        "optimization_level": 1
+      },
+      "resource_category_note": "analytic_estimate and qiskit_transpiled_structural_count are different categories and are not direct substitutes.",
+      "decode_uncompute_details": {
+        "mapping_size": 58,
+        "decodable_syndromes": 40,
+        "ambiguous_syndromes": 18,
+        "syndrome_space_size": 256,
+        "assumptions": [
+          "Serial reversible lookup over populated syndrome rows",
+          "n-bit comparators per row with explicit uncompute",
+          "m-bit controlled write for uniquely decodable rows",
+          "Conservative analytic estimate, not compiled gate synthesis"
+        ]
+      },
+      "register_assumptions": {
+        "m_error_qubits": "error register holding weight-t error patterns",
+        "n_syndrome_qubits": "syndrome register, output of B^T @ y mod 2",
+        "ancilla_qubits_est": "additional ancilla for Dicke prep if needed (0 for SCS)",
+        "decode_uncompute_ancilla_est": "additional workspace for decode/uncompute model (lookup_table_reversible)",
+        "weight_register_qubits": "explicit coherent weight-register size for t in [0, ell]"
+      },
+      "included_stages": [
+        "dicke_prep",
+        "phase_kick",
+        "syndrome_compute",
+        "decode_uncompute",
+        "final_hadamard"
+      ],
+      "excluded_stages": [],
+      "artifact_version": null,
+      "repo_commit": null,
+      "assumptions": [
+        "Dicke prep: deterministic SCS construction (B\u00e4rtschi-Eidenbenz 2019)",
+        "Superposition: naive sum over t=0..ell, not optimized weighted prep",
+        "Syndrome: one CNOT per nonzero entry in B",
+        "Phase kick: one Z per nonzero entry in v",
+        "Decode/uncompute: explicit lookup_table_reversible estimate (analytic_estimate_conservative)",
+        "Coherent weight register: analytic_upper_bound overhead model",
+        "Qiskit structural counts cover only implemented subset (decode/uncompute excluded)."
+      ],
+      "reference": "arXiv:1904.07358",
+      "display_name": "pricing_4feat_8bit"
+    },
+    {
+      "instance_id": "pricing_5feat_10bit",
+      "n": 10,
+      "m": 15,
+      "k_selected": 15,
+      "ell": 3,
+      "dicke_method": "bartschi_eidenbenz_scs_upper_bound",
+      "dicke_cnot_est": 76,
+      "dicke_single_qubit_rot_est": 42,
+      "dicke_depth_est": 15,
+      "syndrome_cnot_count": 27,
+      "phase_z_count": 4,
+      "final_h_count": 10,
+      "total_gate_est": 159,
+      "total_depth_est": 18,
+      "decode_uncompute_gate_est": 54316,
+      "decode_uncompute_depth_est": 22054,
+      "decode_uncompute_ancilla_est": 34,
+      "decode_uncompute_model": "lookup_table_reversible",
+      "decode_uncompute_status": "analytic_estimate_conservative",
+      "decode_uncompute_confidence": "analytic_upper_bound",
+      "total_gate_est_with_decode": 54475,
+      "total_depth_est_with_decode": 22072,
+      "total_gate_est_with_decode_and_weight_register_est": 54523,
+      "total_depth_est_with_decode_and_weight_register_est": 22082,
+      "n_problem_qubits": 10,
+      "m_error_qubits": 15,
+      "n_syndrome_qubits": 10,
+      "ancilla_qubits_est": 0,
+      "total_qubits_est": 25,
+      "total_qubits_est_with_decode": 59,
+      "total_qubits_est_with_decode_and_weight_register_est": 61,
+      "weight_register_qubits": 2,
+      "weight_register_overhead_status": "analytic_upper_bound",
+      "coherent_weight_register_gate_est": 48,
+      "coherent_weight_register_depth_est": 10,
+      "coherent_weight_register_ancilla_est": 0,
+      "row_weight_mean": 1.8,
+      "row_weight_max": 4,
+      "col_weight_mean": 2.7,
+      "col_weight_max": 5,
+      "syndrome_density": 0.5,
+      "number_of_unique_syndromes_decodable_at_ell": 137,
+      "decoder_collision_rate": 0.5209790209790209,
+      "estimated_lookup_table_size": 286,
+      "structure_metrics": {
+        "row_weight_mean": 1.8,
+        "row_weight_max": 4,
+        "col_weight_mean": 2.7,
+        "col_weight_max": 5,
+        "syndrome_density": 0.5,
+        "number_of_unique_syndromes_decodable_at_ell": 137,
+        "decoder_collision_rate": 0.5209790209790209,
+        "estimated_lookup_table_size": 286,
+        "ambiguous_syndrome_count": 149,
+        "syndrome_space_size": 1024,
+        "rank_B_gf2": 9,
+        "ell": 3,
+        "m": 15,
+        "n": 10
+      },
+      "decode_cost_drivers": {
+        "estimated_lookup_table_size": 286,
+        "number_of_unique_syndromes_decodable_at_ell": 137,
+        "decoder_collision_rate": 0.5209790209790209,
+        "collision_guard_gate_est": 8940,
+        "collision_guard_depth_est": 75
+      },
+      "implemented_resources": {
+        "dicke_prep": {
+          "gate_est": 118,
+          "depth_est": 15,
+          "ancilla_est": 0,
+          "confidence": "analytic_upper_bound"
+        },
+        "phase_kick": {
+          "gate_est": 4,
+          "depth_est": 1,
+          "ancilla_est": 0,
+          "confidence": "exact_formula"
+        },
+        "syndrome_compute": {
+          "gate_est": 27,
+          "depth_est": 1,
+          "ancilla_est": 0,
+          "confidence": "exact_formula"
+        },
+        "hadamards": {
+          "gate_est": 10,
+          "depth_est": 1,
+          "ancilla_est": 0,
+          "confidence": "exact_formula"
+        }
+      },
+      "estimated_resources": {
+        "decode_uncompute": {
+          "model": "lookup_table_reversible",
+          "status": "analytic_estimate_conservative",
+          "gate_est": 54316,
+          "depth_est": 22054,
+          "ancilla_est": 34,
+          "confidence": "analytic_upper_bound",
+          "details": {
+            "mapping_size": 286,
+            "decodable_syndromes": 137,
+            "ambiguous_syndromes": 149,
+            "syndrome_space_size": 1024,
+            "assumptions": [
+              "Serial reversible lookup over populated syndrome rows",
+              "n-bit comparators per row with explicit uncompute",
+              "m-bit controlled write for uniquely decodable rows",
+              "Conservative analytic estimate, not compiled gate synthesis"
+            ]
+          },
+          "cost_drivers": {
+            "estimated_lookup_table_size": 286,
+            "number_of_unique_syndromes_decodable_at_ell": 137,
+            "decoder_collision_rate": 0.5209790209790209,
+            "collision_guard_gate_est": 8940,
+            "collision_guard_depth_est": 75
+          }
+        },
+        "coherent_weight_register_overhead": {
+          "weight_register_qubits": 2,
+          "gate_est": 48,
+          "depth_est": 10,
+          "ancilla_est": 0,
+          "status": "analytic_upper_bound",
+          "confidence": "analytic_upper_bound",
+          "details": {
+            "assumptions": [
+              "Generic q-qubit amplitude preparation upper bound (not transpiled)",
+              "No explicit ancilla assumed for the coarse upper-bound model"
+            ]
+          }
+        }
+      },
+      "total_resources": {
+        "total_without_decode": {
+          "gate_est": 159,
+          "depth_est": 18,
+          "qubits_est": 25,
+          "confidence": "mixed"
+        },
+        "total_with_decode": {
+          "gate_est": 54475,
+          "depth_est": 22072,
+          "qubits_est": 59,
+          "confidence": "mixed"
+        },
+        "total_with_decode_and_weight_register_est": {
+          "gate_est": 54523,
+          "depth_est": 22082,
+          "qubits_est": 61,
+          "confidence": "mixed"
+        }
+      },
+      "analytic_estimate": {
+        "category": "analytic_estimate",
+        "status": "ok",
+        "scope": "full_pipeline_estimate_with_decode_model",
+        "total_resources": {
+          "total_without_decode": {
+            "gate_est": 159,
+            "depth_est": 18,
+            "qubits_est": 25,
+            "confidence": "mixed"
+          },
+          "total_with_decode": {
+            "gate_est": 54475,
+            "depth_est": 22072,
+            "qubits_est": 59,
+            "confidence": "mixed"
+          },
+          "total_with_decode_and_weight_register_est": {
+            "gate_est": 54523,
+            "depth_est": 22082,
+            "qubits_est": 61,
+            "confidence": "mixed"
+          }
+        }
+      },
+      "qiskit_transpiled_structural_count": {
+        "category": "qiskit_transpiled_structural_count",
+        "status": "ok",
+        "reason": null,
+        "scope": {
+          "includes": [
+            "dicke_prep_approximate",
+            "phase_kick",
+            "syndrome_compute",
+            "final_hadamards"
+          ],
+          "excludes": [
+            "decode_uncompute"
+          ],
+          "decode_uncompute_included": false,
+          "dicke_prep_status": "approximate_structural",
+          "category": "implemented_subset_only"
+        },
+        "qubit_count": 25,
+        "transpiled_depth": 17,
+        "cx_count": 27,
+        "gate_counts": {
+          "rz": 32,
+          "cx": 27,
+          "sx": 14,
+          "measure": 10,
+          "barrier": 3
+        },
+        "basis_gates": [
+          "cx",
+          "rz",
+          "sx",
+          "x"
+        ],
+        "optimization_level": 1
+      },
+      "resource_category_note": "analytic_estimate and qiskit_transpiled_structural_count are different categories and are not direct substitutes.",
+      "decode_uncompute_details": {
+        "mapping_size": 286,
+        "decodable_syndromes": 137,
+        "ambiguous_syndromes": 149,
+        "syndrome_space_size": 1024,
+        "assumptions": [
+          "Serial reversible lookup over populated syndrome rows",
+          "n-bit comparators per row with explicit uncompute",
+          "m-bit controlled write for uniquely decodable rows",
+          "Conservative analytic estimate, not compiled gate synthesis"
+        ]
+      },
+      "register_assumptions": {
+        "m_error_qubits": "error register holding weight-t error patterns",
+        "n_syndrome_qubits": "syndrome register, output of B^T @ y mod 2",
+        "ancilla_qubits_est": "additional ancilla for Dicke prep if needed (0 for SCS)",
+        "decode_uncompute_ancilla_est": "additional workspace for decode/uncompute model (lookup_table_reversible)",
+        "weight_register_qubits": "explicit coherent weight-register size for t in [0, ell]"
+      },
+      "included_stages": [
+        "dicke_prep",
+        "phase_kick",
+        "syndrome_compute",
+        "decode_uncompute",
+        "final_hadamard"
+      ],
+      "excluded_stages": [],
+      "artifact_version": null,
+      "repo_commit": null,
+      "assumptions": [
+        "Dicke prep: deterministic SCS construction (B\u00e4rtschi-Eidenbenz 2019)",
+        "Superposition: naive sum over t=0..ell, not optimized weighted prep",
+        "Syndrome: one CNOT per nonzero entry in B",
+        "Phase kick: one Z per nonzero entry in v",
+        "Decode/uncompute: explicit lookup_table_reversible estimate (analytic_estimate_conservative)",
+        "Coherent weight register: analytic_upper_bound overhead model",
+        "Qiskit structural counts cover only implemented subset (decode/uncompute excluded)."
+      ],
+      "reference": "arXiv:1904.07358",
+      "display_name": "pricing_5feat_10bit"
+    }
+  ]
+}

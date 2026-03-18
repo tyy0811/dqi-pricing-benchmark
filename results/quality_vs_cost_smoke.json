@@ -1,0 +1,1039 @@
+{
+  "schema_version": "1",
+  "generated_from_benchmark_version": "unknown_or_commit",
+  "metadata": {
+    "instance_id": "P3",
+    "instance_family": "P",
+    "n_bits": 6,
+    "k": 8,
+    "ell": 2,
+    "canonical_source": "embedded_run_benchmark_payload",
+    "has_decode_inclusive_totals": true
+  },
+  "row_count": 6,
+  "objectives": {
+    "maximize": [
+      "quality.best_F_over_F_star"
+    ],
+    "minimize": [
+      "resources.total_gate_est_with_decode"
+    ]
+  },
+  "rows": [
+    {
+      "row_id": "P3|95e2e7196d570a8ae5afdfb4fdc8128e10c7f2cf43d77ed00e6bab298118038d|bp1|paper|mixture|P3 / wht_truncated / bp1 / paper / mixture",
+      "row_status": "complete",
+      "instance_id": "P3",
+      "instance_family": "P",
+      "encoding_artifact_id": "95e2e7196d570a8ae5afdfb4fdc8128e10c7f2cf43d77ed00e6bab298118038d",
+      "run_label": "P3 / wht_truncated / bp1 / paper / mixture",
+      "provenance": {
+        "encoding_backend": "wht_truncated",
+        "decoder": "bp1",
+        "decoder_resource_model": "bp1_classical_oracle_estimate",
+        "alpha_mode": "paper",
+        "execution_mode": "mixture"
+      },
+      "quality": {
+        "best_F": 3000.0,
+        "F_star": 3000.0,
+        "best_F_over_F_star": 1.0,
+        "best_G": 33029.6875,
+        "top1_regret": 0.0,
+        "topk_regret": 0.0,
+        "optimum_recall_at_k": 1.0,
+        "best_top_G_sampled_F": 3000.0,
+        "decision_distortion": 0.0,
+        "decode_success": 0.75,
+        "postselection_success": 0.9374999999999998
+      },
+      "faithfulness": {
+        "spearman_rho_F_G": 0.9068281928768579,
+        "retained_energy_eta": 0.9253373874905164
+      },
+      "collision_structure": {
+        "n": 6,
+        "m": 8,
+        "rank": 6,
+        "rank_deficiency": 0,
+        "row_weight_mean": 1.375,
+        "row_weight_max": 2,
+        "col_weight_mean": 1.8333333333333333,
+        "col_weight_max": 2,
+        "syndrome_density": 1.0,
+        "ambiguous_syndrome_count": 6,
+        "collision_rate": 0.1935483870967742,
+        "decodable_syndrome_fraction": 0.390625
+      },
+      "resources": {
+        "implemented_resources": {
+          "dicke_prep": {
+            "gate_est": 33,
+            "depth_est": 8,
+            "ancilla_est": 0,
+            "confidence": "analytic_upper_bound"
+          },
+          "phase_kick": {
+            "gate_est": 3,
+            "depth_est": 1,
+            "ancilla_est": 0,
+            "confidence": "exact_formula"
+          },
+          "syndrome_compute": {
+            "gate_est": 11,
+            "depth_est": 1,
+            "ancilla_est": 0,
+            "confidence": "exact_formula"
+          },
+          "hadamards": {
+            "gate_est": 6,
+            "depth_est": 1,
+            "ancilla_est": 0,
+            "confidence": "exact_formula"
+          }
+        },
+        "analytic_estimates": {
+          "decode_uncompute": {
+            "model": "bp1_classical_oracle_estimate",
+            "status": "analytic_estimate",
+            "gate_est": 14208,
+            "depth_est": 960,
+            "ancilla_est": 19,
+            "confidence": "implementation_proxy",
+            "details": {
+              "op_count_proxy": 3552,
+              "max_iter": 16,
+              "ell": 2,
+              "not_synthesized_reversible": true,
+              "assumptions": [
+                "BP1 treated as a classical oracle proxy, not compiled reversible logic",
+                "Each iteration scans all m variables against n-bit residual checks",
+                "Gate/depth estimates are conservative scaling proxies from operation counts"
+              ]
+            },
+            "cost_drivers": {
+              "estimated_lookup_table_size": 31,
+              "number_of_unique_syndromes_decodable_at_ell": 25,
+              "decoder_collision_rate": 0.1935483870967742,
+              "collision_guard_gate_est": 0,
+              "collision_guard_depth_est": 0
+            }
+          },
+          "coherent_weight_register_overhead": {
+            "weight_register_qubits": 2,
+            "gate_est": 48,
+            "depth_est": 10,
+            "ancilla_est": 0,
+            "status": "analytic_upper_bound",
+            "confidence": "analytic_upper_bound",
+            "details": {
+              "assumptions": [
+                "Generic q-qubit amplitude preparation upper bound (not transpiled)",
+                "No explicit ancilla assumed for the coarse upper-bound model"
+              ]
+            }
+          }
+        },
+        "total_estimated_resources": {
+          "total_gate_est_without_decode": 53,
+          "total_depth_est_without_decode": 11,
+          "total_qubits_est_without_decode": 14,
+          "total_gate_est_with_decode": 14261,
+          "total_depth_est_with_decode": 971,
+          "total_qubits_est_with_decode": 33,
+          "total_gate_est_with_decode_and_weight_register_est": 14309,
+          "total_depth_est_with_decode_and_weight_register_est": 981,
+          "total_qubits_est_with_decode_and_weight_register_est": 35,
+          "total_without_decode": {
+            "gate_est": 53,
+            "depth_est": 11,
+            "qubits_est": 14
+          },
+          "total_with_decode": {
+            "gate_est": 14261,
+            "depth_est": 971,
+            "qubits_est": 33
+          },
+          "total_with_decode_and_weight_register_est": {
+            "gate_est": 14309,
+            "depth_est": 981,
+            "qubits_est": 35
+          }
+        },
+        "prefix_gate_est": 53,
+        "prefix_depth_est": 11,
+        "decode_model_gate_est": 14208,
+        "decode_model_depth_est": 960,
+        "total_gate_est_with_decode": 14261,
+        "total_depth_est_with_decode": 971,
+        "total_qubits_est_with_decode": 33,
+        "coherent_alpha_overhead": {
+          "status": "not_applicable",
+          "weight_register_qubits": null,
+          "coherent_prep_overhead": null,
+          "controlled_sector_overhead": null
+        },
+        "resource_status": {
+          "decode_included": true,
+          "decode_model_status": "analytic_estimate",
+          "weight_register_status": "not_applicable",
+          "transpiled_subset_available": false
+        }
+      },
+      "status": {
+        "decode_confidence": "implementation_proxy",
+        "coherent_supported": false
+      }
+    },
+    {
+      "row_id": "P3|95e2e7196d570a8ae5afdfb4fdc8128e10c7f2cf43d77ed00e6bab298118038d|bruteforce|heuristic|mixture|P3 / wht_truncated / bruteforce / heuristic / mixture",
+      "row_status": "complete",
+      "instance_id": "P3",
+      "instance_family": "P",
+      "encoding_artifact_id": "95e2e7196d570a8ae5afdfb4fdc8128e10c7f2cf43d77ed00e6bab298118038d",
+      "run_label": "P3 / wht_truncated / bruteforce / heuristic / mixture",
+      "provenance": {
+        "encoding_backend": "wht_truncated",
+        "decoder": "bruteforce",
+        "decoder_resource_model": "lookup_table_reversible",
+        "alpha_mode": "heuristic",
+        "execution_mode": "mixture"
+      },
+      "quality": {
+        "best_F": 3000.0,
+        "F_star": 3000.0,
+        "best_F_over_F_star": 1.0,
+        "best_G": 31992.1875,
+        "top1_regret": 0.0,
+        "topk_regret": 0.0,
+        "optimum_recall_at_k": 0.0,
+        "best_top_G_sampled_F": 3000.0,
+        "decision_distortion": 0.0,
+        "decode_success": 0.390625,
+        "postselection_success": 0.6139771416848612
+      },
+      "faithfulness": {
+        "spearman_rho_F_G": 0.9328811099284876,
+        "retained_energy_eta": 0.9253373874905164
+      },
+      "collision_structure": {
+        "n": 6,
+        "m": 8,
+        "rank": 6,
+        "rank_deficiency": 0,
+        "row_weight_mean": 1.375,
+        "row_weight_max": 2,
+        "col_weight_mean": 1.8333333333333333,
+        "col_weight_max": 2,
+        "syndrome_density": 1.0,
+        "ambiguous_syndrome_count": 6,
+        "collision_rate": 0.1935483870967742,
+        "decodable_syndrome_fraction": 0.390625
+      },
+      "resources": {
+        "implemented_resources": {
+          "dicke_prep": {
+            "gate_est": 33,
+            "depth_est": 8,
+            "ancilla_est": 0,
+            "confidence": "analytic_upper_bound"
+          },
+          "phase_kick": {
+            "gate_est": 3,
+            "depth_est": 1,
+            "ancilla_est": 0,
+            "confidence": "exact_formula"
+          },
+          "syndrome_compute": {
+            "gate_est": 11,
+            "depth_est": 1,
+            "ancilla_est": 0,
+            "confidence": "exact_formula"
+          },
+          "hadamards": {
+            "gate_est": 6,
+            "depth_est": 1,
+            "ancilla_est": 0,
+            "confidence": "exact_formula"
+          }
+        },
+        "analytic_estimates": {
+          "decode_uncompute": {
+            "model": "lookup_table_reversible",
+            "status": "analytic_estimate_conservative",
+            "gate_est": 3596,
+            "depth_est": 1606,
+            "ancilla_est": 19,
+            "confidence": "analytic_upper_bound",
+            "details": {
+              "mapping_size": 31,
+              "decodable_syndromes": 25,
+              "ambiguous_syndromes": 6,
+              "syndrome_space_size": 64,
+              "assumptions": [
+                "Serial reversible lookup over populated syndrome rows",
+                "n-bit comparators per row with explicit uncompute",
+                "m-bit controlled write for uniquely decodable rows",
+                "Conservative analytic estimate, not compiled gate synthesis"
+              ]
+            },
+            "cost_drivers": {
+              "estimated_lookup_table_size": 31,
+              "number_of_unique_syndromes_decodable_at_ell": 25,
+              "decoder_collision_rate": 0.1935483870967742,
+              "collision_guard_gate_est": 216,
+              "collision_guard_depth_est": 3
+            }
+          },
+          "coherent_weight_register_overhead": {
+            "weight_register_qubits": 2,
+            "gate_est": 48,
+            "depth_est": 10,
+            "ancilla_est": 0,
+            "status": "analytic_upper_bound",
+            "confidence": "analytic_upper_bound",
+            "details": {
+              "assumptions": [
+                "Generic q-qubit amplitude preparation upper bound (not transpiled)",
+                "No explicit ancilla assumed for the coarse upper-bound model"
+              ]
+            }
+          }
+        },
+        "total_estimated_resources": {
+          "total_gate_est_without_decode": 53,
+          "total_depth_est_without_decode": 11,
+          "total_qubits_est_without_decode": 14,
+          "total_gate_est_with_decode": 3649,
+          "total_depth_est_with_decode": 1617,
+          "total_qubits_est_with_decode": 33,
+          "total_gate_est_with_decode_and_weight_register_est": 3697,
+          "total_depth_est_with_decode_and_weight_register_est": 1627,
+          "total_qubits_est_with_decode_and_weight_register_est": 35,
+          "total_without_decode": {
+            "gate_est": 53,
+            "depth_est": 11,
+            "qubits_est": 14
+          },
+          "total_with_decode": {
+            "gate_est": 3649,
+            "depth_est": 1617,
+            "qubits_est": 33
+          },
+          "total_with_decode_and_weight_register_est": {
+            "gate_est": 3697,
+            "depth_est": 1627,
+            "qubits_est": 35
+          }
+        },
+        "prefix_gate_est": 53,
+        "prefix_depth_est": 11,
+        "decode_model_gate_est": 3596,
+        "decode_model_depth_est": 1606,
+        "total_gate_est_with_decode": 3649,
+        "total_depth_est_with_decode": 1617,
+        "total_qubits_est_with_decode": 33,
+        "coherent_alpha_overhead": {
+          "status": "not_applicable",
+          "weight_register_qubits": null,
+          "coherent_prep_overhead": null,
+          "controlled_sector_overhead": null
+        },
+        "resource_status": {
+          "decode_included": true,
+          "decode_model_status": "analytic_estimate_conservative",
+          "weight_register_status": "not_applicable",
+          "transpiled_subset_available": true
+        }
+      },
+      "status": {
+        "decode_confidence": "analytic_upper_bound",
+        "coherent_supported": false
+      }
+    },
+    {
+      "row_id": "P3|95e2e7196d570a8ae5afdfb4fdc8128e10c7f2cf43d77ed00e6bab298118038d|bruteforce|paper|coherent|P3 / wht_truncated / bruteforce / paper / coherent",
+      "row_status": "skipped",
+      "instance_id": "P3",
+      "instance_family": "P",
+      "encoding_artifact_id": "95e2e7196d570a8ae5afdfb4fdc8128e10c7f2cf43d77ed00e6bab298118038d",
+      "run_label": "P3 / wht_truncated / bruteforce / paper / coherent",
+      "provenance": {
+        "encoding_backend": "wht_truncated",
+        "decoder": "bruteforce",
+        "decoder_resource_model": "lookup_table_reversible",
+        "alpha_mode": "paper",
+        "execution_mode": "coherent"
+      },
+      "quality": {
+        "best_F": null,
+        "F_star": 3000.0,
+        "best_F_over_F_star": null,
+        "best_G": null,
+        "top1_regret": null,
+        "topk_regret": null,
+        "optimum_recall_at_k": null,
+        "best_top_G_sampled_F": null,
+        "decision_distortion": null,
+        "decode_success": null,
+        "postselection_success": null
+      },
+      "faithfulness": {
+        "spearman_rho_F_G": 0.9255608288160816,
+        "retained_energy_eta": 0.9253373874905164
+      },
+      "collision_structure": {
+        "n": 6,
+        "m": 8,
+        "rank": 6,
+        "rank_deficiency": 0,
+        "row_weight_mean": 1.375,
+        "row_weight_max": 2,
+        "col_weight_mean": 1.8333333333333333,
+        "col_weight_max": 2,
+        "syndrome_density": 1.0,
+        "ambiguous_syndrome_count": 6,
+        "collision_rate": 0.1935483870967742,
+        "decodable_syndrome_fraction": 0.390625
+      },
+      "resources": {
+        "implemented_resources": {
+          "dicke_prep": {
+            "gate_est": 33,
+            "depth_est": 8,
+            "ancilla_est": 0,
+            "confidence": "analytic_upper_bound"
+          },
+          "phase_kick": {
+            "gate_est": 3,
+            "depth_est": 1,
+            "ancilla_est": 0,
+            "confidence": "exact_formula"
+          },
+          "syndrome_compute": {
+            "gate_est": 11,
+            "depth_est": 1,
+            "ancilla_est": 0,
+            "confidence": "exact_formula"
+          },
+          "hadamards": {
+            "gate_est": 6,
+            "depth_est": 1,
+            "ancilla_est": 0,
+            "confidence": "exact_formula"
+          }
+        },
+        "analytic_estimates": {
+          "decode_uncompute": {
+            "model": "lookup_table_reversible",
+            "status": "analytic_estimate_conservative",
+            "gate_est": 3596,
+            "depth_est": 1606,
+            "ancilla_est": 19,
+            "confidence": "analytic_upper_bound",
+            "details": {
+              "mapping_size": 31,
+              "decodable_syndromes": 25,
+              "ambiguous_syndromes": 6,
+              "syndrome_space_size": 64,
+              "assumptions": [
+                "Serial reversible lookup over populated syndrome rows",
+                "n-bit comparators per row with explicit uncompute",
+                "m-bit controlled write for uniquely decodable rows",
+                "Conservative analytic estimate, not compiled gate synthesis"
+              ]
+            },
+            "cost_drivers": {
+              "estimated_lookup_table_size": 31,
+              "number_of_unique_syndromes_decodable_at_ell": 25,
+              "decoder_collision_rate": 0.1935483870967742,
+              "collision_guard_gate_est": 216,
+              "collision_guard_depth_est": 3
+            }
+          },
+          "coherent_weight_register_overhead": {
+            "weight_register_qubits": 2,
+            "gate_est": 48,
+            "depth_est": 10,
+            "ancilla_est": 0,
+            "status": "analytic_upper_bound",
+            "confidence": "analytic_upper_bound",
+            "details": {
+              "assumptions": [
+                "Generic q-qubit amplitude preparation upper bound (not transpiled)",
+                "No explicit ancilla assumed for the coarse upper-bound model"
+              ]
+            }
+          }
+        },
+        "total_estimated_resources": {
+          "total_gate_est_without_decode": 53,
+          "total_depth_est_without_decode": 11,
+          "total_qubits_est_without_decode": 14,
+          "total_gate_est_with_decode": 3649,
+          "total_depth_est_with_decode": 1617,
+          "total_qubits_est_with_decode": 33,
+          "total_gate_est_with_decode_and_weight_register_est": 3697,
+          "total_depth_est_with_decode_and_weight_register_est": 1627,
+          "total_qubits_est_with_decode_and_weight_register_est": 35,
+          "total_without_decode": {
+            "gate_est": 53,
+            "depth_est": 11,
+            "qubits_est": 14
+          },
+          "total_with_decode": {
+            "gate_est": 3649,
+            "depth_est": 1617,
+            "qubits_est": 33
+          },
+          "total_with_decode_and_weight_register_est": {
+            "gate_est": 3697,
+            "depth_est": 1627,
+            "qubits_est": 35
+          }
+        },
+        "prefix_gate_est": 53,
+        "prefix_depth_est": 11,
+        "decode_model_gate_est": 3596,
+        "decode_model_depth_est": 1606,
+        "total_gate_est_with_decode": 3649,
+        "total_depth_est_with_decode": 1617,
+        "total_qubits_est_with_decode": 33,
+        "coherent_alpha_overhead": {
+          "status": "analytic_upper_bound",
+          "weight_register_qubits": 2,
+          "coherent_prep_overhead": 48,
+          "controlled_sector_overhead": 10
+        },
+        "resource_status": {
+          "decode_included": true,
+          "decode_model_status": "analytic_estimate_conservative",
+          "weight_register_status": "analytic_upper_bound",
+          "transpiled_subset_available": true
+        }
+      },
+      "status": {
+        "decode_confidence": "analytic_upper_bound",
+        "coherent_supported": false
+      }
+    },
+    {
+      "row_id": "P3|95e2e7196d570a8ae5afdfb4fdc8128e10c7f2cf43d77ed00e6bab298118038d|bruteforce|paper|mixture|P3 / wht_truncated / bruteforce / paper / mixture",
+      "row_status": "complete",
+      "instance_id": "P3",
+      "instance_family": "P",
+      "encoding_artifact_id": "95e2e7196d570a8ae5afdfb4fdc8128e10c7f2cf43d77ed00e6bab298118038d",
+      "run_label": "P3 / wht_truncated / bruteforce / paper / mixture",
+      "provenance": {
+        "encoding_backend": "wht_truncated",
+        "decoder": "bruteforce",
+        "decoder_resource_model": "lookup_table_reversible",
+        "alpha_mode": "paper",
+        "execution_mode": "mixture"
+      },
+      "quality": {
+        "best_F": 3000.0,
+        "F_star": 3000.0,
+        "best_F_over_F_star": 1.0,
+        "best_G": 33029.6875,
+        "top1_regret": 0.0,
+        "topk_regret": 0.0,
+        "optimum_recall_at_k": 1.0,
+        "best_top_G_sampled_F": 3000.0,
+        "decision_distortion": 0.0,
+        "decode_success": 0.390625,
+        "postselection_success": 0.5714285714285714
+      },
+      "faithfulness": {
+        "spearman_rho_F_G": 0.8569286687979867,
+        "retained_energy_eta": 0.9253373874905164
+      },
+      "collision_structure": {
+        "n": 6,
+        "m": 8,
+        "rank": 6,
+        "rank_deficiency": 0,
+        "row_weight_mean": 1.375,
+        "row_weight_max": 2,
+        "col_weight_mean": 1.8333333333333333,
+        "col_weight_max": 2,
+        "syndrome_density": 1.0,
+        "ambiguous_syndrome_count": 6,
+        "collision_rate": 0.1935483870967742,
+        "decodable_syndrome_fraction": 0.390625
+      },
+      "resources": {
+        "implemented_resources": {
+          "dicke_prep": {
+            "gate_est": 33,
+            "depth_est": 8,
+            "ancilla_est": 0,
+            "confidence": "analytic_upper_bound"
+          },
+          "phase_kick": {
+            "gate_est": 3,
+            "depth_est": 1,
+            "ancilla_est": 0,
+            "confidence": "exact_formula"
+          },
+          "syndrome_compute": {
+            "gate_est": 11,
+            "depth_est": 1,
+            "ancilla_est": 0,
+            "confidence": "exact_formula"
+          },
+          "hadamards": {
+            "gate_est": 6,
+            "depth_est": 1,
+            "ancilla_est": 0,
+            "confidence": "exact_formula"
+          }
+        },
+        "analytic_estimates": {
+          "decode_uncompute": {
+            "model": "lookup_table_reversible",
+            "status": "analytic_estimate_conservative",
+            "gate_est": 3596,
+            "depth_est": 1606,
+            "ancilla_est": 19,
+            "confidence": "analytic_upper_bound",
+            "details": {
+              "mapping_size": 31,
+              "decodable_syndromes": 25,
+              "ambiguous_syndromes": 6,
+              "syndrome_space_size": 64,
+              "assumptions": [
+                "Serial reversible lookup over populated syndrome rows",
+                "n-bit comparators per row with explicit uncompute",
+                "m-bit controlled write for uniquely decodable rows",
+                "Conservative analytic estimate, not compiled gate synthesis"
+              ]
+            },
+            "cost_drivers": {
+              "estimated_lookup_table_size": 31,
+              "number_of_unique_syndromes_decodable_at_ell": 25,
+              "decoder_collision_rate": 0.1935483870967742,
+              "collision_guard_gate_est": 216,
+              "collision_guard_depth_est": 3
+            }
+          },
+          "coherent_weight_register_overhead": {
+            "weight_register_qubits": 2,
+            "gate_est": 48,
+            "depth_est": 10,
+            "ancilla_est": 0,
+            "status": "analytic_upper_bound",
+            "confidence": "analytic_upper_bound",
+            "details": {
+              "assumptions": [
+                "Generic q-qubit amplitude preparation upper bound (not transpiled)",
+                "No explicit ancilla assumed for the coarse upper-bound model"
+              ]
+            }
+          }
+        },
+        "total_estimated_resources": {
+          "total_gate_est_without_decode": 53,
+          "total_depth_est_without_decode": 11,
+          "total_qubits_est_without_decode": 14,
+          "total_gate_est_with_decode": 3649,
+          "total_depth_est_with_decode": 1617,
+          "total_qubits_est_with_decode": 33,
+          "total_gate_est_with_decode_and_weight_register_est": 3697,
+          "total_depth_est_with_decode_and_weight_register_est": 1627,
+          "total_qubits_est_with_decode_and_weight_register_est": 35,
+          "total_without_decode": {
+            "gate_est": 53,
+            "depth_est": 11,
+            "qubits_est": 14
+          },
+          "total_with_decode": {
+            "gate_est": 3649,
+            "depth_est": 1617,
+            "qubits_est": 33
+          },
+          "total_with_decode_and_weight_register_est": {
+            "gate_est": 3697,
+            "depth_est": 1627,
+            "qubits_est": 35
+          }
+        },
+        "prefix_gate_est": 53,
+        "prefix_depth_est": 11,
+        "decode_model_gate_est": 3596,
+        "decode_model_depth_est": 1606,
+        "total_gate_est_with_decode": 3649,
+        "total_depth_est_with_decode": 1617,
+        "total_qubits_est_with_decode": 33,
+        "coherent_alpha_overhead": {
+          "status": "not_applicable",
+          "weight_register_qubits": null,
+          "coherent_prep_overhead": null,
+          "controlled_sector_overhead": null
+        },
+        "resource_status": {
+          "decode_included": true,
+          "decode_model_status": "analytic_estimate_conservative",
+          "weight_register_status": "not_applicable",
+          "transpiled_subset_available": true
+        }
+      },
+      "status": {
+        "decode_confidence": "analytic_upper_bound",
+        "coherent_supported": false
+      }
+    },
+    {
+      "row_id": "P3|95e2e7196d570a8ae5afdfb4fdc8128e10c7f2cf43d77ed00e6bab298118038d|bruteforce|paper|mixture|P3 / wht_truncated / bruteforce / paper / mixture",
+      "row_status": "complete",
+      "instance_id": "P3",
+      "instance_family": "P",
+      "encoding_artifact_id": "95e2e7196d570a8ae5afdfb4fdc8128e10c7f2cf43d77ed00e6bab298118038d",
+      "run_label": "P3 / wht_truncated / bruteforce / paper / mixture",
+      "provenance": {
+        "encoding_backend": "wht_truncated",
+        "decoder": "bruteforce",
+        "decoder_resource_model": "lookup_table_reversible",
+        "alpha_mode": "paper",
+        "execution_mode": "mixture"
+      },
+      "quality": {
+        "best_F": 3000.0,
+        "F_star": 3000.0,
+        "best_F_over_F_star": 1.0,
+        "best_G": 33029.6875,
+        "top1_regret": 0.0,
+        "topk_regret": 0.0,
+        "optimum_recall_at_k": 1.0,
+        "best_top_G_sampled_F": 3000.0,
+        "decision_distortion": 0.0,
+        "decode_success": 0.390625,
+        "postselection_success": 0.5714285714285714
+      },
+      "faithfulness": {
+        "spearman_rho_F_G": 0.8569286687979867,
+        "retained_energy_eta": 0.9253373874905164
+      },
+      "collision_structure": {
+        "n": 6,
+        "m": 8,
+        "rank": 6,
+        "rank_deficiency": 0,
+        "row_weight_mean": 1.375,
+        "row_weight_max": 2,
+        "col_weight_mean": 1.8333333333333333,
+        "col_weight_max": 2,
+        "syndrome_density": 1.0,
+        "ambiguous_syndrome_count": 6,
+        "collision_rate": 0.1935483870967742,
+        "decodable_syndrome_fraction": 0.390625
+      },
+      "resources": {
+        "implemented_resources": {
+          "dicke_prep": {
+            "gate_est": 33,
+            "depth_est": 8,
+            "ancilla_est": 0,
+            "confidence": "analytic_upper_bound"
+          },
+          "phase_kick": {
+            "gate_est": 3,
+            "depth_est": 1,
+            "ancilla_est": 0,
+            "confidence": "exact_formula"
+          },
+          "syndrome_compute": {
+            "gate_est": 11,
+            "depth_est": 1,
+            "ancilla_est": 0,
+            "confidence": "exact_formula"
+          },
+          "hadamards": {
+            "gate_est": 6,
+            "depth_est": 1,
+            "ancilla_est": 0,
+            "confidence": "exact_formula"
+          }
+        },
+        "analytic_estimates": {
+          "decode_uncompute": {
+            "model": "lookup_table_reversible",
+            "status": "analytic_estimate_conservative",
+            "gate_est": 3596,
+            "depth_est": 1606,
+            "ancilla_est": 19,
+            "confidence": "analytic_upper_bound",
+            "details": {
+              "mapping_size": 31,
+              "decodable_syndromes": 25,
+              "ambiguous_syndromes": 6,
+              "syndrome_space_size": 64,
+              "assumptions": [
+                "Serial reversible lookup over populated syndrome rows",
+                "n-bit comparators per row with explicit uncompute",
+                "m-bit controlled write for uniquely decodable rows",
+                "Conservative analytic estimate, not compiled gate synthesis"
+              ]
+            },
+            "cost_drivers": {
+              "estimated_lookup_table_size": 31,
+              "number_of_unique_syndromes_decodable_at_ell": 25,
+              "decoder_collision_rate": 0.1935483870967742,
+              "collision_guard_gate_est": 216,
+              "collision_guard_depth_est": 3
+            }
+          },
+          "coherent_weight_register_overhead": {
+            "weight_register_qubits": 2,
+            "gate_est": 48,
+            "depth_est": 10,
+            "ancilla_est": 0,
+            "status": "analytic_upper_bound",
+            "confidence": "analytic_upper_bound",
+            "details": {
+              "assumptions": [
+                "Generic q-qubit amplitude preparation upper bound (not transpiled)",
+                "No explicit ancilla assumed for the coarse upper-bound model"
+              ]
+            }
+          }
+        },
+        "total_estimated_resources": {
+          "total_gate_est_without_decode": 53,
+          "total_depth_est_without_decode": 11,
+          "total_qubits_est_without_decode": 14,
+          "total_gate_est_with_decode": 3649,
+          "total_depth_est_with_decode": 1617,
+          "total_qubits_est_with_decode": 33,
+          "total_gate_est_with_decode_and_weight_register_est": 3697,
+          "total_depth_est_with_decode_and_weight_register_est": 1627,
+          "total_qubits_est_with_decode_and_weight_register_est": 35,
+          "total_without_decode": {
+            "gate_est": 53,
+            "depth_est": 11,
+            "qubits_est": 14
+          },
+          "total_with_decode": {
+            "gate_est": 3649,
+            "depth_est": 1617,
+            "qubits_est": 33
+          },
+          "total_with_decode_and_weight_register_est": {
+            "gate_est": 3697,
+            "depth_est": 1627,
+            "qubits_est": 35
+          }
+        },
+        "prefix_gate_est": 53,
+        "prefix_depth_est": 11,
+        "decode_model_gate_est": 3596,
+        "decode_model_depth_est": 1606,
+        "total_gate_est_with_decode": 3649,
+        "total_depth_est_with_decode": 1617,
+        "total_qubits_est_with_decode": 33,
+        "coherent_alpha_overhead": {
+          "status": "not_applicable",
+          "weight_register_qubits": null,
+          "coherent_prep_overhead": null,
+          "controlled_sector_overhead": null
+        },
+        "resource_status": {
+          "decode_included": true,
+          "decode_model_status": "analytic_estimate_conservative",
+          "weight_register_status": "not_applicable",
+          "transpiled_subset_available": true
+        }
+      },
+      "status": {
+        "decode_confidence": "analytic_upper_bound",
+        "coherent_supported": false
+      }
+    },
+    {
+      "row_id": "P3|95e2e7196d570a8ae5afdfb4fdc8128e10c7f2cf43d77ed00e6bab298118038d|bruteforce|uniform|mixture|P3 / wht_truncated / bruteforce / uniform / mixture",
+      "row_status": "complete",
+      "instance_id": "P3",
+      "instance_family": "P",
+      "encoding_artifact_id": "95e2e7196d570a8ae5afdfb4fdc8128e10c7f2cf43d77ed00e6bab298118038d",
+      "run_label": "P3 / wht_truncated / bruteforce / uniform / mixture",
+      "provenance": {
+        "encoding_backend": "wht_truncated",
+        "decoder": "bruteforce",
+        "decoder_resource_model": "lookup_table_reversible",
+        "alpha_mode": "uniform",
+        "execution_mode": "mixture"
+      },
+      "quality": {
+        "best_F": 3000.0,
+        "F_star": 3000.0,
+        "best_F_over_F_star": 1.0,
+        "best_G": 31992.1875,
+        "top1_regret": 0.0,
+        "topk_regret": 0.0,
+        "optimum_recall_at_k": 0.0,
+        "best_top_G_sampled_F": 3000.0,
+        "decision_distortion": 0.0,
+        "decode_success": 0.390625,
+        "postselection_success": 0.6785714285714286
+      },
+      "faithfulness": {
+        "spearman_rho_F_G": 0.9487179487179487,
+        "retained_energy_eta": 0.9253373874905164
+      },
+      "collision_structure": {
+        "n": 6,
+        "m": 8,
+        "rank": 6,
+        "rank_deficiency": 0,
+        "row_weight_mean": 1.375,
+        "row_weight_max": 2,
+        "col_weight_mean": 1.8333333333333333,
+        "col_weight_max": 2,
+        "syndrome_density": 1.0,
+        "ambiguous_syndrome_count": 6,
+        "collision_rate": 0.1935483870967742,
+        "decodable_syndrome_fraction": 0.390625
+      },
+      "resources": {
+        "implemented_resources": {
+          "dicke_prep": {
+            "gate_est": 33,
+            "depth_est": 8,
+            "ancilla_est": 0,
+            "confidence": "analytic_upper_bound"
+          },
+          "phase_kick": {
+            "gate_est": 3,
+            "depth_est": 1,
+            "ancilla_est": 0,
+            "confidence": "exact_formula"
+          },
+          "syndrome_compute": {
+            "gate_est": 11,
+            "depth_est": 1,
+            "ancilla_est": 0,
+            "confidence": "exact_formula"
+          },
+          "hadamards": {
+            "gate_est": 6,
+            "depth_est": 1,
+            "ancilla_est": 0,
+            "confidence": "exact_formula"
+          }
+        },
+        "analytic_estimates": {
+          "decode_uncompute": {
+            "model": "lookup_table_reversible",
+            "status": "analytic_estimate_conservative",
+            "gate_est": 3596,
+            "depth_est": 1606,
+            "ancilla_est": 19,
+            "confidence": "analytic_upper_bound",
+            "details": {
+              "mapping_size": 31,
+              "decodable_syndromes": 25,
+              "ambiguous_syndromes": 6,
+              "syndrome_space_size": 64,
+              "assumptions": [
+                "Serial reversible lookup over populated syndrome rows",
+                "n-bit comparators per row with explicit uncompute",
+                "m-bit controlled write for uniquely decodable rows",
+                "Conservative analytic estimate, not compiled gate synthesis"
+              ]
+            },
+            "cost_drivers": {
+              "estimated_lookup_table_size": 31,
+              "number_of_unique_syndromes_decodable_at_ell": 25,
+              "decoder_collision_rate": 0.1935483870967742,
+              "collision_guard_gate_est": 216,
+              "collision_guard_depth_est": 3
+            }
+          },
+          "coherent_weight_register_overhead": {
+            "weight_register_qubits": 2,
+            "gate_est": 48,
+            "depth_est": 10,
+            "ancilla_est": 0,
+            "status": "analytic_upper_bound",
+            "confidence": "analytic_upper_bound",
+            "details": {
+              "assumptions": [
+                "Generic q-qubit amplitude preparation upper bound (not transpiled)",
+                "No explicit ancilla assumed for the coarse upper-bound model"
+              ]
+            }
+          }
+        },
+        "total_estimated_resources": {
+          "total_gate_est_without_decode": 53,
+          "total_depth_est_without_decode": 11,
+          "total_qubits_est_without_decode": 14,
+          "total_gate_est_with_decode": 3649,
+          "total_depth_est_with_decode": 1617,
+          "total_qubits_est_with_decode": 33,
+          "total_gate_est_with_decode_and_weight_register_est": 3697,
+          "total_depth_est_with_decode_and_weight_register_est": 1627,
+          "total_qubits_est_with_decode_and_weight_register_est": 35,
+          "total_without_decode": {
+            "gate_est": 53,
+            "depth_est": 11,
+            "qubits_est": 14
+          },
+          "total_with_decode": {
+            "gate_est": 3649,
+            "depth_est": 1617,
+            "qubits_est": 33
+          },
+          "total_with_decode_and_weight_register_est": {
+            "gate_est": 3697,
+            "depth_est": 1627,
+            "qubits_est": 35
+          }
+        },
+        "prefix_gate_est": 53,
+        "prefix_depth_est": 11,
+        "decode_model_gate_est": 3596,
+        "decode_model_depth_est": 1606,
+        "total_gate_est_with_decode": 3649,
+        "total_depth_est_with_decode": 1617,
+        "total_qubits_est_with_decode": 33,
+        "coherent_alpha_overhead": {
+          "status": "not_applicable",
+          "weight_register_qubits": null,
+          "coherent_prep_overhead": null,
+          "controlled_sector_overhead": null
+        },
+        "resource_status": {
+          "decode_included": true,
+          "decode_model_status": "analytic_estimate_conservative",
+          "weight_register_status": "not_applicable",
+          "transpiled_subset_available": true
+        }
+      },
+      "status": {
+        "decode_confidence": "analytic_upper_bound",
+        "coherent_supported": false
+      }
+    }
+  ],
+  "pareto": {
+    "objective": {
+      "maximize": [
+        "quality.best_F_over_F_star"
+      ],
+      "minimize": [
+        "resources.total_gate_est_with_decode"
+      ]
+    },
+    "row_ids": [
+      "P3|95e2e7196d570a8ae5afdfb4fdc8128e10c7f2cf43d77ed00e6bab298118038d|bruteforce|heuristic|mixture|P3 / wht_truncated / bruteforce / heuristic / mixture",
+      "P3|95e2e7196d570a8ae5afdfb4fdc8128e10c7f2cf43d77ed00e6bab298118038d|bruteforce|paper|mixture|P3 / wht_truncated / bruteforce / paper / mixture",
+      "P3|95e2e7196d570a8ae5afdfb4fdc8128e10c7f2cf43d77ed00e6bab298118038d|bruteforce|paper|mixture|P3 / wht_truncated / bruteforce / paper / mixture",
+      "P3|95e2e7196d570a8ae5afdfb4fdc8128e10c7f2cf43d77ed00e6bab298118038d|bruteforce|uniform|mixture|P3 / wht_truncated / bruteforce / uniform / mixture"
+    ]
+  },
+  "notes": [
+    "Embedded quality_vs_cost payload is canonical; no auto-export side effects.",
+    "Rows with missing pareto objective values are excluded from pareto evaluation."
+  ]
+}

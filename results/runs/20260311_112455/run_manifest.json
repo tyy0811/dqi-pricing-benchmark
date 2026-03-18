@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-03-11T10:25:40+00:00",
+  "run_dir": "results/runs/20260311_112455",
+  "stage2_files": [
+    "benchmark_3feat.json",
+    "benchmark_4feat.json",
+    "benchmark_5feat.json",
+    "benchmark_all.json"
+  ],
+  "stage3_files": [
+    "resources_scaling.json"
+  ]
+}

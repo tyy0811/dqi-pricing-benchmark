@@ -1,0 +1,144 @@
+{
+  "features": [
+    {
+      "name": "Heated Seats",
+      "prices": [
+        500,
+        900,
+        1400
+      ]
+    },
+    {
+      "name": "Panoramic Roof",
+      "prices": [
+        800,
+        1300,
+        1900
+      ]
+    },
+    {
+      "name": "Premium Audio",
+      "prices": [
+        400,
+        800,
+        1200
+      ]
+    },
+    {
+      "name": "Adaptive Cruise",
+      "prices": [
+        600,
+        1100,
+        1700
+      ]
+    },
+    {
+      "name": "Ambient Lighting",
+      "prices": [
+        300,
+        600,
+        1000
+      ]
+    },
+    {
+      "name": "Head-Up Display",
+      "prices": [
+        400,
+        650,
+        850
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "name": "Budget",
+      "budget_cap": 3000,
+      "weight": 0.5
+    },
+    {
+      "name": "Mid-range",
+      "budget_cap": 5000,
+      "weight": 0.35
+    },
+    {
+      "name": "Premium",
+      "budget_cap": 8000,
+      "weight": 0.15
+    },
+    {
+      "name": "Tech-Forward",
+      "budget_cap": 9000,
+      "weight": 0.12
+    }
+  ],
+  "bundle_constraints": [
+    {
+      "name": "Luxury audio requires \u2265premium seats",
+      "feature_a": 2,
+      "tier_a": 2,
+      "feature_b": 0,
+      "allowed_tiers_b": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "Luxury cruise requires \u2265premium roof",
+      "feature_a": 3,
+      "tier_a": 2,
+      "feature_b": 1,
+      "allowed_tiers_b": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "Premium head-up display requires adaptive cruise",
+      "feature_a": 5,
+      "tier_a": 1,
+      "feature_b": 3,
+      "allowed_tiers_b": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "max_luxury": 3,
+  "penalty_invalid": 33600.0,
+  "penalty_bundle": 16800.0,
+  "penalty_luxury_cap": 16800.0,
+  "solution": {
+    "x_opt": 0,
+    "x_opt_bits": "000000000000",
+    "x_opt_tiers": [
+      "Standard",
+      "Standard",
+      "Standard",
+      "Standard",
+      "Standard",
+      "Standard"
+    ],
+    "x_opt_price": 3000.0,
+    "segments_buying_at_opt": [
+      "Budget",
+      "Mid-range",
+      "Premium",
+      "Tech-Forward"
+    ],
+    "f_opt": 3360.0
+  },
+  "statistics": {
+    "n_features": 6,
+    "n_bits": 12,
+    "n_configurations": 4096,
+    "n_feasible": 520,
+    "n_infeasible": 3576,
+    "f_max": 3360.0,
+    "f_min": -201600.0,
+    "f_mean": -54067.31701660156,
+    "f_feasible_max": 3360.0,
+    "f_feasible_min": 1363.5,
+    "f_feasible_mean": 1993.4471153846155
+  }
+}

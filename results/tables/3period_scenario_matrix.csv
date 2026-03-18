@@ -1,0 +1,10 @@
+scenario_label,demand_shift,inventory_regime,smoothing_penalty,dynamic_horizon_revenue,static_horizon_revenue,static_vs_dynamic_delta,remaining_inventory,inventory_used,inventory_usage_summary,dynamic_changes_across_periods,dynamic_choice_pattern,delta_reduction_vs_zero_smoothing,choices_change_vs_zero_smoothing,verdict
+low-tight-smooth-0,low,tight,0.0,2100.0,2100.0,0.0,2,0,"used [0, 0, 0] -> remaining [2, 2, 2]",False,0 -> 0 -> 0,0.0,False,near-static-match
+low-buffered-smooth-5,low,buffered,5.0,2100.0,2100.0,0.0,3,0,"used [0, 0, 0] -> remaining [3, 3, 3]",False,0 -> 0 -> 0,0.0,False,near-static-match
+medium-tight-smooth-0,medium,tight,0.0,2104.0,2086.0,18.0,1,1,"used [0, 0, 1] -> remaining [2, 2, 1]",True,0 -> 0 -> 8,0.0,False,dynamic-uplift-via-package-change
+medium-tight-smooth-20,medium,tight,20.0,2086.0,2086.0,0.0,2,0,"used [0, 0, 0] -> remaining [2, 2, 2]",False,0 -> 0 -> 0,18.0,True,near-static-match
+medium-buffered-smooth-0,medium,buffered,0.0,2104.0,2086.0,18.0,2,1,"used [0, 0, 1] -> remaining [3, 3, 2]",True,0 -> 0 -> 8,0.0,False,dynamic-uplift-via-package-change
+medium-loose-smooth-5,medium,loose,5.0,2099.0,2086.0,13.0,2,2,"used [0, 0, 2] -> remaining [4, 4, 2]",True,0 -> 0 -> 5,5.0,True,dynamic-uplift-via-package-change
+high-tight-smooth-0,high,tight,0.0,2236.0,2086.0,150.0,1,1,"used [0, 0, 1] -> remaining [2, 2, 1]",True,0 -> 0 -> 8,0.0,False,dynamic-uplift-via-package-change
+high-tight-smooth-5,high,tight,5.0,2231.0,2086.0,145.0,1,1,"used [0, 0, 1] -> remaining [2, 2, 1]",True,0 -> 0 -> 8,5.0,False,dynamic-uplift-via-package-change
+high-buffered-smooth-20,high,buffered,20.0,2216.0,2086.0,130.0,2,1,"used [0, 0, 1] -> remaining [3, 3, 2]",True,0 -> 0 -> 8,20.0,False,dynamic-uplift-via-package-change

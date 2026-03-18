@@ -1,0 +1,118 @@
+{
+  "features": [
+    {
+      "name": "Heated Seats",
+      "prices": [
+        500,
+        900,
+        1400
+      ]
+    },
+    {
+      "name": "Panoramic Roof",
+      "prices": [
+        800,
+        1300,
+        1900
+      ]
+    },
+    {
+      "name": "Premium Audio",
+      "prices": [
+        400,
+        800,
+        1200
+      ]
+    },
+    {
+      "name": "Adaptive Cruise",
+      "prices": [
+        600,
+        1100,
+        1700
+      ]
+    },
+    {
+      "name": "Ambient Lighting",
+      "prices": [
+        300,
+        600,
+        1000
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "name": "Budget",
+      "budget_cap": 3000,
+      "weight": 0.5
+    },
+    {
+      "name": "Mid-range",
+      "budget_cap": 5000,
+      "weight": 0.35
+    },
+    {
+      "name": "Premium",
+      "budget_cap": 8000,
+      "weight": 0.15
+    }
+  ],
+  "bundle_constraints": [
+    {
+      "name": "Luxury audio requires \u2265premium seats",
+      "feature_a": 2,
+      "tier_a": 2,
+      "feature_b": 0,
+      "allowed_tiers_b": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "Luxury cruise requires \u2265premium roof",
+      "feature_a": 3,
+      "tier_a": 2,
+      "feature_b": 1,
+      "allowed_tiers_b": [
+        1,
+        2
+      ]
+    }
+  ],
+  "max_luxury": 2,
+  "penalty_invalid": 30000.0,
+  "penalty_bundle": 15000.0,
+  "penalty_luxury_cap": 15000.0,
+  "solution": {
+    "x_opt": 16,
+    "x_opt_bits": "0000010000",
+    "x_opt_tiers": [
+      "Standard",
+      "Standard",
+      "Premium",
+      "Standard",
+      "Standard"
+    ],
+    "x_opt_price": 3000.0,
+    "segments_buying_at_opt": [
+      "Budget",
+      "Mid-range",
+      "Premium"
+    ],
+    "f_opt": 3000.0
+  },
+  "statistics": {
+    "n_features": 5,
+    "n_bits": 10,
+    "n_configurations": 1024,
+    "n_feasible": 154,
+    "n_infeasible": 870,
+    "f_max": 3000.0,
+    "f_min": -150000.0,
+    "f_mean": -41124.9609375,
+    "f_feasible_max": 3000.0,
+    "f_feasible_min": 765.0,
+    "f_feasible_mean": 1790.9415584415585
+  }
+}

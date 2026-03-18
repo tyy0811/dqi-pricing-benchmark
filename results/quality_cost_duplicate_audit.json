@@ -1,0 +1,15 @@
+{
+  "columns": [
+    "duplicate_group_key",
+    "winner_run_id",
+    "winner_run_key",
+    "loser_run_id",
+    "loser_run_ids",
+    "loser_disposition",
+    "winner_ranking_completed_rank",
+    "winner_ranking_verified_rank",
+    "winner_ranking_manifest_slot",
+    "winner_ranking_run_id"
+  ],
+  "rows": []
+}

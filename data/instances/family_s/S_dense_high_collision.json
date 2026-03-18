@@ -1,0 +1,167 @@
+{
+  "B": [
+    [
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      0
+    ]
+  ],
+  "description": "Dense skewed matrix with duplicated/dependent rows for high ambiguity.",
+  "ell_allowed": [
+    1,
+    2
+  ],
+  "ell_default": 2,
+  "family": "S",
+  "generation_params": {
+    "column_skew": 0.75,
+    "dependent_rows": 2,
+    "duplicate_rows": 3,
+    "enforce_full_rank": false,
+    "row_weight_jitter": 1,
+    "target_rank_max": 6,
+    "target_row_weight": 5,
+    "unique_base_rows": false
+  },
+  "instance_id": "S_dense_high_collision",
+  "intended_structure_tags": [
+    "dense",
+    "high_collision",
+    "high_ambiguity",
+    "rank_reduced",
+    "column_skewed"
+  ],
+  "m_rows": 10,
+  "n_bits": 8,
+  "objective_type": "max_xorsat_synthetic",
+  "schema_version": "1.0",
+  "seed": 1102,
+  "source_type": "synthetic_structured_bv",
+  "structure_metrics": {
+    "ambiguous_syndrome_count": 6,
+    "approximate_distance_proxy": 2.0,
+    "col_weight_max": 10,
+    "col_weight_mean": 6.375,
+    "decodable_syndrome_fraction": 0.0078125,
+    "decoder_collision_rate": 0.75,
+    "ell": 2,
+    "estimated_lookup_table_size": 8,
+    "m": 10,
+    "n": 8,
+    "number_of_unique_syndromes_decodable_at_ell": 2,
+    "rank": 3,
+    "rank_B_gf2": 3,
+    "rank_deficiency": 5,
+    "row_weight_max": 6,
+    "row_weight_mean": 5.1,
+    "syndrome_density": 0.03125,
+    "syndrome_space_size": 256
+  },
+  "v": [
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0
+  ]
+}

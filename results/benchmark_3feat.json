@@ -1,0 +1,5460 @@
+{
+  "problem": {
+    "n_features": 3,
+    "n_bits": 6,
+    "n_configurations": 64
+  },
+  "parameters": {
+    "k": 12,
+    "ell": 1,
+    "n_dqi_samples": 1000,
+    "top_k_by_surrogate": 10,
+    "seed": 42,
+    "include_stage1_paired_encoding": true,
+    "run_wht_ablation": true,
+    "include_alpha_ablation": false,
+    "include_coherent_appendix": false
+  },
+  "ground_truth": {
+    "x_opt": 21,
+    "x_opt_bits": "010101",
+    "f_opt": 3000.0
+  },
+  "surrogate": {
+    "spearman_rho": 0.9122648688826857,
+    "spearman_rho_weighted": 0.9122648688826857,
+    "energy_fraction": 0.9943565708724788
+  },
+  "structure": {
+    "row_weight_mean": 1.8333333333333333,
+    "row_weight_max": 4,
+    "col_weight_mean": 3.6666666666666665,
+    "col_weight_max": 5,
+    "syndrome_density": 1.0,
+    "number_of_unique_syndromes_decodable_at_ell": 13,
+    "decoder_collision_rate": 0.0,
+    "estimated_lookup_table_size": 13,
+    "ambiguous_syndrome_count": 0,
+    "rank_B_gf2": 6,
+    "rank": 6,
+    "rank_deficiency": 0,
+    "decodable_syndrome_fraction": 0.203125,
+    "syndrome_space_size": 64,
+    "m": 12,
+    "n": 6,
+    "paper_mixture_success_prob": 1.0
+  },
+  "resources": {
+    "encoding_artifact_id": "d9522c28a59abbbdfc1044ff106461604c877dbbf8364f64fc6939d676b6bd58",
+    "decode_uncompute_model": "lookup_table_reversible",
+    "decode_uncompute_status": "analytic_estimate_conservative",
+    "decode_uncompute_confidence": "analytic_upper_bound",
+    "decode_uncompute_gate_est": 1716,
+    "decode_uncompute_depth_est": 819,
+    "total_gate_est": 54,
+    "total_depth_est": 15,
+    "total_gate_est_with_decode": 1770,
+    "total_depth_est_with_decode": 834,
+    "total_qubits_est_with_decode": 40,
+    "decode_cost_drivers": {
+      "estimated_lookup_table_size": 13,
+      "number_of_unique_syndromes_decodable_at_ell": 13,
+      "decoder_collision_rate": 0.0,
+      "collision_guard_gate_est": 0,
+      "collision_guard_depth_est": 0
+    },
+    "qiskit_transpiled_structural_count": {
+      "category": "qiskit_transpiled_structural_count",
+      "status": "not_available",
+      "reason": "qiskit_not_installed",
+      "scope": {
+        "scope": "structural_subset_only",
+        "includes": [],
+        "excludes": [
+          "decode_uncompute"
+        ],
+        "decode_uncompute_included": false,
+        "postselection_stage_present": false,
+        "distribution_basis": "syndrome_register_after_final_hadamards",
+        "subset_path": "implemented_structural_only",
+        "parity_claim": "no_full_end_to_end_parity_claim",
+        "dicke_prep_status": "unknown",
+        "category": "implemented_subset_only"
+      },
+      "qubit_count": null,
+      "transpiled_depth": null,
+      "cx_count": null,
+      "gate_counts": {},
+      "basis_gates": [
+        "cx",
+        "rz",
+        "sx",
+        "x"
+      ],
+      "optimization_level": 1
+    },
+    "qiskit_subset_resource_report": {
+      "scope": {
+        "scope": "structural_subset_only",
+        "includes": [
+          "approximate_low_weight_superposition",
+          "phase_kick",
+          "syndrome_compute",
+          "final_hadamards"
+        ],
+        "excludes": [
+          "decode_uncompute"
+        ],
+        "decode_uncompute_included": false,
+        "postselection_stage_present": false,
+        "distribution_basis": "syndrome_register_after_final_hadamards",
+        "subset_path": "implemented_structural_only",
+        "parity_claim": "no_full_end_to_end_parity_claim"
+      },
+      "includes": [
+        "approximate_low_weight_superposition",
+        "phase_kick",
+        "syndrome_compute",
+        "final_hadamards"
+      ],
+      "excludes": [
+        "decode_uncompute"
+      ],
+      "decode_uncompute_included": false,
+      "subset_path": "implemented_structural_only",
+      "distribution_basis": "syndrome_register_after_final_hadamards",
+      "postselection_stage_present": false,
+      "parity_claim": "no_full_end_to_end_parity_claim",
+      "status": "not_available",
+      "reason": "qiskit_not_installed",
+      "transpiled_depth": null,
+      "cx_count": null,
+      "qubit_count": null,
+      "gate_counts": {}
+    },
+    "implemented_resources": {
+      "dicke_prep": {
+        "gate_est": 22,
+        "depth_est": 12,
+        "ancilla_est": 0,
+        "confidence": "analytic_upper_bound"
+      },
+      "phase_kick": {
+        "gate_est": 4,
+        "depth_est": 1,
+        "ancilla_est": 0,
+        "confidence": "exact_formula"
+      },
+      "syndrome_compute": {
+        "gate_est": 22,
+        "depth_est": 1,
+        "ancilla_est": 0,
+        "confidence": "exact_formula"
+      },
+      "hadamards": {
+        "gate_est": 6,
+        "depth_est": 1,
+        "ancilla_est": 0,
+        "confidence": "exact_formula"
+      }
+    },
+    "analytic_estimates": {
+      "decode_uncompute": {
+        "model": "lookup_table_reversible",
+        "status": "analytic_estimate_conservative",
+        "gate_est": 1716,
+        "depth_est": 819,
+        "ancilla_est": 22,
+        "confidence": "analytic_upper_bound",
+        "details": {
+          "mapping_size": 13,
+          "decodable_syndromes": 13,
+          "ambiguous_syndromes": 0,
+          "syndrome_space_size": 64,
+          "assumptions": [
+            "Serial reversible lookup over populated syndrome rows",
+            "n-bit comparators per row with explicit uncompute",
+            "m-bit controlled write for uniquely decodable rows",
+            "Conservative analytic estimate, not compiled gate synthesis"
+          ]
+        },
+        "cost_drivers": {
+          "estimated_lookup_table_size": 13,
+          "number_of_unique_syndromes_decodable_at_ell": 13,
+          "decoder_collision_rate": 0.0,
+          "collision_guard_gate_est": 0,
+          "collision_guard_depth_est": 0
+        }
+      },
+      "coherent_weight_register_overhead": {
+        "weight_register_qubits": 1,
+        "gate_est": 16,
+        "depth_est": 5,
+        "ancilla_est": 0,
+        "status": "analytic_upper_bound",
+        "confidence": "analytic_upper_bound",
+        "details": {
+          "assumptions": [
+            "Generic q-qubit amplitude preparation upper bound (not transpiled)",
+            "No explicit ancilla assumed for the coarse upper-bound model"
+          ]
+        }
+      }
+    },
+    "total_estimated_resources": {
+      "total_gate_est_without_decode": 54,
+      "total_depth_est_without_decode": 15,
+      "total_qubits_est_without_decode": 18,
+      "total_gate_est_with_decode": 1770,
+      "total_depth_est_with_decode": 834,
+      "total_qubits_est_with_decode": 40,
+      "total_gate_est_with_decode_and_weight_register_est": 1786,
+      "total_depth_est_with_decode_and_weight_register_est": 839,
+      "total_qubits_est_with_decode_and_weight_register_est": 41,
+      "total_without_decode": {
+        "gate_est": 54,
+        "depth_est": 15,
+        "qubits_est": 18
+      },
+      "total_with_decode": {
+        "gate_est": 1770,
+        "depth_est": 834,
+        "qubits_est": 40
+      },
+      "total_with_decode_and_weight_register_est": {
+        "gate_est": 1786,
+        "depth_est": 839,
+        "qubits_est": 41
+      }
+    },
+    "prefix_gate_est": 54,
+    "prefix_depth_est": 15,
+    "decode_model_gate_est": 1716,
+    "decode_model_depth_est": 819,
+    "weight_register_qubits": 1,
+    "coherent_weight_register_gate_est": 16,
+    "coherent_weight_register_depth_est": 5,
+    "weight_register_overhead_status": "analytic_upper_bound"
+  },
+  "resources_by_decoder_model": {
+    "bruteforce": {
+      "instance_id": null,
+      "n": 6,
+      "m": 12,
+      "k_selected": null,
+      "ell": 1,
+      "dicke_method": "bartschi_eidenbenz_scs_upper_bound",
+      "dicke_cnot_est": 11,
+      "dicke_single_qubit_rot_est": 11,
+      "dicke_depth_est": 12,
+      "syndrome_cnot_count": 22,
+      "phase_z_count": 4,
+      "final_h_count": 6,
+      "total_gate_est": 54,
+      "total_depth_est": 15,
+      "decode_uncompute_gate_est": 1716,
+      "decode_uncompute_depth_est": 819,
+      "decode_uncompute_ancilla_est": 22,
+      "decode_uncompute_model": "lookup_table_reversible",
+      "decode_uncompute_status": "analytic_estimate_conservative",
+      "decode_uncompute_confidence": "analytic_upper_bound",
+      "total_gate_est_with_decode": 1770,
+      "total_depth_est_with_decode": 834,
+      "total_gate_est_with_decode_and_weight_register_est": 1786,
+      "total_depth_est_with_decode_and_weight_register_est": 839,
+      "n_problem_qubits": 6,
+      "m_error_qubits": 12,
+      "n_syndrome_qubits": 6,
+      "ancilla_qubits_est": 0,
+      "total_qubits_est": 18,
+      "total_qubits_est_with_decode": 40,
+      "total_qubits_est_with_decode_and_weight_register_est": 41,
+      "weight_register_qubits": 1,
+      "weight_register_overhead_status": "analytic_upper_bound",
+      "coherent_weight_register_gate_est": 16,
+      "coherent_weight_register_depth_est": 5,
+      "coherent_weight_register_ancilla_est": 0,
+      "row_weight_mean": 1.8333333333333333,
+      "row_weight_max": 4,
+      "col_weight_mean": 3.6666666666666665,
+      "col_weight_max": 5,
+      "syndrome_density": 1.0,
+      "number_of_unique_syndromes_decodable_at_ell": 13,
+      "decoder_collision_rate": 0.0,
+      "estimated_lookup_table_size": 13,
+      "structure_metrics": {
+        "row_weight_min": 1,
+        "row_weight_mean": 1.8333333333333333,
+        "row_weight_max": 4,
+        "col_weight_min": 2,
+        "col_weight_mean": 3.6666666666666665,
+        "col_weight_max": 5,
+        "syndrome_density": 1.0,
+        "number_of_unique_syndromes_decodable_at_ell": 13,
+        "decoder_collision_rate": 0.0,
+        "estimated_lookup_table_size": 13,
+        "ambiguous_syndrome_count": 0,
+        "syndrome_space_size": 64,
+        "rank_B_gf2": 6,
+        "rank": 6,
+        "rank_deficiency": 0,
+        "short_cycle_proxy": 0.10606060606060606,
+        "decodable_syndrome_fraction": 0.203125,
+        "approximate_distance_proxy": 3.0,
+        "distance_proxy": 3.0,
+        "structure_row_weight_min": 1,
+        "structure_row_weight_mean": 1.8333333333333333,
+        "structure_row_weight_max": 4,
+        "structure_col_weight_min": 2,
+        "structure_col_weight_mean": 3.6666666666666665,
+        "structure_col_weight_max": 5,
+        "structure_rank": 6,
+        "structure_rank_deficiency": 0,
+        "structure_collision_rate": 0.0,
+        "structure_ambiguous_syndrome_count": 0,
+        "structure_short_cycle_proxy": 0.10606060606060606,
+        "structure_distance_proxy": 3.0,
+        "ell": 1,
+        "m": 12,
+        "n": 6
+      },
+      "decode_cost_drivers": {
+        "estimated_lookup_table_size": 13,
+        "number_of_unique_syndromes_decodable_at_ell": 13,
+        "decoder_collision_rate": 0.0,
+        "collision_guard_gate_est": 0,
+        "collision_guard_depth_est": 0
+      },
+      "implemented_resources": {
+        "dicke_prep": {
+          "gate_est": 22,
+          "depth_est": 12,
+          "ancilla_est": 0,
+          "confidence": "analytic_upper_bound"
+        },
+        "phase_kick": {
+          "gate_est": 4,
+          "depth_est": 1,
+          "ancilla_est": 0,
+          "confidence": "exact_formula"
+        },
+        "syndrome_compute": {
+          "gate_est": 22,
+          "depth_est": 1,
+          "ancilla_est": 0,
+          "confidence": "exact_formula"
+        },
+        "hadamards": {
+          "gate_est": 6,
+          "depth_est": 1,
+          "ancilla_est": 0,
+          "confidence": "exact_formula"
+        }
+      },
+      "estimated_resources": {
+        "decode_uncompute": {
+          "model": "lookup_table_reversible",
+          "status": "analytic_estimate_conservative",
+          "gate_est": 1716,
+          "depth_est": 819,
+          "ancilla_est": 22,
+          "confidence": "analytic_upper_bound",
+          "details": {
+            "mapping_size": 13,
+            "decodable_syndromes": 13,
+            "ambiguous_syndromes": 0,
+            "syndrome_space_size": 64,
+            "assumptions": [
+              "Serial reversible lookup over populated syndrome rows",
+              "n-bit comparators per row with explicit uncompute",
+              "m-bit controlled write for uniquely decodable rows",
+              "Conservative analytic estimate, not compiled gate synthesis"
+            ]
+          },
+          "cost_drivers": {
+            "estimated_lookup_table_size": 13,
+            "number_of_unique_syndromes_decodable_at_ell": 13,
+            "decoder_collision_rate": 0.0,
+            "collision_guard_gate_est": 0,
+            "collision_guard_depth_est": 0
+          }
+        },
+        "coherent_weight_register_overhead": {
+          "weight_register_qubits": 1,
+          "gate_est": 16,
+          "depth_est": 5,
+          "ancilla_est": 0,
+          "status": "analytic_upper_bound",
+          "confidence": "analytic_upper_bound",
+          "details": {
+            "assumptions": [
+              "Generic q-qubit amplitude preparation upper bound (not transpiled)",
+              "No explicit ancilla assumed for the coarse upper-bound model"
+            ]
+          }
+        }
+      },
+      "analytic_estimates": {
+        "decode_uncompute": {
+          "model": "lookup_table_reversible",
+          "status": "analytic_estimate_conservative",
+          "gate_est": 1716,
+          "depth_est": 819,
+          "ancilla_est": 22,
+          "confidence": "analytic_upper_bound",
+          "details": {
+            "mapping_size": 13,
+            "decodable_syndromes": 13,
+            "ambiguous_syndromes": 0,
+            "syndrome_space_size": 64,
+            "assumptions": [
+              "Serial reversible lookup over populated syndrome rows",
+              "n-bit comparators per row with explicit uncompute",
+              "m-bit controlled write for uniquely decodable rows",
+              "Conservative analytic estimate, not compiled gate synthesis"
+            ]
+          },
+          "cost_drivers": {
+            "estimated_lookup_table_size": 13,
+            "number_of_unique_syndromes_decodable_at_ell": 13,
+            "decoder_collision_rate": 0.0,
+            "collision_guard_gate_est": 0,
+            "collision_guard_depth_est": 0
+          }
+        },
+        "coherent_weight_register_overhead": {
+          "weight_register_qubits": 1,
+          "gate_est": 16,
+          "depth_est": 5,
+          "ancilla_est": 0,
+          "status": "analytic_upper_bound",
+          "confidence": "analytic_upper_bound",
+          "details": {
+            "assumptions": [
+              "Generic q-qubit amplitude preparation upper bound (not transpiled)",
+              "No explicit ancilla assumed for the coarse upper-bound model"
+            ]
+          }
+        }
+      },
+      "total_resources": {
+        "total_without_decode": {
+          "gate_est": 54,
+          "depth_est": 15,
+          "qubits_est": 18,
+          "confidence": "mixed"
+        },
+        "total_with_decode": {
+          "gate_est": 1770,
+          "depth_est": 834,
+          "qubits_est": 40,
+          "confidence": "mixed"
+        },
+        "total_with_decode_and_weight_register_est": {
+          "gate_est": 1786,
+          "depth_est": 839,
+          "qubits_est": 41,
+          "confidence": "mixed"
+        }
+      },
+      "total_estimated_resources": {
+        "total_gate_est_without_decode": 54,
+        "total_depth_est_without_decode": 15,
+        "total_qubits_est_without_decode": 18,
+        "total_gate_est_with_decode": 1770,
+        "total_depth_est_with_decode": 834,
+        "total_qubits_est_with_decode": 40,
+        "total_gate_est_with_decode_and_weight_register_est": 1786,
+        "total_depth_est_with_decode_and_weight_register_est": 839,
+        "total_qubits_est_with_decode_and_weight_register_est": 41,
+        "total_without_decode": {
+          "gate_est": 54,
+          "depth_est": 15,
+          "qubits_est": 18
+        },
+        "total_with_decode": {
+          "gate_est": 1770,
+          "depth_est": 834,
+          "qubits_est": 40
+        },
+        "total_with_decode_and_weight_register_est": {
+          "gate_est": 1786,
+          "depth_est": 839,
+          "qubits_est": 41
+        }
+      },
+      "analytic_estimate": {
+        "category": "analytic_estimate",
+        "status": "ok",
+        "scope": "full_pipeline_estimate_with_decode_model",
+        "total_resources": {
+          "total_without_decode": {
+            "gate_est": 54,
+            "depth_est": 15,
+            "qubits_est": 18,
+            "confidence": "mixed"
+          },
+          "total_with_decode": {
+            "gate_est": 1770,
+            "depth_est": 834,
+            "qubits_est": 40,
+            "confidence": "mixed"
+          },
+          "total_with_decode_and_weight_register_est": {
+            "gate_est": 1786,
+            "depth_est": 839,
+            "qubits_est": 41,
+            "confidence": "mixed"
+          }
+        }
+      },
+      "resource_validation_scope": "analytic_full_pipeline_plus_qiskit_structural_subset",
+      "qiskit_transpiled_structural_count": {
+        "category": "qiskit_transpiled_structural_count",
+        "status": "not_available",
+        "reason": "qiskit_not_installed",
+        "scope": {
+          "scope": "structural_subset_only",
+          "includes": [],
+          "excludes": [
+            "decode_uncompute"
+          ],
+          "decode_uncompute_included": false,
+          "postselection_stage_present": false,
+          "distribution_basis": "syndrome_register_after_final_hadamards",
+          "subset_path": "implemented_structural_only",
+          "parity_claim": "no_full_end_to_end_parity_claim",
+          "dicke_prep_status": "unknown",
+          "category": "implemented_subset_only"
+        },
+        "qubit_count": null,
+        "transpiled_depth": null,
+        "cx_count": null,
+        "gate_counts": {},
+        "basis_gates": [
+          "cx",
+          "rz",
+          "sx",
+          "x"
+        ],
+        "optimization_level": 1
+      },
+      "qiskit_subset_resource_report": {
+        "scope": {
+          "scope": "structural_subset_only",
+          "includes": [
+            "approximate_low_weight_superposition",
+            "phase_kick",
+            "syndrome_compute",
+            "final_hadamards"
+          ],
+          "excludes": [
+            "decode_uncompute"
+          ],
+          "decode_uncompute_included": false,
+          "postselection_stage_present": false,
+          "distribution_basis": "syndrome_register_after_final_hadamards",
+          "subset_path": "implemented_structural_only",
+          "parity_claim": "no_full_end_to_end_parity_claim"
+        },
+        "includes": [
+          "approximate_low_weight_superposition",
+          "phase_kick",
+          "syndrome_compute",
+          "final_hadamards"
+        ],
+        "excludes": [
+          "decode_uncompute"
+        ],
+        "decode_uncompute_included": false,
+        "subset_path": "implemented_structural_only",
+        "distribution_basis": "syndrome_register_after_final_hadamards",
+        "postselection_stage_present": false,
+        "parity_claim": "no_full_end_to_end_parity_claim",
+        "status": "not_available",
+        "reason": "qiskit_not_installed",
+        "transpiled_depth": null,
+        "cx_count": null,
+        "qubit_count": null,
+        "gate_counts": {}
+      },
+      "resource_category_note": "analytic_estimate and qiskit_transpiled_structural_count are different categories and are not direct substitutes.",
+      "decode_uncompute_details": {
+        "mapping_size": 13,
+        "decodable_syndromes": 13,
+        "ambiguous_syndromes": 0,
+        "syndrome_space_size": 64,
+        "assumptions": [
+          "Serial reversible lookup over populated syndrome rows",
+          "n-bit comparators per row with explicit uncompute",
+          "m-bit controlled write for uniquely decodable rows",
+          "Conservative analytic estimate, not compiled gate synthesis"
+        ]
+      },
+      "prefix_gate_est": 54,
+      "prefix_depth_est": 15,
+      "decode_model_gate_est": 1716,
+      "decode_model_depth_est": 819,
+      "rank": 6,
+      "rank_deficiency": 0,
+      "decodable_syndrome_fraction": 0.203125,
+      "ambiguous_syndrome_count": 0,
+      "register_assumptions": {
+        "m_error_qubits": "error register holding weight-t error patterns",
+        "n_syndrome_qubits": "syndrome register, output of B^T @ y mod 2",
+        "ancilla_qubits_est": "additional ancilla for Dicke prep if needed (0 for SCS)",
+        "decode_uncompute_ancilla_est": "additional workspace for decode/uncompute model (lookup_table_reversible)",
+        "weight_register_qubits": "explicit coherent weight-register size for t in [0, ell]"
+      },
+      "included_stages": [
+        "dicke_prep",
+        "phase_kick",
+        "syndrome_compute",
+        "decode_uncompute",
+        "final_hadamard"
+      ],
+      "excluded_stages": [],
+      "artifact_version": null,
+      "repo_commit": null,
+      "assumptions": [
+        "Dicke prep: deterministic SCS construction (B\u00e4rtschi-Eidenbenz 2019)",
+        "Superposition: naive sum over t=0..ell, not optimized weighted prep",
+        "Syndrome: one CNOT per nonzero entry in B",
+        "Phase kick: one Z per nonzero entry in v",
+        "Decode/uncompute: explicit lookup_table_reversible estimate (analytic_estimate_conservative)",
+        "Coherent weight register: analytic_upper_bound overhead model",
+        "Qiskit structural counts cover only implemented subset (decode/uncompute excluded)."
+      ],
+      "reference": "arXiv:1904.07358",
+      "encoding_artifact_id": "d9522c28a59abbbdfc1044ff106461604c877dbbf8364f64fc6939d676b6bd58"
+    },
+    "bp1": {
+      "instance_id": null,
+      "n": 6,
+      "m": 12,
+      "k_selected": null,
+      "ell": 1,
+      "dicke_method": "bartschi_eidenbenz_scs_upper_bound",
+      "dicke_cnot_est": 11,
+      "dicke_single_qubit_rot_est": 11,
+      "dicke_depth_est": 12,
+      "syndrome_cnot_count": 22,
+      "phase_z_count": 4,
+      "final_h_count": 6,
+      "total_gate_est": 54,
+      "total_depth_est": 15,
+      "decode_uncompute_gate_est": 21120,
+      "decode_uncompute_depth_est": 1152,
+      "decode_uncompute_ancilla_est": 23,
+      "decode_uncompute_model": "bp1_classical_oracle_estimate",
+      "decode_uncompute_status": "analytic_estimate",
+      "decode_uncompute_confidence": "implementation_proxy",
+      "total_gate_est_with_decode": 21174,
+      "total_depth_est_with_decode": 1167,
+      "total_gate_est_with_decode_and_weight_register_est": 21190,
+      "total_depth_est_with_decode_and_weight_register_est": 1172,
+      "n_problem_qubits": 6,
+      "m_error_qubits": 12,
+      "n_syndrome_qubits": 6,
+      "ancilla_qubits_est": 0,
+      "total_qubits_est": 18,
+      "total_qubits_est_with_decode": 41,
+      "total_qubits_est_with_decode_and_weight_register_est": 42,
+      "weight_register_qubits": 1,
+      "weight_register_overhead_status": "analytic_upper_bound",
+      "coherent_weight_register_gate_est": 16,
+      "coherent_weight_register_depth_est": 5,
+      "coherent_weight_register_ancilla_est": 0,
+      "row_weight_mean": 1.8333333333333333,
+      "row_weight_max": 4,
+      "col_weight_mean": 3.6666666666666665,
+      "col_weight_max": 5,
+      "syndrome_density": 1.0,
+      "number_of_unique_syndromes_decodable_at_ell": 13,
+      "decoder_collision_rate": 0.0,
+      "estimated_lookup_table_size": 13,
+      "structure_metrics": {
+        "row_weight_min": 1,
+        "row_weight_mean": 1.8333333333333333,
+        "row_weight_max": 4,
+        "col_weight_min": 2,
+        "col_weight_mean": 3.6666666666666665,
+        "col_weight_max": 5,
+        "syndrome_density": 1.0,
+        "number_of_unique_syndromes_decodable_at_ell": 13,
+        "decoder_collision_rate": 0.0,
+        "estimated_lookup_table_size": 13,
+        "ambiguous_syndrome_count": 0,
+        "syndrome_space_size": 64,
+        "rank_B_gf2": 6,
+        "rank": 6,
+        "rank_deficiency": 0,
+        "short_cycle_proxy": 0.10606060606060606,
+        "decodable_syndrome_fraction": 0.203125,
+        "approximate_distance_proxy": 3.0,
+        "distance_proxy": 3.0,
+        "structure_row_weight_min": 1,
+        "structure_row_weight_mean": 1.8333333333333333,
+        "structure_row_weight_max": 4,
+        "structure_col_weight_min": 2,
+        "structure_col_weight_mean": 3.6666666666666665,
+        "structure_col_weight_max": 5,
+        "structure_rank": 6,
+        "structure_rank_deficiency": 0,
+        "structure_collision_rate": 0.0,
+        "structure_ambiguous_syndrome_count": 0,
+        "structure_short_cycle_proxy": 0.10606060606060606,
+        "structure_distance_proxy": 3.0,
+        "ell": 1,
+        "m": 12,
+        "n": 6
+      },
+      "decode_cost_drivers": {
+        "estimated_lookup_table_size": 13,
+        "number_of_unique_syndromes_decodable_at_ell": 13,
+        "decoder_collision_rate": 0.0,
+        "collision_guard_gate_est": 0,
+        "collision_guard_depth_est": 0
+      },
+      "implemented_resources": {
+        "dicke_prep": {
+          "gate_est": 22,
+          "depth_est": 12,
+          "ancilla_est": 0,
+          "confidence": "analytic_upper_bound"
+        },
+        "phase_kick": {
+          "gate_est": 4,
+          "depth_est": 1,
+          "ancilla_est": 0,
+          "confidence": "exact_formula"
+        },
+        "syndrome_compute": {
+          "gate_est": 22,
+          "depth_est": 1,
+          "ancilla_est": 0,
+          "confidence": "exact_formula"
+        },
+        "hadamards": {
+          "gate_est": 6,
+          "depth_est": 1,
+          "ancilla_est": 0,
+          "confidence": "exact_formula"
+        }
+      },
+      "estimated_resources": {
+        "decode_uncompute": {
+          "model": "bp1_classical_oracle_estimate",
+          "status": "analytic_estimate",
+          "gate_est": 21120,
+          "depth_est": 1152,
+          "ancilla_est": 23,
+          "confidence": "implementation_proxy",
+          "details": {
+            "op_count_proxy": 5280,
+            "max_iter": 16,
+            "ell": 1,
+            "not_synthesized_reversible": true,
+            "assumptions": [
+              "BP1 treated as a classical oracle proxy, not compiled reversible logic",
+              "Each iteration scans all m variables against n-bit residual checks",
+              "Gate/depth estimates are conservative scaling proxies from operation counts"
+            ]
+          },
+          "cost_drivers": {
+            "estimated_lookup_table_size": 13,
+            "number_of_unique_syndromes_decodable_at_ell": 13,
+            "decoder_collision_rate": 0.0,
+            "collision_guard_gate_est": 0,
+            "collision_guard_depth_est": 0
+          }
+        },
+        "coherent_weight_register_overhead": {
+          "weight_register_qubits": 1,
+          "gate_est": 16,
+          "depth_est": 5,
+          "ancilla_est": 0,
+          "status": "analytic_upper_bound",
+          "confidence": "analytic_upper_bound",
+          "details": {
+            "assumptions": [
+              "Generic q-qubit amplitude preparation upper bound (not transpiled)",
+              "No explicit ancilla assumed for the coarse upper-bound model"
+            ]
+          }
+        }
+      },
+      "analytic_estimates": {
+        "decode_uncompute": {
+          "model": "bp1_classical_oracle_estimate",
+          "status": "analytic_estimate",
+          "gate_est": 21120,
+          "depth_est": 1152,
+          "ancilla_est": 23,
+          "confidence": "implementation_proxy",
+          "details": {
+            "op_count_proxy": 5280,
+            "max_iter": 16,
+            "ell": 1,
+            "not_synthesized_reversible": true,
+            "assumptions": [
+              "BP1 treated as a classical oracle proxy, not compiled reversible logic",
+              "Each iteration scans all m variables against n-bit residual checks",
+              "Gate/depth estimates are conservative scaling proxies from operation counts"
+            ]
+          },
+          "cost_drivers": {
+            "estimated_lookup_table_size": 13,
+            "number_of_unique_syndromes_decodable_at_ell": 13,
+            "decoder_collision_rate": 0.0,
+            "collision_guard_gate_est": 0,
+            "collision_guard_depth_est": 0
+          }
+        },
+        "coherent_weight_register_overhead": {
+          "weight_register_qubits": 1,
+          "gate_est": 16,
+          "depth_est": 5,
+          "ancilla_est": 0,
+          "status": "analytic_upper_bound",
+          "confidence": "analytic_upper_bound",
+          "details": {
+            "assumptions": [
+              "Generic q-qubit amplitude preparation upper bound (not transpiled)",
+              "No explicit ancilla assumed for the coarse upper-bound model"
+            ]
+          }
+        }
+      },
+      "total_resources": {
+        "total_without_decode": {
+          "gate_est": 54,
+          "depth_est": 15,
+          "qubits_est": 18,
+          "confidence": "mixed"
+        },
+        "total_with_decode": {
+          "gate_est": 21174,
+          "depth_est": 1167,
+          "qubits_est": 41,
+          "confidence": "mixed"
+        },
+        "total_with_decode_and_weight_register_est": {
+          "gate_est": 21190,
+          "depth_est": 1172,
+          "qubits_est": 42,
+          "confidence": "mixed"
+        }
+      },
+      "total_estimated_resources": {
+        "total_gate_est_without_decode": 54,
+        "total_depth_est_without_decode": 15,
+        "total_qubits_est_without_decode": 18,
+        "total_gate_est_with_decode": 21174,
+        "total_depth_est_with_decode": 1167,
+        "total_qubits_est_with_decode": 41,
+        "total_gate_est_with_decode_and_weight_register_est": 21190,
+        "total_depth_est_with_decode_and_weight_register_est": 1172,
+        "total_qubits_est_with_decode_and_weight_register_est": 42,
+        "total_without_decode": {
+          "gate_est": 54,
+          "depth_est": 15,
+          "qubits_est": 18
+        },
+        "total_with_decode": {
+          "gate_est": 21174,
+          "depth_est": 1167,
+          "qubits_est": 41
+        },
+        "total_with_decode_and_weight_register_est": {
+          "gate_est": 21190,
+          "depth_est": 1172,
+          "qubits_est": 42
+        }
+      },
+      "analytic_estimate": {
+        "category": "analytic_estimate",
+        "status": "ok",
+        "scope": "full_pipeline_estimate_with_decode_model",
+        "total_resources": {
+          "total_without_decode": {
+            "gate_est": 54,
+            "depth_est": 15,
+            "qubits_est": 18,
+            "confidence": "mixed"
+          },
+          "total_with_decode": {
+            "gate_est": 21174,
+            "depth_est": 1167,
+            "qubits_est": 41,
+            "confidence": "mixed"
+          },
+          "total_with_decode_and_weight_register_est": {
+            "gate_est": 21190,
+            "depth_est": 1172,
+            "qubits_est": 42,
+            "confidence": "mixed"
+          }
+        }
+      },
+      "resource_validation_scope": "analytic_full_pipeline_plus_qiskit_structural_subset",
+      "qiskit_transpiled_structural_count": {
+        "category": "qiskit_transpiled_structural_count",
+        "status": "not_available",
+        "reason": "qiskit_not_installed",
+        "scope": {
+          "scope": "structural_subset_only",
+          "includes": [],
+          "excludes": [
+            "decode_uncompute"
+          ],
+          "decode_uncompute_included": false,
+          "postselection_stage_present": false,
+          "distribution_basis": "syndrome_register_after_final_hadamards",
+          "subset_path": "implemented_structural_only",
+          "parity_claim": "no_full_end_to_end_parity_claim",
+          "dicke_prep_status": "unknown",
+          "category": "implemented_subset_only"
+        },
+        "qubit_count": null,
+        "transpiled_depth": null,
+        "cx_count": null,
+        "gate_counts": {},
+        "basis_gates": [
+          "cx",
+          "rz",
+          "sx",
+          "x"
+        ],
+        "optimization_level": 1
+      },
+      "qiskit_subset_resource_report": {
+        "scope": {
+          "scope": "structural_subset_only",
+          "includes": [
+            "approximate_low_weight_superposition",
+            "phase_kick",
+            "syndrome_compute",
+            "final_hadamards"
+          ],
+          "excludes": [
+            "decode_uncompute"
+          ],
+          "decode_uncompute_included": false,
+          "postselection_stage_present": false,
+          "distribution_basis": "syndrome_register_after_final_hadamards",
+          "subset_path": "implemented_structural_only",
+          "parity_claim": "no_full_end_to_end_parity_claim"
+        },
+        "includes": [
+          "approximate_low_weight_superposition",
+          "phase_kick",
+          "syndrome_compute",
+          "final_hadamards"
+        ],
+        "excludes": [
+          "decode_uncompute"
+        ],
+        "decode_uncompute_included": false,
+        "subset_path": "implemented_structural_only",
+        "distribution_basis": "syndrome_register_after_final_hadamards",
+        "postselection_stage_present": false,
+        "parity_claim": "no_full_end_to_end_parity_claim",
+        "status": "not_available",
+        "reason": "qiskit_not_installed",
+        "transpiled_depth": null,
+        "cx_count": null,
+        "qubit_count": null,
+        "gate_counts": {}
+      },
+      "resource_category_note": "analytic_estimate and qiskit_transpiled_structural_count are different categories and are not direct substitutes.",
+      "decode_uncompute_details": {
+        "op_count_proxy": 5280,
+        "max_iter": 16,
+        "ell": 1,
+        "not_synthesized_reversible": true,
+        "assumptions": [
+          "BP1 treated as a classical oracle proxy, not compiled reversible logic",
+          "Each iteration scans all m variables against n-bit residual checks",
+          "Gate/depth estimates are conservative scaling proxies from operation counts"
+        ]
+      },
+      "prefix_gate_est": 54,
+      "prefix_depth_est": 15,
+      "decode_model_gate_est": 21120,
+      "decode_model_depth_est": 1152,
+      "rank": 6,
+      "rank_deficiency": 0,
+      "decodable_syndrome_fraction": 0.203125,
+      "ambiguous_syndrome_count": 0,
+      "register_assumptions": {
+        "m_error_qubits": "error register holding weight-t error patterns",
+        "n_syndrome_qubits": "syndrome register, output of B^T @ y mod 2",
+        "ancilla_qubits_est": "additional ancilla for Dicke prep if needed (0 for SCS)",
+        "decode_uncompute_ancilla_est": "additional workspace for decode/uncompute model (bp1_classical_oracle_estimate)",
+        "weight_register_qubits": "explicit coherent weight-register size for t in [0, ell]"
+      },
+      "included_stages": [
+        "dicke_prep",
+        "phase_kick",
+        "syndrome_compute",
+        "decode_uncompute",
+        "final_hadamard"
+      ],
+      "excluded_stages": [],
+      "artifact_version": null,
+      "repo_commit": null,
+      "assumptions": [
+        "Dicke prep: deterministic SCS construction (B\u00e4rtschi-Eidenbenz 2019)",
+        "Superposition: naive sum over t=0..ell, not optimized weighted prep",
+        "Syndrome: one CNOT per nonzero entry in B",
+        "Phase kick: one Z per nonzero entry in v",
+        "Decode/uncompute: explicit bp1_classical_oracle_estimate estimate (analytic_estimate)",
+        "Coherent weight register: analytic_upper_bound overhead model",
+        "Qiskit structural counts cover only implemented subset (decode/uncompute excluded)."
+      ],
+      "reference": "arXiv:1904.07358",
+      "encoding_artifact_id": "d9522c28a59abbbdfc1044ff106461604c877dbbf8364f64fc6939d676b6bd58"
+    }
+  },
+  "baselines": {
+    "brute_force": {
+      "x": 21,
+      "f": 3000.0,
+      "time": 2.5467000000389817e-05,
+      "optimal": true
+    },
+    "simulated_annealing": {
+      "x": 21.0,
+      "f": 3000.0,
+      "time": 0.21713792700000045,
+      "approx_ratio": 1.0
+    },
+    "cp_sat": {
+      "x": 21,
+      "f": 3000.0,
+      "objective_value": 3000.0,
+      "optimized_objective_value": 46.0,
+      "decoded_config": {
+        "bitstring": "010101",
+        "tiers": [
+          "Premium",
+          "Premium",
+          "Premium"
+        ],
+        "feature_choices": {
+          "Heated Seats": {
+            "tier": "Premium",
+            "price": 900
+          },
+          "Panoramic Roof": {
+            "tier": "Premium",
+            "price": 1300
+          },
+          "Premium Audio": {
+            "tier": "Premium",
+            "price": 800
+          }
+        },
+        "total_price": 3000.0,
+        "expected_revenue": 3000.0,
+        "segments_buying": [
+          "Budget",
+          "Mid-range",
+          "Premium"
+        ],
+        "n_invalid": 0,
+        "n_bundle_violations": 0,
+        "n_luxury": 0,
+        "objective_F": 3000.0
+      },
+      "constraint_summary": {
+        "n_invalid": 0,
+        "n_bundle_violations": 0,
+        "n_luxury": 0,
+        "max_luxury": 2,
+        "is_feasible": true
+      },
+      "instance_id": null,
+      "metadata": {
+        "solver_name": "ortools_cp_sat_one_hot_exact",
+        "raw_status_code": 4,
+        "objective_encoding": "rank_by_unique_F",
+        "model_type": "one_hot_exact",
+        "n_variables": 64,
+        "n_decision_variables": 64
+      },
+      "time": 6.165485538999999,
+      "approx_ratio": 1.0,
+      "optimal": true,
+      "status": "ok",
+      "solver": "ortools_cp_sat_one_hot_exact",
+      "matches_bruteforce_objective": true,
+      "matches_bruteforce_x": true
+    },
+    "random_search": {
+      "x": 33.0,
+      "f": 3000.0,
+      "time": 0.013713184000000211,
+      "approx_ratio": 1.0
+    }
+  },
+  "dqi_uniform_mixture": {
+    "weight_mode": "uniform",
+    "best_F": 3000.0,
+    "best_x": 33,
+    "approximation_ratio": 1.0,
+    "unique_samples": 64,
+    "best_G": 25954.6875,
+    "best_G_weighted": 25954.6875,
+    "best_G_unweighted": 6,
+    "best_satisfied_count": 9,
+    "m_constraints": 12,
+    "success_prob": 1.0,
+    "alpha": [
+      0.7071067811865475,
+      0.7071067811865475
+    ],
+    "alpha_mode": "uniform",
+    "alpha_vector": [
+      0.7071067811865475,
+      0.7071067811865475
+    ],
+    "alpha_source_label": "uniform_l2",
+    "alpha_norm": 0.9999999999999999,
+    "alpha_is_paper_derived": false,
+    "execution_mode": "mixture",
+    "coherent_supported": false,
+    "coherent_exact_small_instance": false,
+    "weight_register_bits": 1,
+    "decode_semantics": "projective_surrogate",
+    "state_model": "mixture_probabilities",
+    "postselection_kind": "projective_surrogate",
+    "decoder_mode": "bruteforce",
+    "decoder_success_rate": 0.203125,
+    "decode_exact_recovery_rate": 1.0,
+    "ambiguous_syndrome_rate": 0.0,
+    "flip_count_stats": null,
+    "confidence_stats": null,
+    "probabilities": [
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.031249999999999993,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.031249999999999993,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.031249999999999993,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666664,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.049479166666666664,
+      0.04947916666666668
+    ],
+    "time": 0.1503991659999997,
+    "decision_metrics": {
+      "metrics_schema_version": "1.0",
+      "core_decision": {
+        "best_sampled_F": 3000.0,
+        "best_sampled_G": 25954.6875,
+        "top1_regret": 0.0,
+        "topk_regret": 0.0,
+        "optimum_recall_at_k": 10.0,
+        "precision_at_k_high_F": null,
+        "best_top_G_sampled_F": 3000.0,
+        "surrogate_best_vs_true_best_sampled_gap": 0.0,
+        "decision_distortion": 0.0
+      },
+      "faithfulness": {
+        "spearman_rho_F_G": 0.9367152916621617,
+        "retained_energy_eta": 0.9943565708724788
+      },
+      "pipeline": {
+        "decode_success": 0.203125,
+        "postselection_success": 1.0
+      },
+      "timing": {
+        "runtime_s": 0.1503991659999997
+      },
+      "metadata": {
+        "k_eval": 10,
+        "sample_count": 1000,
+        "unique_sample_count": 64,
+        "candidate_source_label": "dqi_uniform_mixture"
+      },
+      "metric_goal": {
+        "best_sampled_F": "higher_is_better",
+        "best_sampled_G": "higher_is_better",
+        "top1_regret": "lower_is_better",
+        "topk_regret": "lower_is_better",
+        "optimum_recall_at_k": "higher_is_better",
+        "precision_at_k_high_F": "higher_is_better",
+        "best_top_G_sampled_F": "higher_is_better",
+        "surrogate_best_vs_true_best_sampled_gap": "lower_abs_is_better",
+        "spearman_rho_F_G": "higher_is_better",
+        "retained_energy_eta": "higher_is_better",
+        "decision_distortion": "lower_is_better",
+        "decode_success": "higher_is_better",
+        "postselection_success": "higher_is_better"
+      },
+      "metric_availability": {
+        "best_sampled_F": "available",
+        "best_sampled_G": "available",
+        "top1_regret": "available",
+        "topk_regret": "available",
+        "optimum_recall_at_k": "available",
+        "precision_at_k_high_F": "not_computed",
+        "best_top_G_sampled_F": "available",
+        "surrogate_best_vs_true_best_sampled_gap": "available",
+        "spearman_rho_F_G": "available",
+        "retained_energy_eta": "available",
+        "decision_distortion": "available",
+        "decode_success": "available",
+        "postselection_success": "available"
+      }
+    },
+    "top_by_weighted_surrogate": {
+      "k": 10,
+      "x": [
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21
+      ],
+      "F_values": [
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0
+      ],
+      "G_weighted_values": [
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875
+      ],
+      "G_unweighted_values": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "satisfied_counts": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "F_summary": {
+        "mean": 3000.0,
+        "median": 3000.0,
+        "max": 3000.0
+      }
+    },
+    "gap_summary": {
+      "at_true_optimum": {
+        "x": 21,
+        "F": 3000.0,
+        "G_weighted": 25954.6875,
+        "G_unweighted": 2,
+        "num_satisfied": 7
+      },
+      "at_best_weighted_surrogate_sampled": {
+        "x": 21,
+        "F": 3000.0,
+        "G_weighted": 25954.6875,
+        "G_unweighted": 2,
+        "num_satisfied": 7,
+        "F_gap_to_true_opt": 0.0
+      }
+    }
+  },
+  "dqi_paper_mixture": {
+    "weight_mode": "paper",
+    "best_F": 3000.0,
+    "best_x": 33,
+    "approximation_ratio": 1.0,
+    "unique_samples": 64,
+    "best_G": 25954.6875,
+    "best_G_weighted": 25954.6875,
+    "best_G_unweighted": 6,
+    "best_satisfied_count": 9,
+    "m_constraints": 12,
+    "success_prob": 1.0,
+    "alpha": [
+      0.7071067811865476,
+      0.7071067811865476
+    ],
+    "alpha_mode": "paper",
+    "alpha_vector": [
+      0.7071067811865476,
+      0.7071067811865476
+    ],
+    "alpha_source_label": "paper_tridiagonal_eigenvector",
+    "alpha_norm": 1.0,
+    "alpha_is_paper_derived": true,
+    "execution_mode": "mixture",
+    "coherent_supported": false,
+    "coherent_exact_small_instance": false,
+    "weight_register_bits": 1,
+    "decode_semantics": "projective_surrogate",
+    "state_model": "mixture_probabilities",
+    "postselection_kind": "projective_surrogate",
+    "decoder_mode": "bruteforce",
+    "decoder_success_rate": 0.203125,
+    "decode_exact_recovery_rate": 1.0,
+    "ambiguous_syndrome_rate": 0.0,
+    "flip_count_stats": null,
+    "confidence_stats": null,
+    "probabilities": [
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.031249999999999993,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.031249999999999993,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.031249999999999993,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666664,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.049479166666666664,
+      0.04947916666666668
+    ],
+    "time": 0.14180234800000058,
+    "decision_metrics": {
+      "metrics_schema_version": "1.0",
+      "core_decision": {
+        "best_sampled_F": 3000.0,
+        "best_sampled_G": 25954.6875,
+        "top1_regret": 0.0,
+        "topk_regret": 0.0,
+        "optimum_recall_at_k": 10.0,
+        "precision_at_k_high_F": null,
+        "best_top_G_sampled_F": 3000.0,
+        "surrogate_best_vs_true_best_sampled_gap": 0.0,
+        "decision_distortion": 0.0
+      },
+      "faithfulness": {
+        "spearman_rho_F_G": 0.9367152916621617,
+        "retained_energy_eta": 0.9943565708724788
+      },
+      "pipeline": {
+        "decode_success": 0.203125,
+        "postselection_success": 1.0
+      },
+      "timing": {
+        "runtime_s": 0.14180234800000058
+      },
+      "metadata": {
+        "k_eval": 10,
+        "sample_count": 1000,
+        "unique_sample_count": 64,
+        "candidate_source_label": "dqi_paper_mixture"
+      },
+      "metric_goal": {
+        "best_sampled_F": "higher_is_better",
+        "best_sampled_G": "higher_is_better",
+        "top1_regret": "lower_is_better",
+        "topk_regret": "lower_is_better",
+        "optimum_recall_at_k": "higher_is_better",
+        "precision_at_k_high_F": "higher_is_better",
+        "best_top_G_sampled_F": "higher_is_better",
+        "surrogate_best_vs_true_best_sampled_gap": "lower_abs_is_better",
+        "spearman_rho_F_G": "higher_is_better",
+        "retained_energy_eta": "higher_is_better",
+        "decision_distortion": "lower_is_better",
+        "decode_success": "higher_is_better",
+        "postselection_success": "higher_is_better"
+      },
+      "metric_availability": {
+        "best_sampled_F": "available",
+        "best_sampled_G": "available",
+        "top1_regret": "available",
+        "topk_regret": "available",
+        "optimum_recall_at_k": "available",
+        "precision_at_k_high_F": "not_computed",
+        "best_top_G_sampled_F": "available",
+        "surrogate_best_vs_true_best_sampled_gap": "available",
+        "spearman_rho_F_G": "available",
+        "retained_energy_eta": "available",
+        "decision_distortion": "available",
+        "decode_success": "available",
+        "postselection_success": "available"
+      }
+    },
+    "top_by_weighted_surrogate": {
+      "k": 10,
+      "x": [
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21
+      ],
+      "F_values": [
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0
+      ],
+      "G_weighted_values": [
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875
+      ],
+      "G_unweighted_values": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "satisfied_counts": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "F_summary": {
+        "mean": 3000.0,
+        "median": 3000.0,
+        "max": 3000.0
+      }
+    },
+    "gap_summary": {
+      "at_true_optimum": {
+        "x": 21,
+        "F": 3000.0,
+        "G_weighted": 25954.6875,
+        "G_unweighted": 2,
+        "num_satisfied": 7
+      },
+      "at_best_weighted_surrogate_sampled": {
+        "x": 21,
+        "F": 3000.0,
+        "G_weighted": 25954.6875,
+        "G_unweighted": 2,
+        "num_satisfied": 7,
+        "F_gap_to_true_opt": 0.0
+      }
+    }
+  },
+  "dqi_heuristic_mixture": {
+    "weight_mode": "heuristic",
+    "best_F": 3000.0,
+    "best_x": 33,
+    "approximation_ratio": 1.0,
+    "unique_samples": 64,
+    "best_G": 25954.6875,
+    "best_G_weighted": 25954.6875,
+    "best_G_unweighted": 6,
+    "best_satisfied_count": 9,
+    "m_constraints": 12,
+    "success_prob": 1.0,
+    "alpha": [
+      0.6339889056055382,
+      0.7733421413379024
+    ],
+    "alpha_mode": "heuristic",
+    "alpha_vector": [
+      0.6339889056055382,
+      0.7733421413379024
+    ],
+    "alpha_source_label": "heuristic_proxy_eigenvector",
+    "alpha_norm": 1.0,
+    "alpha_is_paper_derived": false,
+    "execution_mode": "mixture",
+    "coherent_supported": false,
+    "coherent_exact_small_instance": false,
+    "weight_register_bits": 1,
+    "decode_semantics": "projective_surrogate",
+    "state_model": "mixture_probabilities",
+    "postselection_kind": "projective_surrogate",
+    "decoder_mode": "bruteforce",
+    "decoder_success_rate": 0.203125,
+    "decode_exact_recovery_rate": 1.0,
+    "ambiguous_syndrome_rate": 0.0,
+    "flip_count_stats": null,
+    "confidence_stats": null,
+    "probabilities": [
+      0.01873988576858902,
+      0.01873988576858902,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.018739885768589027,
+      0.009395228462821956,
+      0.009395228462821956,
+      0.03431431461153412,
+      0.009395228462821958,
+      0.009395228462821956,
+      0.009395228462821956,
+      0.03431431461153412,
+      0.009395228462821958,
+      0.009395228462821956,
+      0.009395228462821956,
+      0.03431431461153412,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.009395228462821955,
+      0.034314314611534134,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.034314314611534134,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.034314314611534134,
+      0.009395228462821956,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.034314314611534134,
+      0.009395228462821958,
+      0.009395228462821956,
+      0.009395228462821956,
+      0.009395228462821958,
+      0.034314314611534134,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.05611851499165728,
+      0.05611851499165729
+    ],
+    "time": 0.23225046399999982,
+    "decision_metrics": {
+      "metrics_schema_version": "1.0",
+      "core_decision": {
+        "best_sampled_F": 3000.0,
+        "best_sampled_G": 25954.6875,
+        "top1_regret": 0.0,
+        "topk_regret": 0.0,
+        "optimum_recall_at_k": 10.0,
+        "precision_at_k_high_F": null,
+        "best_top_G_sampled_F": 3000.0,
+        "surrogate_best_vs_true_best_sampled_gap": 0.0,
+        "decision_distortion": 0.0
+      },
+      "faithfulness": {
+        "spearman_rho_F_G": 0.9406504562036431,
+        "retained_energy_eta": 0.9943565708724788
+      },
+      "pipeline": {
+        "decode_success": 0.203125,
+        "postselection_success": 1.0
+      },
+      "timing": {
+        "runtime_s": 0.23225046399999982
+      },
+      "metadata": {
+        "k_eval": 10,
+        "sample_count": 1000,
+        "unique_sample_count": 64,
+        "candidate_source_label": "dqi_heuristic_mixture"
+      },
+      "metric_goal": {
+        "best_sampled_F": "higher_is_better",
+        "best_sampled_G": "higher_is_better",
+        "top1_regret": "lower_is_better",
+        "topk_regret": "lower_is_better",
+        "optimum_recall_at_k": "higher_is_better",
+        "precision_at_k_high_F": "higher_is_better",
+        "best_top_G_sampled_F": "higher_is_better",
+        "surrogate_best_vs_true_best_sampled_gap": "lower_abs_is_better",
+        "spearman_rho_F_G": "higher_is_better",
+        "retained_energy_eta": "higher_is_better",
+        "decision_distortion": "lower_is_better",
+        "decode_success": "higher_is_better",
+        "postselection_success": "higher_is_better"
+      },
+      "metric_availability": {
+        "best_sampled_F": "available",
+        "best_sampled_G": "available",
+        "top1_regret": "available",
+        "topk_regret": "available",
+        "optimum_recall_at_k": "available",
+        "precision_at_k_high_F": "not_computed",
+        "best_top_G_sampled_F": "available",
+        "surrogate_best_vs_true_best_sampled_gap": "available",
+        "spearman_rho_F_G": "available",
+        "retained_energy_eta": "available",
+        "decision_distortion": "available",
+        "decode_success": "available",
+        "postselection_success": "available"
+      }
+    },
+    "top_by_weighted_surrogate": {
+      "k": 10,
+      "x": [
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21
+      ],
+      "F_values": [
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0
+      ],
+      "G_weighted_values": [
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875
+      ],
+      "G_unweighted_values": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "satisfied_counts": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "F_summary": {
+        "mean": 3000.0,
+        "median": 3000.0,
+        "max": 3000.0
+      }
+    },
+    "gap_summary": {
+      "at_true_optimum": {
+        "x": 21,
+        "F": 3000.0,
+        "G_weighted": 25954.6875,
+        "G_unweighted": 2,
+        "num_satisfied": 7
+      },
+      "at_best_weighted_surrogate_sampled": {
+        "x": 21,
+        "F": 3000.0,
+        "G_weighted": 25954.6875,
+        "G_unweighted": 2,
+        "num_satisfied": 7,
+        "F_gap_to_true_opt": 0.0
+      }
+    }
+  },
+  "dqi_paper_coherent": {
+    "status": "unsupported",
+    "reason": "coherent_hilbert_cap_exceeded",
+    "execution_mode": "coherent",
+    "alpha_mode": "paper",
+    "k": 12,
+    "ell": 1,
+    "n_bits": 6,
+    "m": 12,
+    "coherent_supported": false,
+    "coherent_exact_small_instance": false,
+    "coherent_comparison_attempted": false,
+    "joint_num_bits": 19,
+    "joint_state_size": 524288,
+    "cap_limit": 4096,
+    "alpha_vector": [
+      0.7071067811865476,
+      0.7071067811865476
+    ],
+    "weight_register_bits": 1,
+    "decoder_mode": "bruteforce",
+    "decode_semantics": "projective_surrogate",
+    "state_model": "coherent_joint_state",
+    "postselection_kind": "projective_surrogate",
+    "decoder_success_rate": null,
+    "decode_exact_recovery_rate": null,
+    "ambiguous_syndrome_rate": null,
+    "flip_count_stats": null,
+    "confidence_stats": null
+  },
+  "dqi_paper_mixture_bruteforce": {
+    "weight_mode": "paper",
+    "best_F": 3000.0,
+    "best_x": 33,
+    "approximation_ratio": 1.0,
+    "unique_samples": 64,
+    "best_G": 25954.6875,
+    "best_G_weighted": 25954.6875,
+    "best_G_unweighted": 6,
+    "best_satisfied_count": 9,
+    "m_constraints": 12,
+    "success_prob": 1.0,
+    "alpha": [
+      0.7071067811865476,
+      0.7071067811865476
+    ],
+    "alpha_mode": "paper",
+    "alpha_vector": [
+      0.7071067811865476,
+      0.7071067811865476
+    ],
+    "alpha_source_label": "paper_tridiagonal_eigenvector",
+    "alpha_norm": 1.0,
+    "alpha_is_paper_derived": true,
+    "execution_mode": "mixture",
+    "coherent_supported": false,
+    "coherent_exact_small_instance": false,
+    "weight_register_bits": 1,
+    "decode_semantics": "projective_surrogate",
+    "state_model": "mixture_probabilities",
+    "postselection_kind": "projective_surrogate",
+    "decoder_mode": "bruteforce",
+    "decoder_success_rate": 0.203125,
+    "decode_exact_recovery_rate": 1.0,
+    "ambiguous_syndrome_rate": 0.0,
+    "flip_count_stats": null,
+    "confidence_stats": null,
+    "probabilities": [
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.031249999999999993,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.031249999999999993,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.031249999999999993,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666664,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.049479166666666664,
+      0.04947916666666668
+    ],
+    "time": 0.14180234800000058,
+    "decision_metrics": {
+      "metrics_schema_version": "1.0",
+      "core_decision": {
+        "best_sampled_F": 3000.0,
+        "best_sampled_G": 25954.6875,
+        "top1_regret": 0.0,
+        "topk_regret": 0.0,
+        "optimum_recall_at_k": 10.0,
+        "precision_at_k_high_F": null,
+        "best_top_G_sampled_F": 3000.0,
+        "surrogate_best_vs_true_best_sampled_gap": 0.0,
+        "decision_distortion": 0.0
+      },
+      "faithfulness": {
+        "spearman_rho_F_G": 0.9367152916621617,
+        "retained_energy_eta": 0.9943565708724788
+      },
+      "pipeline": {
+        "decode_success": 0.203125,
+        "postselection_success": 1.0
+      },
+      "timing": {
+        "runtime_s": 0.14180234800000058
+      },
+      "metadata": {
+        "k_eval": 10,
+        "sample_count": 1000,
+        "unique_sample_count": 64,
+        "candidate_source_label": "dqi_paper_mixture"
+      },
+      "metric_goal": {
+        "best_sampled_F": "higher_is_better",
+        "best_sampled_G": "higher_is_better",
+        "top1_regret": "lower_is_better",
+        "topk_regret": "lower_is_better",
+        "optimum_recall_at_k": "higher_is_better",
+        "precision_at_k_high_F": "higher_is_better",
+        "best_top_G_sampled_F": "higher_is_better",
+        "surrogate_best_vs_true_best_sampled_gap": "lower_abs_is_better",
+        "spearman_rho_F_G": "higher_is_better",
+        "retained_energy_eta": "higher_is_better",
+        "decision_distortion": "lower_is_better",
+        "decode_success": "higher_is_better",
+        "postselection_success": "higher_is_better"
+      },
+      "metric_availability": {
+        "best_sampled_F": "available",
+        "best_sampled_G": "available",
+        "top1_regret": "available",
+        "topk_regret": "available",
+        "optimum_recall_at_k": "available",
+        "precision_at_k_high_F": "not_computed",
+        "best_top_G_sampled_F": "available",
+        "surrogate_best_vs_true_best_sampled_gap": "available",
+        "spearman_rho_F_G": "available",
+        "retained_energy_eta": "available",
+        "decision_distortion": "available",
+        "decode_success": "available",
+        "postselection_success": "available"
+      }
+    },
+    "top_by_weighted_surrogate": {
+      "k": 10,
+      "x": [
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21
+      ],
+      "F_values": [
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0
+      ],
+      "G_weighted_values": [
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875
+      ],
+      "G_unweighted_values": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "satisfied_counts": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "F_summary": {
+        "mean": 3000.0,
+        "median": 3000.0,
+        "max": 3000.0
+      }
+    },
+    "gap_summary": {
+      "at_true_optimum": {
+        "x": 21,
+        "F": 3000.0,
+        "G_weighted": 25954.6875,
+        "G_unweighted": 2,
+        "num_satisfied": 7
+      },
+      "at_best_weighted_surrogate_sampled": {
+        "x": 21,
+        "F": 3000.0,
+        "G_weighted": 25954.6875,
+        "G_unweighted": 2,
+        "num_satisfied": 7,
+        "F_gap_to_true_opt": 0.0
+      }
+    }
+  },
+  "dqi_paper_mixture_bp1": {
+    "weight_mode": "paper",
+    "best_F": 3000.0,
+    "best_x": 33,
+    "approximation_ratio": 1.0,
+    "unique_samples": 64,
+    "best_G": 25954.6875,
+    "best_G_weighted": 25954.6875,
+    "best_G_unweighted": 6,
+    "best_satisfied_count": 9,
+    "m_constraints": 12,
+    "success_prob": 1.0,
+    "alpha": [
+      0.7071067811865476,
+      0.7071067811865476
+    ],
+    "alpha_mode": "paper",
+    "alpha_vector": [
+      0.7071067811865476,
+      0.7071067811865476
+    ],
+    "alpha_source_label": "paper_tridiagonal_eigenvector",
+    "alpha_norm": 1.0,
+    "alpha_is_paper_derived": true,
+    "execution_mode": "mixture",
+    "coherent_supported": false,
+    "coherent_exact_small_instance": false,
+    "weight_register_bits": 1,
+    "decode_semantics": "projective_surrogate",
+    "state_model": "mixture_probabilities",
+    "postselection_kind": "projective_surrogate",
+    "decoder_mode": "bp1",
+    "decoder_success_rate": 1.0,
+    "decode_exact_recovery_rate": 1.0,
+    "ambiguous_syndrome_rate": null,
+    "flip_count_stats": {
+      "mean": 2.0625,
+      "median": 2.0,
+      "min": 0.0,
+      "max": 3.0
+    },
+    "confidence_stats": null,
+    "probabilities": [
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.031249999999999993,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.031249999999999993,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.031249999999999993,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666664,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.049479166666666664,
+      0.04947916666666668
+    ],
+    "time": 0.184510104000001,
+    "decision_metrics": {
+      "metrics_schema_version": "1.0",
+      "core_decision": {
+        "best_sampled_F": 3000.0,
+        "best_sampled_G": 25954.6875,
+        "top1_regret": 0.0,
+        "topk_regret": 0.0,
+        "optimum_recall_at_k": 10.0,
+        "precision_at_k_high_F": null,
+        "best_top_G_sampled_F": 3000.0,
+        "surrogate_best_vs_true_best_sampled_gap": 0.0,
+        "decision_distortion": 0.0
+      },
+      "faithfulness": {
+        "spearman_rho_F_G": 0.9367152916621617,
+        "retained_energy_eta": 0.9943565708724788
+      },
+      "pipeline": {
+        "decode_success": 1.0,
+        "postselection_success": 1.0
+      },
+      "timing": {
+        "runtime_s": 0.184510104000001
+      },
+      "metadata": {
+        "k_eval": 10,
+        "sample_count": 1000,
+        "unique_sample_count": 64,
+        "candidate_source_label": "dqi_paper_mixture"
+      },
+      "metric_goal": {
+        "best_sampled_F": "higher_is_better",
+        "best_sampled_G": "higher_is_better",
+        "top1_regret": "lower_is_better",
+        "topk_regret": "lower_is_better",
+        "optimum_recall_at_k": "higher_is_better",
+        "precision_at_k_high_F": "higher_is_better",
+        "best_top_G_sampled_F": "higher_is_better",
+        "surrogate_best_vs_true_best_sampled_gap": "lower_abs_is_better",
+        "spearman_rho_F_G": "higher_is_better",
+        "retained_energy_eta": "higher_is_better",
+        "decision_distortion": "lower_is_better",
+        "decode_success": "higher_is_better",
+        "postselection_success": "higher_is_better"
+      },
+      "metric_availability": {
+        "best_sampled_F": "available",
+        "best_sampled_G": "available",
+        "top1_regret": "available",
+        "topk_regret": "available",
+        "optimum_recall_at_k": "available",
+        "precision_at_k_high_F": "not_computed",
+        "best_top_G_sampled_F": "available",
+        "surrogate_best_vs_true_best_sampled_gap": "available",
+        "spearman_rho_F_G": "available",
+        "retained_energy_eta": "available",
+        "decision_distortion": "available",
+        "decode_success": "available",
+        "postselection_success": "available"
+      }
+    },
+    "top_by_weighted_surrogate": {
+      "k": 10,
+      "x": [
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21
+      ],
+      "F_values": [
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0
+      ],
+      "G_weighted_values": [
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875
+      ],
+      "G_unweighted_values": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "satisfied_counts": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "F_summary": {
+        "mean": 3000.0,
+        "median": 3000.0,
+        "max": 3000.0
+      }
+    },
+    "gap_summary": {
+      "at_true_optimum": {
+        "x": 21,
+        "F": 3000.0,
+        "G_weighted": 25954.6875,
+        "G_unweighted": 2,
+        "num_satisfied": 7
+      },
+      "at_best_weighted_surrogate_sampled": {
+        "x": 21,
+        "F": 3000.0,
+        "G_weighted": 25954.6875,
+        "G_unweighted": 2,
+        "num_satisfied": 7,
+        "F_gap_to_true_opt": 0.0
+      }
+    }
+  },
+  "decoder_sensitivity_paper_mixture": {
+    "alpha_mode": "paper",
+    "execution_mode": "mixture",
+    "by_decoder": {
+      "bruteforce": {
+        "best_F": 3000.0,
+        "success_prob": 1.0,
+        "decode_success_rate": 0.203125
+      },
+      "bp1": {
+        "best_F": 3000.0,
+        "success_prob": 1.0,
+        "decode_success_rate": 1.0
+      }
+    },
+    "delta_best_F_bp1_minus_bruteforce": 0.0,
+    "delta_success_prob_bp1_minus_bruteforce": 0.0,
+    "delta_decode_success_rate_bp1_minus_bruteforce": 0.796875
+  },
+  "dqi_uniform": {
+    "weight_mode": "uniform",
+    "best_F": 3000.0,
+    "best_x": 33,
+    "approximation_ratio": 1.0,
+    "unique_samples": 64,
+    "best_G": 25954.6875,
+    "best_G_weighted": 25954.6875,
+    "best_G_unweighted": 6,
+    "best_satisfied_count": 9,
+    "m_constraints": 12,
+    "success_prob": 1.0,
+    "alpha": [
+      0.7071067811865475,
+      0.7071067811865475
+    ],
+    "alpha_mode": "uniform",
+    "alpha_vector": [
+      0.7071067811865475,
+      0.7071067811865475
+    ],
+    "alpha_source_label": "uniform_l2",
+    "alpha_norm": 0.9999999999999999,
+    "alpha_is_paper_derived": false,
+    "execution_mode": "mixture",
+    "coherent_supported": false,
+    "coherent_exact_small_instance": false,
+    "weight_register_bits": 1,
+    "decode_semantics": "projective_surrogate",
+    "state_model": "mixture_probabilities",
+    "postselection_kind": "projective_surrogate",
+    "decoder_mode": "bruteforce",
+    "decoder_success_rate": 0.203125,
+    "decode_exact_recovery_rate": 1.0,
+    "ambiguous_syndrome_rate": 0.0,
+    "flip_count_stats": null,
+    "confidence_stats": null,
+    "probabilities": [
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.031249999999999993,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.031249999999999993,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.031249999999999993,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666664,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.049479166666666664,
+      0.04947916666666668
+    ],
+    "time": 0.1503991659999997,
+    "decision_metrics": {
+      "metrics_schema_version": "1.0",
+      "core_decision": {
+        "best_sampled_F": 3000.0,
+        "best_sampled_G": 25954.6875,
+        "top1_regret": 0.0,
+        "topk_regret": 0.0,
+        "optimum_recall_at_k": 10.0,
+        "precision_at_k_high_F": null,
+        "best_top_G_sampled_F": 3000.0,
+        "surrogate_best_vs_true_best_sampled_gap": 0.0,
+        "decision_distortion": 0.0
+      },
+      "faithfulness": {
+        "spearman_rho_F_G": 0.9367152916621617,
+        "retained_energy_eta": 0.9943565708724788
+      },
+      "pipeline": {
+        "decode_success": 0.203125,
+        "postselection_success": 1.0
+      },
+      "timing": {
+        "runtime_s": 0.1503991659999997
+      },
+      "metadata": {
+        "k_eval": 10,
+        "sample_count": 1000,
+        "unique_sample_count": 64,
+        "candidate_source_label": "dqi_uniform_mixture"
+      },
+      "metric_goal": {
+        "best_sampled_F": "higher_is_better",
+        "best_sampled_G": "higher_is_better",
+        "top1_regret": "lower_is_better",
+        "topk_regret": "lower_is_better",
+        "optimum_recall_at_k": "higher_is_better",
+        "precision_at_k_high_F": "higher_is_better",
+        "best_top_G_sampled_F": "higher_is_better",
+        "surrogate_best_vs_true_best_sampled_gap": "lower_abs_is_better",
+        "spearman_rho_F_G": "higher_is_better",
+        "retained_energy_eta": "higher_is_better",
+        "decision_distortion": "lower_is_better",
+        "decode_success": "higher_is_better",
+        "postselection_success": "higher_is_better"
+      },
+      "metric_availability": {
+        "best_sampled_F": "available",
+        "best_sampled_G": "available",
+        "top1_regret": "available",
+        "topk_regret": "available",
+        "optimum_recall_at_k": "available",
+        "precision_at_k_high_F": "not_computed",
+        "best_top_G_sampled_F": "available",
+        "surrogate_best_vs_true_best_sampled_gap": "available",
+        "spearman_rho_F_G": "available",
+        "retained_energy_eta": "available",
+        "decision_distortion": "available",
+        "decode_success": "available",
+        "postselection_success": "available"
+      }
+    },
+    "top_by_weighted_surrogate": {
+      "k": 10,
+      "x": [
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21
+      ],
+      "F_values": [
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0
+      ],
+      "G_weighted_values": [
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875
+      ],
+      "G_unweighted_values": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "satisfied_counts": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "F_summary": {
+        "mean": 3000.0,
+        "median": 3000.0,
+        "max": 3000.0
+      }
+    },
+    "gap_summary": {
+      "at_true_optimum": {
+        "x": 21,
+        "F": 3000.0,
+        "G_weighted": 25954.6875,
+        "G_unweighted": 2,
+        "num_satisfied": 7
+      },
+      "at_best_weighted_surrogate_sampled": {
+        "x": 21,
+        "F": 3000.0,
+        "G_weighted": 25954.6875,
+        "G_unweighted": 2,
+        "num_satisfied": 7,
+        "F_gap_to_true_opt": 0.0
+      }
+    }
+  },
+  "dqi_paper": {
+    "weight_mode": "paper",
+    "best_F": 3000.0,
+    "best_x": 33,
+    "approximation_ratio": 1.0,
+    "unique_samples": 64,
+    "best_G": 25954.6875,
+    "best_G_weighted": 25954.6875,
+    "best_G_unweighted": 6,
+    "best_satisfied_count": 9,
+    "m_constraints": 12,
+    "success_prob": 1.0,
+    "alpha": [
+      0.7071067811865476,
+      0.7071067811865476
+    ],
+    "alpha_mode": "paper",
+    "alpha_vector": [
+      0.7071067811865476,
+      0.7071067811865476
+    ],
+    "alpha_source_label": "paper_tridiagonal_eigenvector",
+    "alpha_norm": 1.0,
+    "alpha_is_paper_derived": true,
+    "execution_mode": "mixture",
+    "coherent_supported": false,
+    "coherent_exact_small_instance": false,
+    "weight_register_bits": 1,
+    "decode_semantics": "projective_surrogate",
+    "state_model": "mixture_probabilities",
+    "postselection_kind": "projective_surrogate",
+    "decoder_mode": "bruteforce",
+    "decoder_success_rate": 0.203125,
+    "decode_exact_recovery_rate": 1.0,
+    "ambiguous_syndrome_rate": 0.0,
+    "flip_count_stats": null,
+    "confidence_stats": null,
+    "probabilities": [
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.031249999999999993,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.031249999999999993,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.031249999999999993,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666664,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.010416666666666666,
+      0.03125000000000001,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.018229166666666668,
+      0.049479166666666664,
+      0.04947916666666668
+    ],
+    "time": 0.14180234800000058,
+    "decision_metrics": {
+      "metrics_schema_version": "1.0",
+      "core_decision": {
+        "best_sampled_F": 3000.0,
+        "best_sampled_G": 25954.6875,
+        "top1_regret": 0.0,
+        "topk_regret": 0.0,
+        "optimum_recall_at_k": 10.0,
+        "precision_at_k_high_F": null,
+        "best_top_G_sampled_F": 3000.0,
+        "surrogate_best_vs_true_best_sampled_gap": 0.0,
+        "decision_distortion": 0.0
+      },
+      "faithfulness": {
+        "spearman_rho_F_G": 0.9367152916621617,
+        "retained_energy_eta": 0.9943565708724788
+      },
+      "pipeline": {
+        "decode_success": 0.203125,
+        "postselection_success": 1.0
+      },
+      "timing": {
+        "runtime_s": 0.14180234800000058
+      },
+      "metadata": {
+        "k_eval": 10,
+        "sample_count": 1000,
+        "unique_sample_count": 64,
+        "candidate_source_label": "dqi_paper_mixture"
+      },
+      "metric_goal": {
+        "best_sampled_F": "higher_is_better",
+        "best_sampled_G": "higher_is_better",
+        "top1_regret": "lower_is_better",
+        "topk_regret": "lower_is_better",
+        "optimum_recall_at_k": "higher_is_better",
+        "precision_at_k_high_F": "higher_is_better",
+        "best_top_G_sampled_F": "higher_is_better",
+        "surrogate_best_vs_true_best_sampled_gap": "lower_abs_is_better",
+        "spearman_rho_F_G": "higher_is_better",
+        "retained_energy_eta": "higher_is_better",
+        "decision_distortion": "lower_is_better",
+        "decode_success": "higher_is_better",
+        "postselection_success": "higher_is_better"
+      },
+      "metric_availability": {
+        "best_sampled_F": "available",
+        "best_sampled_G": "available",
+        "top1_regret": "available",
+        "topk_regret": "available",
+        "optimum_recall_at_k": "available",
+        "precision_at_k_high_F": "not_computed",
+        "best_top_G_sampled_F": "available",
+        "surrogate_best_vs_true_best_sampled_gap": "available",
+        "spearman_rho_F_G": "available",
+        "retained_energy_eta": "available",
+        "decision_distortion": "available",
+        "decode_success": "available",
+        "postselection_success": "available"
+      }
+    },
+    "top_by_weighted_surrogate": {
+      "k": 10,
+      "x": [
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21
+      ],
+      "F_values": [
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0
+      ],
+      "G_weighted_values": [
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875
+      ],
+      "G_unweighted_values": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "satisfied_counts": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "F_summary": {
+        "mean": 3000.0,
+        "median": 3000.0,
+        "max": 3000.0
+      }
+    },
+    "gap_summary": {
+      "at_true_optimum": {
+        "x": 21,
+        "F": 3000.0,
+        "G_weighted": 25954.6875,
+        "G_unweighted": 2,
+        "num_satisfied": 7
+      },
+      "at_best_weighted_surrogate_sampled": {
+        "x": 21,
+        "F": 3000.0,
+        "G_weighted": 25954.6875,
+        "G_unweighted": 2,
+        "num_satisfied": 7,
+        "F_gap_to_true_opt": 0.0
+      }
+    }
+  },
+  "dqi_heuristic": {
+    "weight_mode": "heuristic",
+    "best_F": 3000.0,
+    "best_x": 33,
+    "approximation_ratio": 1.0,
+    "unique_samples": 64,
+    "best_G": 25954.6875,
+    "best_G_weighted": 25954.6875,
+    "best_G_unweighted": 6,
+    "best_satisfied_count": 9,
+    "m_constraints": 12,
+    "success_prob": 1.0,
+    "alpha": [
+      0.6339889056055382,
+      0.7733421413379024
+    ],
+    "alpha_mode": "heuristic",
+    "alpha_vector": [
+      0.6339889056055382,
+      0.7733421413379024
+    ],
+    "alpha_source_label": "heuristic_proxy_eigenvector",
+    "alpha_norm": 1.0,
+    "alpha_is_paper_derived": false,
+    "execution_mode": "mixture",
+    "coherent_supported": false,
+    "coherent_exact_small_instance": false,
+    "weight_register_bits": 1,
+    "decode_semantics": "projective_surrogate",
+    "state_model": "mixture_probabilities",
+    "postselection_kind": "projective_surrogate",
+    "decoder_mode": "bruteforce",
+    "decoder_success_rate": 0.203125,
+    "decode_exact_recovery_rate": 1.0,
+    "ambiguous_syndrome_rate": 0.0,
+    "flip_count_stats": null,
+    "confidence_stats": null,
+    "probabilities": [
+      0.01873988576858902,
+      0.01873988576858902,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.018739885768589027,
+      0.009395228462821956,
+      0.009395228462821956,
+      0.03431431461153412,
+      0.009395228462821958,
+      0.009395228462821956,
+      0.009395228462821956,
+      0.03431431461153412,
+      0.009395228462821958,
+      0.009395228462821956,
+      0.009395228462821956,
+      0.03431431461153412,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.009395228462821955,
+      0.034314314611534134,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.034314314611534134,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.034314314611534134,
+      0.009395228462821956,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.034314314611534134,
+      0.009395228462821958,
+      0.009395228462821956,
+      0.009395228462821956,
+      0.009395228462821958,
+      0.034314314611534134,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.05611851499165728,
+      0.05611851499165729
+    ],
+    "time": 0.23225046399999982,
+    "decision_metrics": {
+      "metrics_schema_version": "1.0",
+      "core_decision": {
+        "best_sampled_F": 3000.0,
+        "best_sampled_G": 25954.6875,
+        "top1_regret": 0.0,
+        "topk_regret": 0.0,
+        "optimum_recall_at_k": 10.0,
+        "precision_at_k_high_F": null,
+        "best_top_G_sampled_F": 3000.0,
+        "surrogate_best_vs_true_best_sampled_gap": 0.0,
+        "decision_distortion": 0.0
+      },
+      "faithfulness": {
+        "spearman_rho_F_G": 0.9406504562036431,
+        "retained_energy_eta": 0.9943565708724788
+      },
+      "pipeline": {
+        "decode_success": 0.203125,
+        "postselection_success": 1.0
+      },
+      "timing": {
+        "runtime_s": 0.23225046399999982
+      },
+      "metadata": {
+        "k_eval": 10,
+        "sample_count": 1000,
+        "unique_sample_count": 64,
+        "candidate_source_label": "dqi_heuristic_mixture"
+      },
+      "metric_goal": {
+        "best_sampled_F": "higher_is_better",
+        "best_sampled_G": "higher_is_better",
+        "top1_regret": "lower_is_better",
+        "topk_regret": "lower_is_better",
+        "optimum_recall_at_k": "higher_is_better",
+        "precision_at_k_high_F": "higher_is_better",
+        "best_top_G_sampled_F": "higher_is_better",
+        "surrogate_best_vs_true_best_sampled_gap": "lower_abs_is_better",
+        "spearman_rho_F_G": "higher_is_better",
+        "retained_energy_eta": "higher_is_better",
+        "decision_distortion": "lower_is_better",
+        "decode_success": "higher_is_better",
+        "postselection_success": "higher_is_better"
+      },
+      "metric_availability": {
+        "best_sampled_F": "available",
+        "best_sampled_G": "available",
+        "top1_regret": "available",
+        "topk_regret": "available",
+        "optimum_recall_at_k": "available",
+        "precision_at_k_high_F": "not_computed",
+        "best_top_G_sampled_F": "available",
+        "surrogate_best_vs_true_best_sampled_gap": "available",
+        "spearman_rho_F_G": "available",
+        "retained_energy_eta": "available",
+        "decision_distortion": "available",
+        "decode_success": "available",
+        "postselection_success": "available"
+      }
+    },
+    "top_by_weighted_surrogate": {
+      "k": 10,
+      "x": [
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21
+      ],
+      "F_values": [
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0
+      ],
+      "G_weighted_values": [
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875
+      ],
+      "G_unweighted_values": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "satisfied_counts": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "F_summary": {
+        "mean": 3000.0,
+        "median": 3000.0,
+        "max": 3000.0
+      }
+    },
+    "gap_summary": {
+      "at_true_optimum": {
+        "x": 21,
+        "F": 3000.0,
+        "G_weighted": 25954.6875,
+        "G_unweighted": 2,
+        "num_satisfied": 7
+      },
+      "at_best_weighted_surrogate_sampled": {
+        "x": 21,
+        "F": 3000.0,
+        "G_weighted": 25954.6875,
+        "G_unweighted": 2,
+        "num_satisfied": 7,
+        "F_gap_to_true_opt": 0.0
+      }
+    }
+  },
+  "dqi_heuristic_optimal": {
+    "weight_mode": "heuristic",
+    "best_F": 3000.0,
+    "best_x": 33,
+    "approximation_ratio": 1.0,
+    "unique_samples": 64,
+    "best_G": 25954.6875,
+    "best_G_weighted": 25954.6875,
+    "best_G_unweighted": 6,
+    "best_satisfied_count": 9,
+    "m_constraints": 12,
+    "success_prob": 1.0,
+    "alpha": [
+      0.6339889056055382,
+      0.7733421413379024
+    ],
+    "alpha_mode": "heuristic",
+    "alpha_vector": [
+      0.6339889056055382,
+      0.7733421413379024
+    ],
+    "alpha_source_label": "heuristic_proxy_eigenvector",
+    "alpha_norm": 1.0,
+    "alpha_is_paper_derived": false,
+    "execution_mode": "mixture",
+    "coherent_supported": false,
+    "coherent_exact_small_instance": false,
+    "weight_register_bits": 1,
+    "decode_semantics": "projective_surrogate",
+    "state_model": "mixture_probabilities",
+    "postselection_kind": "projective_surrogate",
+    "decoder_mode": "bruteforce",
+    "decoder_success_rate": 0.203125,
+    "decode_exact_recovery_rate": 1.0,
+    "ambiguous_syndrome_rate": 0.0,
+    "flip_count_stats": null,
+    "confidence_stats": null,
+    "probabilities": [
+      0.01873988576858902,
+      0.01873988576858902,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.018739885768589027,
+      0.009395228462821956,
+      0.009395228462821956,
+      0.03431431461153412,
+      0.009395228462821958,
+      0.009395228462821956,
+      0.009395228462821956,
+      0.03431431461153412,
+      0.009395228462821958,
+      0.009395228462821956,
+      0.009395228462821956,
+      0.03431431461153412,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.009395228462821955,
+      0.034314314611534134,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.034314314611534134,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.034314314611534134,
+      0.009395228462821956,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.034314314611534134,
+      0.009395228462821958,
+      0.009395228462821956,
+      0.009395228462821956,
+      0.009395228462821958,
+      0.034314314611534134,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.05611851499165728,
+      0.05611851499165729
+    ],
+    "time": 0.23225046399999982,
+    "decision_metrics": {
+      "metrics_schema_version": "1.0",
+      "core_decision": {
+        "best_sampled_F": 3000.0,
+        "best_sampled_G": 25954.6875,
+        "top1_regret": 0.0,
+        "topk_regret": 0.0,
+        "optimum_recall_at_k": 10.0,
+        "precision_at_k_high_F": null,
+        "best_top_G_sampled_F": 3000.0,
+        "surrogate_best_vs_true_best_sampled_gap": 0.0,
+        "decision_distortion": 0.0
+      },
+      "faithfulness": {
+        "spearman_rho_F_G": 0.9406504562036431,
+        "retained_energy_eta": 0.9943565708724788
+      },
+      "pipeline": {
+        "decode_success": 0.203125,
+        "postselection_success": 1.0
+      },
+      "timing": {
+        "runtime_s": 0.23225046399999982
+      },
+      "metadata": {
+        "k_eval": 10,
+        "sample_count": 1000,
+        "unique_sample_count": 64,
+        "candidate_source_label": "dqi_heuristic_mixture"
+      },
+      "metric_goal": {
+        "best_sampled_F": "higher_is_better",
+        "best_sampled_G": "higher_is_better",
+        "top1_regret": "lower_is_better",
+        "topk_regret": "lower_is_better",
+        "optimum_recall_at_k": "higher_is_better",
+        "precision_at_k_high_F": "higher_is_better",
+        "best_top_G_sampled_F": "higher_is_better",
+        "surrogate_best_vs_true_best_sampled_gap": "lower_abs_is_better",
+        "spearman_rho_F_G": "higher_is_better",
+        "retained_energy_eta": "higher_is_better",
+        "decision_distortion": "lower_is_better",
+        "decode_success": "higher_is_better",
+        "postselection_success": "higher_is_better"
+      },
+      "metric_availability": {
+        "best_sampled_F": "available",
+        "best_sampled_G": "available",
+        "top1_regret": "available",
+        "topk_regret": "available",
+        "optimum_recall_at_k": "available",
+        "precision_at_k_high_F": "not_computed",
+        "best_top_G_sampled_F": "available",
+        "surrogate_best_vs_true_best_sampled_gap": "available",
+        "spearman_rho_F_G": "available",
+        "retained_energy_eta": "available",
+        "decision_distortion": "available",
+        "decode_success": "available",
+        "postselection_success": "available"
+      }
+    },
+    "top_by_weighted_surrogate": {
+      "k": 10,
+      "x": [
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21
+      ],
+      "F_values": [
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0
+      ],
+      "G_weighted_values": [
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875
+      ],
+      "G_unweighted_values": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "satisfied_counts": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "F_summary": {
+        "mean": 3000.0,
+        "median": 3000.0,
+        "max": 3000.0
+      }
+    },
+    "gap_summary": {
+      "at_true_optimum": {
+        "x": 21,
+        "F": 3000.0,
+        "G_weighted": 25954.6875,
+        "G_unweighted": 2,
+        "num_satisfied": 7
+      },
+      "at_best_weighted_surrogate_sampled": {
+        "x": 21,
+        "F": 3000.0,
+        "G_weighted": 25954.6875,
+        "G_unweighted": 2,
+        "num_satisfied": 7,
+        "F_gap_to_true_opt": 0.0
+      }
+    },
+    "_compat_source_key": "dqi_heuristic_mixture",
+    "_compat_note": "Legacy key retained for compatibility; use dqi_heuristic_mixture."
+  },
+  "dqi_optimal": {
+    "weight_mode": "heuristic",
+    "best_F": 3000.0,
+    "best_x": 33,
+    "approximation_ratio": 1.0,
+    "unique_samples": 64,
+    "best_G": 25954.6875,
+    "best_G_weighted": 25954.6875,
+    "best_G_unweighted": 6,
+    "best_satisfied_count": 9,
+    "m_constraints": 12,
+    "success_prob": 1.0,
+    "alpha": [
+      0.6339889056055382,
+      0.7733421413379024
+    ],
+    "alpha_mode": "heuristic",
+    "alpha_vector": [
+      0.6339889056055382,
+      0.7733421413379024
+    ],
+    "alpha_source_label": "heuristic_proxy_eigenvector",
+    "alpha_norm": 1.0,
+    "alpha_is_paper_derived": false,
+    "execution_mode": "mixture",
+    "coherent_supported": false,
+    "coherent_exact_small_instance": false,
+    "weight_register_bits": 1,
+    "decode_semantics": "projective_surrogate",
+    "state_model": "mixture_probabilities",
+    "postselection_kind": "projective_surrogate",
+    "decoder_mode": "bruteforce",
+    "decoder_success_rate": 0.203125,
+    "decode_exact_recovery_rate": 1.0,
+    "ambiguous_syndrome_rate": 0.0,
+    "flip_count_stats": null,
+    "confidence_stats": null,
+    "probabilities": [
+      0.01873988576858902,
+      0.01873988576858902,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.018739885768589027,
+      0.009395228462821956,
+      0.009395228462821956,
+      0.03431431461153412,
+      0.009395228462821958,
+      0.009395228462821956,
+      0.009395228462821956,
+      0.03431431461153412,
+      0.009395228462821958,
+      0.009395228462821956,
+      0.009395228462821956,
+      0.03431431461153412,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.009395228462821955,
+      0.034314314611534134,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.034314314611534134,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.034314314611534134,
+      0.009395228462821956,
+      0.009395228462821958,
+      0.009395228462821958,
+      0.034314314611534134,
+      0.009395228462821958,
+      0.009395228462821956,
+      0.009395228462821956,
+      0.009395228462821958,
+      0.034314314611534134,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.0062803426942329346,
+      0.0062803426942329346,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.01873988576858902,
+      0.05611851499165728,
+      0.05611851499165729
+    ],
+    "time": 0.23225046399999982,
+    "decision_metrics": {
+      "metrics_schema_version": "1.0",
+      "core_decision": {
+        "best_sampled_F": 3000.0,
+        "best_sampled_G": 25954.6875,
+        "top1_regret": 0.0,
+        "topk_regret": 0.0,
+        "optimum_recall_at_k": 10.0,
+        "precision_at_k_high_F": null,
+        "best_top_G_sampled_F": 3000.0,
+        "surrogate_best_vs_true_best_sampled_gap": 0.0,
+        "decision_distortion": 0.0
+      },
+      "faithfulness": {
+        "spearman_rho_F_G": 0.9406504562036431,
+        "retained_energy_eta": 0.9943565708724788
+      },
+      "pipeline": {
+        "decode_success": 0.203125,
+        "postselection_success": 1.0
+      },
+      "timing": {
+        "runtime_s": 0.23225046399999982
+      },
+      "metadata": {
+        "k_eval": 10,
+        "sample_count": 1000,
+        "unique_sample_count": 64,
+        "candidate_source_label": "dqi_heuristic_mixture"
+      },
+      "metric_goal": {
+        "best_sampled_F": "higher_is_better",
+        "best_sampled_G": "higher_is_better",
+        "top1_regret": "lower_is_better",
+        "topk_regret": "lower_is_better",
+        "optimum_recall_at_k": "higher_is_better",
+        "precision_at_k_high_F": "higher_is_better",
+        "best_top_G_sampled_F": "higher_is_better",
+        "surrogate_best_vs_true_best_sampled_gap": "lower_abs_is_better",
+        "spearman_rho_F_G": "higher_is_better",
+        "retained_energy_eta": "higher_is_better",
+        "decision_distortion": "lower_is_better",
+        "decode_success": "higher_is_better",
+        "postselection_success": "higher_is_better"
+      },
+      "metric_availability": {
+        "best_sampled_F": "available",
+        "best_sampled_G": "available",
+        "top1_regret": "available",
+        "topk_regret": "available",
+        "optimum_recall_at_k": "available",
+        "precision_at_k_high_F": "not_computed",
+        "best_top_G_sampled_F": "available",
+        "surrogate_best_vs_true_best_sampled_gap": "available",
+        "spearman_rho_F_G": "available",
+        "retained_energy_eta": "available",
+        "decision_distortion": "available",
+        "decode_success": "available",
+        "postselection_success": "available"
+      }
+    },
+    "top_by_weighted_surrogate": {
+      "k": 10,
+      "x": [
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21
+      ],
+      "F_values": [
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0,
+        3000.0
+      ],
+      "G_weighted_values": [
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875,
+        25954.6875
+      ],
+      "G_unweighted_values": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "satisfied_counts": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "F_summary": {
+        "mean": 3000.0,
+        "median": 3000.0,
+        "max": 3000.0
+      }
+    },
+    "gap_summary": {
+      "at_true_optimum": {
+        "x": 21,
+        "F": 3000.0,
+        "G_weighted": 25954.6875,
+        "G_unweighted": 2,
+        "num_satisfied": 7
+      },
+      "at_best_weighted_surrogate_sampled": {
+        "x": 21,
+        "F": 3000.0,
+        "G_weighted": 25954.6875,
+        "G_unweighted": 2,
+        "num_satisfied": 7,
+        "F_gap_to_true_opt": 0.0
+      }
+    },
+    "_compat_source_key": "dqi_heuristic_mixture",
+    "_compat_note": "Legacy key retained for compatibility; use dqi_heuristic_mixture."
+  },
+  "alpha_diagnostics": {
+    "alpha_uniform": [
+      0.7071067811865475,
+      0.7071067811865475
+    ],
+    "alpha_paper": [
+      0.7071067811865476,
+      0.7071067811865476
+    ],
+    "alpha_heuristic": [
+      0.6339889056055382,
+      0.7733421413379024
+    ],
+    "alpha_l2_distance": 0.09865772480581356,
+    "alpha_l1_distance": 0.13935323573236413,
+    "alpha_l2_distance_uniform_paper": 1.5700924586837752e-16,
+    "alpha_l1_distance_uniform_paper": 2.220446049250313e-16,
+    "alpha_l2_distance_paper_heuristic": 0.09865772480581357,
+    "alpha_l1_distance_paper_heuristic": 0.13935323573236413,
+    "alpha_exactly_equal": false,
+    "alpha_effectively_equal": false
+  },
+  "dqi_pairwise_diagnostics": {
+    "delta_best_F_paper_vs_heuristic": 0.0,
+    "delta_success_prob_paper_vs_heuristic": 0.0,
+    "delta_best_F_paper_mixture_vs_coherent": null,
+    "tvd_paper_mixture_vs_coherent": null,
+    "same_top_sample_flag_paper_mixture_vs_coherent": null,
+    "coherent_comparison_attempted": false
+  },
+  "dqi_key_diagnostics": {
+    "dqi_optimal_is_backward_compat_key": true,
+    "dqi_optimal_refers_to": "dqi_heuristic_mixture",
+    "dqi_optimal_same_object_as_heuristic": false,
+    "dqi_optimal_core_payload_equals_heuristic": true,
+    "dqi_optimal_has_compatibility_metadata": true
+  },
+  "dqi_run_diagnostics": {
+    "headline_metric_equality": {
+      "best_F": true,
+      "approximation_ratio": true,
+      "best_G_weighted": true,
+      "best_G_unweighted": true,
+      "best_x": true
+    },
+    "success_prob_uniform": 1.0,
+    "success_prob_paper": 1.0,
+    "success_prob_heuristic": 1.0,
+    "success_prob_equal": true,
+    "metrics_that_differ": [],
+    "explanation": "Alpha vectors differ, but these frozen instances are insensitive on headline metrics and success probability."
+  },
+  "stage1_paired_encoding": {
+    "comparison_id": "dbd3fac90124a733ea6680c874e618e7036a2228fc88ec0aa861f4da0a6a1ac8",
+    "comparison_metadata": {
+      "schema_version": "1.0",
+      "instance_hash": "42df22f72dc0efa26a8d869f54058ceaa9cfc28786323837ac72a471639d2df0",
+      "backend_a_hash": "0093bc8c527724aaee4eb04e1506fe9a21fee17276a50ad7d1b75085aca7fc6c",
+      "backend_b_hash": "11c588e4db9c7ee82620dd57d9e1e44a2d4dc654942ec8abeee2014e30df2847",
+      "alpha_mode": "paper",
+      "execution_mode": "mixture",
+      "decoder_mode": "bruteforce",
+      "n_samples": 1000,
+      "top_k_eval": 10
+    },
+    "instance_metadata": {
+      "instance_id": "pricing_3feat_6bit",
+      "instance_hash": "42df22f72dc0efa26a8d869f54058ceaa9cfc28786323837ac72a471639d2df0",
+      "n_features": 3,
+      "n_bits": 6
+    },
+    "backend_a_name": "wht_truncated",
+    "backend_b_name": "ilp_exact_reference",
+    "backend_a_reviewer_name": "wht_truncated",
+    "backend_b_reviewer_name": "ilp_derived_exact",
+    "backend_a_artifact_summary": {
+      "backend_name": "wht_truncated",
+      "encoding_type": "wht_truncated",
+      "reviewer_backend_name": "wht_truncated",
+      "n_bits": 6,
+      "m_terms": 12,
+      "retained_energy_eta": 0.9943565708724788,
+      "exact_full_spectrum": false,
+      "constant_offset": -22728.125,
+      "artifact_hash": "0093bc8c527724aaee4eb04e1506fe9a21fee17276a50ad7d1b75085aca7fc6c",
+      "story_role": "exploratory",
+      "benchmark_status": "non_mainline_surrogate",
+      "row_weight_mean": 1.8333333333333333,
+      "row_weight_max": 4,
+      "density": 0.3055555555555556
+    },
+    "backend_b_artifact_summary": {
+      "backend_name": "ilp_exact_reference",
+      "encoding_type": "ilp_exact_reference",
+      "reviewer_backend_name": "ilp_derived_exact",
+      "n_bits": 6,
+      "m_terms": 63,
+      "retained_energy_eta": 1.0,
+      "exact_full_spectrum": true,
+      "constant_offset": -22728.125,
+      "artifact_hash": "11c588e4db9c7ee82620dd57d9e1e44a2d4dc654942ec8abeee2014e30df2847",
+      "row_weight_mean": 3.0476190476190474,
+      "row_weight_max": 6,
+      "density": 0.5079365079365079
+    },
+    "artifacts_compatible_for_paired_run": true,
+    "compatibility_notes": [],
+    "backend_a_metrics": {
+      "metrics_schema_version": "1.0",
+      "core_decision": {
+        "best_sampled_F": 3000.0,
+        "best_sampled_G": 25954.6875,
+        "top1_regret": 0.0,
+        "topk_regret": 0.0,
+        "optimum_recall_at_k": 0.5,
+        "precision_at_k_high_F": null,
+        "best_top_G_sampled_F": 3000.0,
+        "surrogate_best_vs_true_best_sampled_gap": 0.0,
+        "decision_distortion": 0.0
+      },
+      "faithfulness": {
+        "spearman_rho_F_G": 0.9122648688826857,
+        "retained_energy_eta": 0.9943565708724788
+      },
+      "pipeline": {
+        "decode_success": null,
+        "postselection_success": null
+      },
+      "timing": {
+        "runtime_s": null
+      },
+      "metadata": {
+        "k_eval": 10,
+        "sample_count": 64,
+        "unique_sample_count": 64,
+        "candidate_source_label": "wht_truncated"
+      },
+      "metric_goal": {
+        "best_sampled_F": "higher_is_better",
+        "best_sampled_G": "higher_is_better",
+        "top1_regret": "lower_is_better",
+        "topk_regret": "lower_is_better",
+        "optimum_recall_at_k": "higher_is_better",
+        "precision_at_k_high_F": "higher_is_better",
+        "best_top_G_sampled_F": "higher_is_better",
+        "surrogate_best_vs_true_best_sampled_gap": "lower_abs_is_better",
+        "spearman_rho_F_G": "higher_is_better",
+        "retained_energy_eta": "higher_is_better",
+        "decision_distortion": "lower_is_better",
+        "decode_success": "higher_is_better",
+        "postselection_success": "higher_is_better"
+      },
+      "metric_availability": {
+        "best_sampled_F": "available",
+        "best_sampled_G": "available",
+        "top1_regret": "available",
+        "topk_regret": "available",
+        "optimum_recall_at_k": "available",
+        "precision_at_k_high_F": "not_computed",
+        "best_top_G_sampled_F": "available",
+        "surrogate_best_vs_true_best_sampled_gap": "available",
+        "spearman_rho_F_G": "available",
+        "retained_energy_eta": "available",
+        "decision_distortion": "available",
+        "decode_success": "not_computed",
+        "postselection_success": "not_computed"
+      }
+    },
+    "backend_b_metrics": {
+      "metrics_schema_version": "1.0",
+      "core_decision": {
+        "best_sampled_F": 3000.0,
+        "best_sampled_G": 25728.125,
+        "top1_regret": 0.0,
+        "topk_regret": 0.0,
+        "optimum_recall_at_k": 1.0,
+        "precision_at_k_high_F": null,
+        "best_top_G_sampled_F": 3000.0,
+        "surrogate_best_vs_true_best_sampled_gap": 0.0,
+        "decision_distortion": 0.0
+      },
+      "faithfulness": {
+        "spearman_rho_F_G": 0.9999999999999998,
+        "retained_energy_eta": 1.0
+      },
+      "pipeline": {
+        "decode_success": null,
+        "postselection_success": null
+      },
+      "timing": {
+        "runtime_s": null
+      },
+      "metadata": {
+        "k_eval": 10,
+        "sample_count": 64,
+        "unique_sample_count": 64,
+        "candidate_source_label": "ilp_derived_exact"
+      },
+      "metric_goal": {
+        "best_sampled_F": "higher_is_better",
+        "best_sampled_G": "higher_is_better",
+        "top1_regret": "lower_is_better",
+        "topk_regret": "lower_is_better",
+        "optimum_recall_at_k": "higher_is_better",
+        "precision_at_k_high_F": "higher_is_better",
+        "best_top_G_sampled_F": "higher_is_better",
+        "surrogate_best_vs_true_best_sampled_gap": "lower_abs_is_better",
+        "spearman_rho_F_G": "higher_is_better",
+        "retained_energy_eta": "higher_is_better",
+        "decision_distortion": "lower_is_better",
+        "decode_success": "higher_is_better",
+        "postselection_success": "higher_is_better"
+      },
+      "metric_availability": {
+        "best_sampled_F": "available",
+        "best_sampled_G": "available",
+        "top1_regret": "available",
+        "topk_regret": "available",
+        "optimum_recall_at_k": "available",
+        "precision_at_k_high_F": "not_computed",
+        "best_top_G_sampled_F": "available",
+        "surrogate_best_vs_true_best_sampled_gap": "available",
+        "spearman_rho_F_G": "available",
+        "retained_energy_eta": "available",
+        "decision_distortion": "available",
+        "decode_success": "not_computed",
+        "postselection_success": "not_computed"
+      }
+    },
+    "metric_deltas": {
+      "delta_best_sampled_F_a_minus_b": 0.0,
+      "delta_best_sampled_G_a_minus_b": 226.5625,
+      "delta_top1_regret_a_minus_b": 0.0,
+      "delta_topk_regret_a_minus_b": 0.0,
+      "delta_optimum_recall_at_k_a_minus_b": -0.5,
+      "delta_precision_at_k_high_F_a_minus_b": null,
+      "delta_best_top_G_sampled_F_a_minus_b": 0.0,
+      "delta_surrogate_best_vs_true_best_sampled_gap_a_minus_b": 0.0,
+      "delta_spearman_rho_F_G_a_minus_b": -0.08773513111731412,
+      "delta_retained_energy_eta_a_minus_b": -0.005643429127521249,
+      "delta_decision_distortion_a_minus_b": 0.0,
+      "delta_decode_success_a_minus_b": null,
+      "delta_postselection_success_a_minus_b": null
+    },
+    "summary": {
+      "winner": "mainline_exact_reference",
+      "metrics_used": [
+        "top1_regret",
+        "topk_regret",
+        "optimum_recall_at_k",
+        "decision_distortion"
+      ],
+      "reviewer_verdict": "ilp_derived_exact"
+    }
+  },
+  "encoding_backend_recommendation": {
+    "status": "available",
+    "reason": "paired_comparison_complete",
+    "formal_verdict": "mainline_exact_reference",
+    "default_reviewer_backend": "ilp_derived_exact",
+    "recommendation_basis": "conservative_dominance_decision_metrics"
+  },
+  "reviewer_display": {
+    "headline_order": [
+      "dqi_paper_mixture",
+      "dqi_paper_mixture_bp1",
+      "stage1_paired_encoding"
+    ],
+    "headline_rows": [
+      {
+        "source_key": "dqi_paper_mixture",
+        "display_label": "dqi_paper_mixture",
+        "kind": "dqi",
+        "best_F": 3000.0,
+        "approximation_ratio": 1.0,
+        "success_prob": 1.0,
+        "decoder_mode": "bruteforce",
+        "execution_mode": "mixture",
+        "alpha_mode": "paper"
+      },
+      {
+        "source_key": "dqi_paper_mixture_bp1",
+        "display_label": "dqi_paper_mixture_bp1",
+        "kind": "dqi",
+        "best_F": 3000.0,
+        "approximation_ratio": 1.0,
+        "success_prob": 1.0,
+        "decoder_mode": "bp1",
+        "execution_mode": "mixture",
+        "alpha_mode": "paper"
+      },
+      {
+        "source_key": "stage1_paired_encoding",
+        "display_label": "ilp_derived_exact",
+        "kind": "paired_encoding",
+        "backend_a_name": "wht_truncated",
+        "backend_b_name": "ilp_derived_exact",
+        "comparison_id": "dbd3fac90124a733ea6680c874e618e7036a2228fc88ec0aa861f4da0a6a1ac8",
+        "formal_verdict": "mainline_exact_reference",
+        "reviewer_verdict": "ilp_derived_exact",
+        "best_F": 3000.0,
+        "best_G": 25728.125,
+        "top1_regret": 0.0,
+        "topk_regret": 0.0,
+        "optimum_recall_at_k": 1.0,
+        "spearman_rho_F_G": 0.9999999999999998,
+        "retained_energy_eta": 1.0,
+        "decision_distortion": 0.0,
+        "exploratory_best_F": 3000.0
+      }
+    ],
+    "appendix_rows": []
+  },
+  "quality_vs_cost": {
+    "schema_version": "1",
+    "generated_from_benchmark_version": "unknown_or_commit",
+    "metadata": {
+      "instance_id": "P3",
+      "instance_family": "P",
+      "n_bits": 6,
+      "k": 12,
+      "ell": 1,
+      "canonical_source": "embedded_run_benchmark_payload",
+      "has_decode_inclusive_totals": true
+    },
+    "row_count": 6,
+    "objectives": {
+      "maximize": [
+        "quality.best_F_over_F_star"
+      ],
+      "minimize": [
+        "resources.total_gate_est_with_decode"
+      ]
+    },
+    "rows": [
+      {
+        "row_id": "P3|d9522c28a59abbbdfc1044ff106461604c877dbbf8364f64fc6939d676b6bd58|bp1|paper|mixture|P3 / wht_truncated / bp1 / paper / mixture",
+        "row_status": "complete",
+        "instance_id": "P3",
+        "instance_family": "P",
+        "encoding_artifact_id": "d9522c28a59abbbdfc1044ff106461604c877dbbf8364f64fc6939d676b6bd58",
+        "run_label": "P3 / wht_truncated / bp1 / paper / mixture",
+        "provenance": {
+          "encoding_backend": "wht_truncated",
+          "decoder": "bp1",
+          "decoder_resource_model": "bp1_classical_oracle_estimate",
+          "alpha_mode": "paper",
+          "execution_mode": "mixture"
+        },
+        "quality": {
+          "best_F": 3000.0,
+          "F_star": 3000.0,
+          "best_F_over_F_star": 1.0,
+          "best_G": 25954.6875,
+          "top1_regret": 0.0,
+          "topk_regret": 0.0,
+          "optimum_recall_at_k": 10.0,
+          "best_top_G_sampled_F": 3000.0,
+          "decision_distortion": 0.0,
+          "decode_success": 1.0,
+          "postselection_success": 1.0
+        },
+        "faithfulness": {
+          "spearman_rho_F_G": 0.9367152916621617,
+          "retained_energy_eta": 0.9943565708724788
+        },
+        "collision_structure": {
+          "n": 6,
+          "m": 12,
+          "rank": 6,
+          "rank_deficiency": 0,
+          "row_weight_mean": 1.8333333333333333,
+          "row_weight_max": 4,
+          "col_weight_mean": 3.6666666666666665,
+          "col_weight_max": 5,
+          "syndrome_density": 1.0,
+          "ambiguous_syndrome_count": 0,
+          "collision_rate": 0.0,
+          "decodable_syndrome_fraction": 0.203125
+        },
+        "resources": {
+          "implemented_resources": {
+            "dicke_prep": {
+              "gate_est": 22,
+              "depth_est": 12,
+              "ancilla_est": 0,
+              "confidence": "analytic_upper_bound"
+            },
+            "phase_kick": {
+              "gate_est": 4,
+              "depth_est": 1,
+              "ancilla_est": 0,
+              "confidence": "exact_formula"
+            },
+            "syndrome_compute": {
+              "gate_est": 22,
+              "depth_est": 1,
+              "ancilla_est": 0,
+              "confidence": "exact_formula"
+            },
+            "hadamards": {
+              "gate_est": 6,
+              "depth_est": 1,
+              "ancilla_est": 0,
+              "confidence": "exact_formula"
+            }
+          },
+          "analytic_estimates": {
+            "decode_uncompute": {
+              "model": "bp1_classical_oracle_estimate",
+              "status": "analytic_estimate",
+              "gate_est": 21120,
+              "depth_est": 1152,
+              "ancilla_est": 23,
+              "confidence": "implementation_proxy",
+              "details": {
+                "op_count_proxy": 5280,
+                "max_iter": 16,
+                "ell": 1,
+                "not_synthesized_reversible": true,
+                "assumptions": [
+                  "BP1 treated as a classical oracle proxy, not compiled reversible logic",
+                  "Each iteration scans all m variables against n-bit residual checks",
+                  "Gate/depth estimates are conservative scaling proxies from operation counts"
+                ]
+              },
+              "cost_drivers": {
+                "estimated_lookup_table_size": 13,
+                "number_of_unique_syndromes_decodable_at_ell": 13,
+                "decoder_collision_rate": 0.0,
+                "collision_guard_gate_est": 0,
+                "collision_guard_depth_est": 0
+              }
+            },
+            "coherent_weight_register_overhead": {
+              "weight_register_qubits": 1,
+              "gate_est": 16,
+              "depth_est": 5,
+              "ancilla_est": 0,
+              "status": "analytic_upper_bound",
+              "confidence": "analytic_upper_bound",
+              "details": {
+                "assumptions": [
+                  "Generic q-qubit amplitude preparation upper bound (not transpiled)",
+                  "No explicit ancilla assumed for the coarse upper-bound model"
+                ]
+              }
+            }
+          },
+          "total_estimated_resources": {
+            "total_gate_est_without_decode": 54,
+            "total_depth_est_without_decode": 15,
+            "total_qubits_est_without_decode": 18,
+            "total_gate_est_with_decode": 21174,
+            "total_depth_est_with_decode": 1167,
+            "total_qubits_est_with_decode": 41,
+            "total_gate_est_with_decode_and_weight_register_est": 21190,
+            "total_depth_est_with_decode_and_weight_register_est": 1172,
+            "total_qubits_est_with_decode_and_weight_register_est": 42,
+            "total_without_decode": {
+              "gate_est": 54,
+              "depth_est": 15,
+              "qubits_est": 18
+            },
+            "total_with_decode": {
+              "gate_est": 21174,
+              "depth_est": 1167,
+              "qubits_est": 41
+            },
+            "total_with_decode_and_weight_register_est": {
+              "gate_est": 21190,
+              "depth_est": 1172,
+              "qubits_est": 42
+            }
+          },
+          "prefix_gate_est": 54,
+          "prefix_depth_est": 15,
+          "decode_model_gate_est": 21120,
+          "decode_model_depth_est": 1152,
+          "total_gate_est_with_decode": 21174,
+          "total_depth_est_with_decode": 1167,
+          "total_qubits_est_with_decode": 41,
+          "coherent_alpha_overhead": {
+            "status": "not_applicable",
+            "weight_register_qubits": null,
+            "coherent_prep_overhead": null,
+            "controlled_sector_overhead": null
+          },
+          "resource_status": {
+            "decode_included": true,
+            "decode_model_status": "analytic_estimate",
+            "weight_register_status": "not_applicable",
+            "transpiled_subset_available": false
+          },
+          "qiskit_subset_resource_report": {
+            "scope": {
+              "scope": "structural_subset_only",
+              "includes": [
+                "approximate_low_weight_superposition",
+                "phase_kick",
+                "syndrome_compute",
+                "final_hadamards"
+              ],
+              "excludes": [
+                "decode_uncompute"
+              ],
+              "decode_uncompute_included": false,
+              "postselection_stage_present": false,
+              "distribution_basis": "syndrome_register_after_final_hadamards",
+              "subset_path": "implemented_structural_only",
+              "parity_claim": "no_full_end_to_end_parity_claim"
+            },
+            "includes": [
+              "approximate_low_weight_superposition",
+              "phase_kick",
+              "syndrome_compute",
+              "final_hadamards"
+            ],
+            "excludes": [
+              "decode_uncompute"
+            ],
+            "decode_uncompute_included": false,
+            "subset_path": "implemented_structural_only",
+            "distribution_basis": "syndrome_register_after_final_hadamards",
+            "postselection_stage_present": false,
+            "parity_claim": "no_full_end_to_end_parity_claim",
+            "status": "not_available",
+            "reason": "qiskit_not_installed",
+            "transpiled_depth": null,
+            "cx_count": null,
+            "qubit_count": null,
+            "gate_counts": {}
+          },
+          "qiskit_transpiled_structural_count": {
+            "category": "qiskit_transpiled_structural_count",
+            "status": "not_available",
+            "reason": "qiskit_not_installed",
+            "scope": {
+              "scope": "structural_subset_only",
+              "includes": [],
+              "excludes": [
+                "decode_uncompute"
+              ],
+              "decode_uncompute_included": false,
+              "postselection_stage_present": false,
+              "distribution_basis": "syndrome_register_after_final_hadamards",
+              "subset_path": "implemented_structural_only",
+              "parity_claim": "no_full_end_to_end_parity_claim",
+              "dicke_prep_status": "unknown",
+              "category": "implemented_subset_only"
+            },
+            "qubit_count": null,
+            "transpiled_depth": null,
+            "cx_count": null,
+            "gate_counts": {},
+            "basis_gates": [
+              "cx",
+              "rz",
+              "sx",
+              "x"
+            ],
+            "optimization_level": 1
+          },
+          "qiskit_subset_transpiled_depth": null,
+          "qiskit_subset_cx_count": null,
+          "qiskit_subset_qubit_count": null,
+          "qiskit_subset_status": "not_available"
+        },
+        "status": {
+          "decode_confidence": "implementation_proxy",
+          "coherent_supported": false
+        }
+      },
+      {
+        "row_id": "P3|d9522c28a59abbbdfc1044ff106461604c877dbbf8364f64fc6939d676b6bd58|bruteforce|heuristic|mixture|P3 / wht_truncated / bruteforce / heuristic / mixture",
+        "row_status": "complete",
+        "instance_id": "P3",
+        "instance_family": "P",
+        "encoding_artifact_id": "d9522c28a59abbbdfc1044ff106461604c877dbbf8364f64fc6939d676b6bd58",
+        "run_label": "P3 / wht_truncated / bruteforce / heuristic / mixture",
+        "provenance": {
+          "encoding_backend": "wht_truncated",
+          "decoder": "bruteforce",
+          "decoder_resource_model": "lookup_table_reversible",
+          "alpha_mode": "heuristic",
+          "execution_mode": "mixture"
+        },
+        "quality": {
+          "best_F": 3000.0,
+          "F_star": 3000.0,
+          "best_F_over_F_star": 1.0,
+          "best_G": 25954.6875,
+          "top1_regret": 0.0,
+          "topk_regret": 0.0,
+          "optimum_recall_at_k": 10.0,
+          "best_top_G_sampled_F": 3000.0,
+          "decision_distortion": 0.0,
+          "decode_success": 0.203125,
+          "postselection_success": 1.0
+        },
+        "faithfulness": {
+          "spearman_rho_F_G": 0.9406504562036431,
+          "retained_energy_eta": 0.9943565708724788
+        },
+        "collision_structure": {
+          "n": 6,
+          "m": 12,
+          "rank": 6,
+          "rank_deficiency": 0,
+          "row_weight_mean": 1.8333333333333333,
+          "row_weight_max": 4,
+          "col_weight_mean": 3.6666666666666665,
+          "col_weight_max": 5,
+          "syndrome_density": 1.0,
+          "ambiguous_syndrome_count": 0,
+          "collision_rate": 0.0,
+          "decodable_syndrome_fraction": 0.203125
+        },
+        "resources": {
+          "implemented_resources": {
+            "dicke_prep": {
+              "gate_est": 22,
+              "depth_est": 12,
+              "ancilla_est": 0,
+              "confidence": "analytic_upper_bound"
+            },
+            "phase_kick": {
+              "gate_est": 4,
+              "depth_est": 1,
+              "ancilla_est": 0,
+              "confidence": "exact_formula"
+            },
+            "syndrome_compute": {
+              "gate_est": 22,
+              "depth_est": 1,
+              "ancilla_est": 0,
+              "confidence": "exact_formula"
+            },
+            "hadamards": {
+              "gate_est": 6,
+              "depth_est": 1,
+              "ancilla_est": 0,
+              "confidence": "exact_formula"
+            }
+          },
+          "analytic_estimates": {
+            "decode_uncompute": {
+              "model": "lookup_table_reversible",
+              "status": "analytic_estimate_conservative",
+              "gate_est": 1716,
+              "depth_est": 819,
+              "ancilla_est": 22,
+              "confidence": "analytic_upper_bound",
+              "details": {
+                "mapping_size": 13,
+                "decodable_syndromes": 13,
+                "ambiguous_syndromes": 0,
+                "syndrome_space_size": 64,
+                "assumptions": [
+                  "Serial reversible lookup over populated syndrome rows",
+                  "n-bit comparators per row with explicit uncompute",
+                  "m-bit controlled write for uniquely decodable rows",
+                  "Conservative analytic estimate, not compiled gate synthesis"
+                ]
+              },
+              "cost_drivers": {
+                "estimated_lookup_table_size": 13,
+                "number_of_unique_syndromes_decodable_at_ell": 13,
+                "decoder_collision_rate": 0.0,
+                "collision_guard_gate_est": 0,
+                "collision_guard_depth_est": 0
+              }
+            },
+            "coherent_weight_register_overhead": {
+              "weight_register_qubits": 1,
+              "gate_est": 16,
+              "depth_est": 5,
+              "ancilla_est": 0,
+              "status": "analytic_upper_bound",
+              "confidence": "analytic_upper_bound",
+              "details": {
+                "assumptions": [
+                  "Generic q-qubit amplitude preparation upper bound (not transpiled)",
+                  "No explicit ancilla assumed for the coarse upper-bound model"
+                ]
+              }
+            }
+          },
+          "total_estimated_resources": {
+            "total_gate_est_without_decode": 54,
+            "total_depth_est_without_decode": 15,
+            "total_qubits_est_without_decode": 18,
+            "total_gate_est_with_decode": 1770,
+            "total_depth_est_with_decode": 834,
+            "total_qubits_est_with_decode": 40,
+            "total_gate_est_with_decode_and_weight_register_est": 1786,
+            "total_depth_est_with_decode_and_weight_register_est": 839,
+            "total_qubits_est_with_decode_and_weight_register_est": 41,
+            "total_without_decode": {
+              "gate_est": 54,
+              "depth_est": 15,
+              "qubits_est": 18
+            },
+            "total_with_decode": {
+              "gate_est": 1770,
+              "depth_est": 834,
+              "qubits_est": 40
+            },
+            "total_with_decode_and_weight_register_est": {
+              "gate_est": 1786,
+              "depth_est": 839,
+              "qubits_est": 41
+            }
+          },
+          "prefix_gate_est": 54,
+          "prefix_depth_est": 15,
+          "decode_model_gate_est": 1716,
+          "decode_model_depth_est": 819,
+          "total_gate_est_with_decode": 1770,
+          "total_depth_est_with_decode": 834,
+          "total_qubits_est_with_decode": 40,
+          "coherent_alpha_overhead": {
+            "status": "not_applicable",
+            "weight_register_qubits": null,
+            "coherent_prep_overhead": null,
+            "controlled_sector_overhead": null
+          },
+          "resource_status": {
+            "decode_included": true,
+            "decode_model_status": "analytic_estimate_conservative",
+            "weight_register_status": "not_applicable",
+            "transpiled_subset_available": false
+          },
+          "qiskit_subset_resource_report": {
+            "scope": {
+              "scope": "structural_subset_only",
+              "includes": [
+                "approximate_low_weight_superposition",
+                "phase_kick",
+                "syndrome_compute",
+                "final_hadamards"
+              ],
+              "excludes": [
+                "decode_uncompute"
+              ],
+              "decode_uncompute_included": false,
+              "postselection_stage_present": false,
+              "distribution_basis": "syndrome_register_after_final_hadamards",
+              "subset_path": "implemented_structural_only",
+              "parity_claim": "no_full_end_to_end_parity_claim"
+            },
+            "includes": [
+              "approximate_low_weight_superposition",
+              "phase_kick",
+              "syndrome_compute",
+              "final_hadamards"
+            ],
+            "excludes": [
+              "decode_uncompute"
+            ],
+            "decode_uncompute_included": false,
+            "subset_path": "implemented_structural_only",
+            "distribution_basis": "syndrome_register_after_final_hadamards",
+            "postselection_stage_present": false,
+            "parity_claim": "no_full_end_to_end_parity_claim",
+            "status": "not_available",
+            "reason": "qiskit_not_installed",
+            "transpiled_depth": null,
+            "cx_count": null,
+            "qubit_count": null,
+            "gate_counts": {}
+          },
+          "qiskit_transpiled_structural_count": {
+            "category": "qiskit_transpiled_structural_count",
+            "status": "not_available",
+            "reason": "qiskit_not_installed",
+            "scope": {
+              "scope": "structural_subset_only",
+              "includes": [],
+              "excludes": [
+                "decode_uncompute"
+              ],
+              "decode_uncompute_included": false,
+              "postselection_stage_present": false,
+              "distribution_basis": "syndrome_register_after_final_hadamards",
+              "subset_path": "implemented_structural_only",
+              "parity_claim": "no_full_end_to_end_parity_claim",
+              "dicke_prep_status": "unknown",
+              "category": "implemented_subset_only"
+            },
+            "qubit_count": null,
+            "transpiled_depth": null,
+            "cx_count": null,
+            "gate_counts": {},
+            "basis_gates": [
+              "cx",
+              "rz",
+              "sx",
+              "x"
+            ],
+            "optimization_level": 1
+          },
+          "qiskit_subset_transpiled_depth": null,
+          "qiskit_subset_cx_count": null,
+          "qiskit_subset_qubit_count": null,
+          "qiskit_subset_status": "not_available"
+        },
+        "status": {
+          "decode_confidence": "analytic_upper_bound",
+          "coherent_supported": false
+        }
+      },
+      {
+        "row_id": "P3|d9522c28a59abbbdfc1044ff106461604c877dbbf8364f64fc6939d676b6bd58|bruteforce|paper|coherent|P3 / wht_truncated / bruteforce / paper / coherent",
+        "row_status": "skipped",
+        "instance_id": "P3",
+        "instance_family": "P",
+        "encoding_artifact_id": "d9522c28a59abbbdfc1044ff106461604c877dbbf8364f64fc6939d676b6bd58",
+        "run_label": "P3 / wht_truncated / bruteforce / paper / coherent",
+        "provenance": {
+          "encoding_backend": "wht_truncated",
+          "decoder": "bruteforce",
+          "decoder_resource_model": "lookup_table_reversible",
+          "alpha_mode": "paper",
+          "execution_mode": "coherent"
+        },
+        "quality": {
+          "best_F": null,
+          "F_star": 3000.0,
+          "best_F_over_F_star": null,
+          "best_G": null,
+          "top1_regret": null,
+          "topk_regret": null,
+          "optimum_recall_at_k": null,
+          "best_top_G_sampled_F": null,
+          "decision_distortion": null,
+          "decode_success": null,
+          "postselection_success": null
+        },
+        "faithfulness": {
+          "spearman_rho_F_G": 0.9122648688826857,
+          "retained_energy_eta": 0.9943565708724788
+        },
+        "collision_structure": {
+          "n": 6,
+          "m": 12,
+          "rank": 6,
+          "rank_deficiency": 0,
+          "row_weight_mean": 1.8333333333333333,
+          "row_weight_max": 4,
+          "col_weight_mean": 3.6666666666666665,
+          "col_weight_max": 5,
+          "syndrome_density": 1.0,
+          "ambiguous_syndrome_count": 0,
+          "collision_rate": 0.0,
+          "decodable_syndrome_fraction": 0.203125
+        },
+        "resources": {
+          "implemented_resources": {
+            "dicke_prep": {
+              "gate_est": 22,
+              "depth_est": 12,
+              "ancilla_est": 0,
+              "confidence": "analytic_upper_bound"
+            },
+            "phase_kick": {
+              "gate_est": 4,
+              "depth_est": 1,
+              "ancilla_est": 0,
+              "confidence": "exact_formula"
+            },
+            "syndrome_compute": {
+              "gate_est": 22,
+              "depth_est": 1,
+              "ancilla_est": 0,
+              "confidence": "exact_formula"
+            },
+            "hadamards": {
+              "gate_est": 6,
+              "depth_est": 1,
+              "ancilla_est": 0,
+              "confidence": "exact_formula"
+            }
+          },
+          "analytic_estimates": {
+            "decode_uncompute": {
+              "model": "lookup_table_reversible",
+              "status": "analytic_estimate_conservative",
+              "gate_est": 1716,
+              "depth_est": 819,
+              "ancilla_est": 22,
+              "confidence": "analytic_upper_bound",
+              "details": {
+                "mapping_size": 13,
+                "decodable_syndromes": 13,
+                "ambiguous_syndromes": 0,
+                "syndrome_space_size": 64,
+                "assumptions": [
+                  "Serial reversible lookup over populated syndrome rows",
+                  "n-bit comparators per row with explicit uncompute",
+                  "m-bit controlled write for uniquely decodable rows",
+                  "Conservative analytic estimate, not compiled gate synthesis"
+                ]
+              },
+              "cost_drivers": {
+                "estimated_lookup_table_size": 13,
+                "number_of_unique_syndromes_decodable_at_ell": 13,
+                "decoder_collision_rate": 0.0,
+                "collision_guard_gate_est": 0,
+                "collision_guard_depth_est": 0
+              }
+            },
+            "coherent_weight_register_overhead": {
+              "weight_register_qubits": 1,
+              "gate_est": 16,
+              "depth_est": 5,
+              "ancilla_est": 0,
+              "status": "analytic_upper_bound",
+              "confidence": "analytic_upper_bound",
+              "details": {
+                "assumptions": [
+                  "Generic q-qubit amplitude preparation upper bound (not transpiled)",
+                  "No explicit ancilla assumed for the coarse upper-bound model"
+                ]
+              }
+            }
+          },
+          "total_estimated_resources": {
+            "total_gate_est_without_decode": 54,
+            "total_depth_est_without_decode": 15,
+            "total_qubits_est_without_decode": 18,
+            "total_gate_est_with_decode": 1770,
+            "total_depth_est_with_decode": 834,
+            "total_qubits_est_with_decode": 40,
+            "total_gate_est_with_decode_and_weight_register_est": 1786,
+            "total_depth_est_with_decode_and_weight_register_est": 839,
+            "total_qubits_est_with_decode_and_weight_register_est": 41,
+            "total_without_decode": {
+              "gate_est": 54,
+              "depth_est": 15,
+              "qubits_est": 18
+            },
+            "total_with_decode": {
+              "gate_est": 1770,
+              "depth_est": 834,
+              "qubits_est": 40
+            },
+            "total_with_decode_and_weight_register_est": {
+              "gate_est": 1786,
+              "depth_est": 839,
+              "qubits_est": 41
+            }
+          },
+          "prefix_gate_est": 54,
+          "prefix_depth_est": 15,
+          "decode_model_gate_est": 1716,
+          "decode_model_depth_est": 819,
+          "total_gate_est_with_decode": 1770,
+          "total_depth_est_with_decode": 834,
+          "total_qubits_est_with_decode": 40,
+          "coherent_alpha_overhead": {
+            "status": "analytic_upper_bound",
+            "weight_register_qubits": 1,
+            "coherent_prep_overhead": 16,
+            "controlled_sector_overhead": 5
+          },
+          "resource_status": {
+            "decode_included": true,
+            "decode_model_status": "analytic_estimate_conservative",
+            "weight_register_status": "analytic_upper_bound",
+            "transpiled_subset_available": false
+          },
+          "qiskit_subset_resource_report": {
+            "scope": {
+              "scope": "structural_subset_only",
+              "includes": [
+                "approximate_low_weight_superposition",
+                "phase_kick",
+                "syndrome_compute",
+                "final_hadamards"
+              ],
+              "excludes": [
+                "decode_uncompute"
+              ],
+              "decode_uncompute_included": false,
+              "postselection_stage_present": false,
+              "distribution_basis": "syndrome_register_after_final_hadamards",
+              "subset_path": "implemented_structural_only",
+              "parity_claim": "no_full_end_to_end_parity_claim"
+            },
+            "includes": [
+              "approximate_low_weight_superposition",
+              "phase_kick",
+              "syndrome_compute",
+              "final_hadamards"
+            ],
+            "excludes": [
+              "decode_uncompute"
+            ],
+            "decode_uncompute_included": false,
+            "subset_path": "implemented_structural_only",
+            "distribution_basis": "syndrome_register_after_final_hadamards",
+            "postselection_stage_present": false,
+            "parity_claim": "no_full_end_to_end_parity_claim",
+            "status": "not_available",
+            "reason": "qiskit_not_installed",
+            "transpiled_depth": null,
+            "cx_count": null,
+            "qubit_count": null,
+            "gate_counts": {}
+          },
+          "qiskit_transpiled_structural_count": {
+            "category": "qiskit_transpiled_structural_count",
+            "status": "not_available",
+            "reason": "qiskit_not_installed",
+            "scope": {
+              "scope": "structural_subset_only",
+              "includes": [],
+              "excludes": [
+                "decode_uncompute"
+              ],
+              "decode_uncompute_included": false,
+              "postselection_stage_present": false,
+              "distribution_basis": "syndrome_register_after_final_hadamards",
+              "subset_path": "implemented_structural_only",
+              "parity_claim": "no_full_end_to_end_parity_claim",
+              "dicke_prep_status": "unknown",
+              "category": "implemented_subset_only"
+            },
+            "qubit_count": null,
+            "transpiled_depth": null,
+            "cx_count": null,
+            "gate_counts": {},
+            "basis_gates": [
+              "cx",
+              "rz",
+              "sx",
+              "x"
+            ],
+            "optimization_level": 1
+          },
+          "qiskit_subset_transpiled_depth": null,
+          "qiskit_subset_cx_count": null,
+          "qiskit_subset_qubit_count": null,
+          "qiskit_subset_status": "not_available"
+        },
+        "status": {
+          "decode_confidence": "analytic_upper_bound",
+          "coherent_supported": false
+        }
+      },
+      {
+        "row_id": "P3|d9522c28a59abbbdfc1044ff106461604c877dbbf8364f64fc6939d676b6bd58|bruteforce|paper|mixture|P3 / wht_truncated / bruteforce / paper / mixture",
+        "row_status": "complete",
+        "instance_id": "P3",
+        "instance_family": "P",
+        "encoding_artifact_id": "d9522c28a59abbbdfc1044ff106461604c877dbbf8364f64fc6939d676b6bd58",
+        "run_label": "P3 / wht_truncated / bruteforce / paper / mixture",
+        "provenance": {
+          "encoding_backend": "wht_truncated",
+          "decoder": "bruteforce",
+          "decoder_resource_model": "lookup_table_reversible",
+          "alpha_mode": "paper",
+          "execution_mode": "mixture"
+        },
+        "quality": {
+          "best_F": 3000.0,
+          "F_star": 3000.0,
+          "best_F_over_F_star": 1.0,
+          "best_G": 25954.6875,
+          "top1_regret": 0.0,
+          "topk_regret": 0.0,
+          "optimum_recall_at_k": 10.0,
+          "best_top_G_sampled_F": 3000.0,
+          "decision_distortion": 0.0,
+          "decode_success": 0.203125,
+          "postselection_success": 1.0
+        },
+        "faithfulness": {
+          "spearman_rho_F_G": 0.9367152916621617,
+          "retained_energy_eta": 0.9943565708724788
+        },
+        "collision_structure": {
+          "n": 6,
+          "m": 12,
+          "rank": 6,
+          "rank_deficiency": 0,
+          "row_weight_mean": 1.8333333333333333,
+          "row_weight_max": 4,
+          "col_weight_mean": 3.6666666666666665,
+          "col_weight_max": 5,
+          "syndrome_density": 1.0,
+          "ambiguous_syndrome_count": 0,
+          "collision_rate": 0.0,
+          "decodable_syndrome_fraction": 0.203125
+        },
+        "resources": {
+          "implemented_resources": {
+            "dicke_prep": {
+              "gate_est": 22,
+              "depth_est": 12,
+              "ancilla_est": 0,
+              "confidence": "analytic_upper_bound"
+            },
+            "phase_kick": {
+              "gate_est": 4,
+              "depth_est": 1,
+              "ancilla_est": 0,
+              "confidence": "exact_formula"
+            },
+            "syndrome_compute": {
+              "gate_est": 22,
+              "depth_est": 1,
+              "ancilla_est": 0,
+              "confidence": "exact_formula"
+            },
+            "hadamards": {
+              "gate_est": 6,
+              "depth_est": 1,
+              "ancilla_est": 0,
+              "confidence": "exact_formula"
+            }
+          },
+          "analytic_estimates": {
+            "decode_uncompute": {
+              "model": "lookup_table_reversible",
+              "status": "analytic_estimate_conservative",
+              "gate_est": 1716,
+              "depth_est": 819,
+              "ancilla_est": 22,
+              "confidence": "analytic_upper_bound",
+              "details": {
+                "mapping_size": 13,
+                "decodable_syndromes": 13,
+                "ambiguous_syndromes": 0,
+                "syndrome_space_size": 64,
+                "assumptions": [
+                  "Serial reversible lookup over populated syndrome rows",
+                  "n-bit comparators per row with explicit uncompute",
+                  "m-bit controlled write for uniquely decodable rows",
+                  "Conservative analytic estimate, not compiled gate synthesis"
+                ]
+              },
+              "cost_drivers": {
+                "estimated_lookup_table_size": 13,
+                "number_of_unique_syndromes_decodable_at_ell": 13,
+                "decoder_collision_rate": 0.0,
+                "collision_guard_gate_est": 0,
+                "collision_guard_depth_est": 0
+              }
+            },
+            "coherent_weight_register_overhead": {
+              "weight_register_qubits": 1,
+              "gate_est": 16,
+              "depth_est": 5,
+              "ancilla_est": 0,
+              "status": "analytic_upper_bound",
+              "confidence": "analytic_upper_bound",
+              "details": {
+                "assumptions": [
+                  "Generic q-qubit amplitude preparation upper bound (not transpiled)",
+                  "No explicit ancilla assumed for the coarse upper-bound model"
+                ]
+              }
+            }
+          },
+          "total_estimated_resources": {
+            "total_gate_est_without_decode": 54,
+            "total_depth_est_without_decode": 15,
+            "total_qubits_est_without_decode": 18,
+            "total_gate_est_with_decode": 1770,
+            "total_depth_est_with_decode": 834,
+            "total_qubits_est_with_decode": 40,
+            "total_gate_est_with_decode_and_weight_register_est": 1786,
+            "total_depth_est_with_decode_and_weight_register_est": 839,
+            "total_qubits_est_with_decode_and_weight_register_est": 41,
+            "total_without_decode": {
+              "gate_est": 54,
+              "depth_est": 15,
+              "qubits_est": 18
+            },
+            "total_with_decode": {
+              "gate_est": 1770,
+              "depth_est": 834,
+              "qubits_est": 40
+            },
+            "total_with_decode_and_weight_register_est": {
+              "gate_est": 1786,
+              "depth_est": 839,
+              "qubits_est": 41
+            }
+          },
+          "prefix_gate_est": 54,
+          "prefix_depth_est": 15,
+          "decode_model_gate_est": 1716,
+          "decode_model_depth_est": 819,
+          "total_gate_est_with_decode": 1770,
+          "total_depth_est_with_decode": 834,
+          "total_qubits_est_with_decode": 40,
+          "coherent_alpha_overhead": {
+            "status": "not_applicable",
+            "weight_register_qubits": null,
+            "coherent_prep_overhead": null,
+            "controlled_sector_overhead": null
+          },
+          "resource_status": {
+            "decode_included": true,
+            "decode_model_status": "analytic_estimate_conservative",
+            "weight_register_status": "not_applicable",
+            "transpiled_subset_available": false
+          },
+          "qiskit_subset_resource_report": {
+            "scope": {
+              "scope": "structural_subset_only",
+              "includes": [
+                "approximate_low_weight_superposition",
+                "phase_kick",
+                "syndrome_compute",
+                "final_hadamards"
+              ],
+              "excludes": [
+                "decode_uncompute"
+              ],
+              "decode_uncompute_included": false,
+              "postselection_stage_present": false,
+              "distribution_basis": "syndrome_register_after_final_hadamards",
+              "subset_path": "implemented_structural_only",
+              "parity_claim": "no_full_end_to_end_parity_claim"
+            },
+            "includes": [
+              "approximate_low_weight_superposition",
+              "phase_kick",
+              "syndrome_compute",
+              "final_hadamards"
+            ],
+            "excludes": [
+              "decode_uncompute"
+            ],
+            "decode_uncompute_included": false,
+            "subset_path": "implemented_structural_only",
+            "distribution_basis": "syndrome_register_after_final_hadamards",
+            "postselection_stage_present": false,
+            "parity_claim": "no_full_end_to_end_parity_claim",
+            "status": "not_available",
+            "reason": "qiskit_not_installed",
+            "transpiled_depth": null,
+            "cx_count": null,
+            "qubit_count": null,
+            "gate_counts": {}
+          },
+          "qiskit_transpiled_structural_count": {
+            "category": "qiskit_transpiled_structural_count",
+            "status": "not_available",
+            "reason": "qiskit_not_installed",
+            "scope": {
+              "scope": "structural_subset_only",
+              "includes": [],
+              "excludes": [
+                "decode_uncompute"
+              ],
+              "decode_uncompute_included": false,
+              "postselection_stage_present": false,
+              "distribution_basis": "syndrome_register_after_final_hadamards",
+              "subset_path": "implemented_structural_only",
+              "parity_claim": "no_full_end_to_end_parity_claim",
+              "dicke_prep_status": "unknown",
+              "category": "implemented_subset_only"
+            },
+            "qubit_count": null,
+            "transpiled_depth": null,
+            "cx_count": null,
+            "gate_counts": {},
+            "basis_gates": [
+              "cx",
+              "rz",
+              "sx",
+              "x"
+            ],
+            "optimization_level": 1
+          },
+          "qiskit_subset_transpiled_depth": null,
+          "qiskit_subset_cx_count": null,
+          "qiskit_subset_qubit_count": null,
+          "qiskit_subset_status": "not_available"
+        },
+        "status": {
+          "decode_confidence": "analytic_upper_bound",
+          "coherent_supported": false
+        }
+      },
+      {
+        "row_id": "P3|d9522c28a59abbbdfc1044ff106461604c877dbbf8364f64fc6939d676b6bd58|bruteforce|paper|mixture|P3 / wht_truncated / bruteforce / paper / mixture",
+        "row_status": "complete",
+        "instance_id": "P3",
+        "instance_family": "P",
+        "encoding_artifact_id": "d9522c28a59abbbdfc1044ff106461604c877dbbf8364f64fc6939d676b6bd58",
+        "run_label": "P3 / wht_truncated / bruteforce / paper / mixture",
+        "provenance": {
+          "encoding_backend": "wht_truncated",
+          "decoder": "bruteforce",
+          "decoder_resource_model": "lookup_table_reversible",
+          "alpha_mode": "paper",
+          "execution_mode": "mixture"
+        },
+        "quality": {
+          "best_F": 3000.0,
+          "F_star": 3000.0,
+          "best_F_over_F_star": 1.0,
+          "best_G": 25954.6875,
+          "top1_regret": 0.0,
+          "topk_regret": 0.0,
+          "optimum_recall_at_k": 10.0,
+          "best_top_G_sampled_F": 3000.0,
+          "decision_distortion": 0.0,
+          "decode_success": 0.203125,
+          "postselection_success": 1.0
+        },
+        "faithfulness": {
+          "spearman_rho_F_G": 0.9367152916621617,
+          "retained_energy_eta": 0.9943565708724788
+        },
+        "collision_structure": {
+          "n": 6,
+          "m": 12,
+          "rank": 6,
+          "rank_deficiency": 0,
+          "row_weight_mean": 1.8333333333333333,
+          "row_weight_max": 4,
+          "col_weight_mean": 3.6666666666666665,
+          "col_weight_max": 5,
+          "syndrome_density": 1.0,
+          "ambiguous_syndrome_count": 0,
+          "collision_rate": 0.0,
+          "decodable_syndrome_fraction": 0.203125
+        },
+        "resources": {
+          "implemented_resources": {
+            "dicke_prep": {
+              "gate_est": 22,
+              "depth_est": 12,
+              "ancilla_est": 0,
+              "confidence": "analytic_upper_bound"
+            },
+            "phase_kick": {
+              "gate_est": 4,
+              "depth_est": 1,
+              "ancilla_est": 0,
+              "confidence": "exact_formula"
+            },
+            "syndrome_compute": {
+              "gate_est": 22,
+              "depth_est": 1,
+              "ancilla_est": 0,
+              "confidence": "exact_formula"
+            },
+            "hadamards": {
+              "gate_est": 6,
+              "depth_est": 1,
+              "ancilla_est": 0,
+              "confidence": "exact_formula"
+            }
+          },
+          "analytic_estimates": {
+            "decode_uncompute": {
+              "model": "lookup_table_reversible",
+              "status": "analytic_estimate_conservative",
+              "gate_est": 1716,
+              "depth_est": 819,
+              "ancilla_est": 22,
+              "confidence": "analytic_upper_bound",
+              "details": {
+                "mapping_size": 13,
+                "decodable_syndromes": 13,
+                "ambiguous_syndromes": 0,
+                "syndrome_space_size": 64,
+                "assumptions": [
+                  "Serial reversible lookup over populated syndrome rows",
+                  "n-bit comparators per row with explicit uncompute",
+                  "m-bit controlled write for uniquely decodable rows",
+                  "Conservative analytic estimate, not compiled gate synthesis"
+                ]
+              },
+              "cost_drivers": {
+                "estimated_lookup_table_size": 13,
+                "number_of_unique_syndromes_decodable_at_ell": 13,
+                "decoder_collision_rate": 0.0,
+                "collision_guard_gate_est": 0,
+                "collision_guard_depth_est": 0
+              }
+            },
+            "coherent_weight_register_overhead": {
+              "weight_register_qubits": 1,
+              "gate_est": 16,
+              "depth_est": 5,
+              "ancilla_est": 0,
+              "status": "analytic_upper_bound",
+              "confidence": "analytic_upper_bound",
+              "details": {
+                "assumptions": [
+                  "Generic q-qubit amplitude preparation upper bound (not transpiled)",
+                  "No explicit ancilla assumed for the coarse upper-bound model"
+                ]
+              }
+            }
+          },
+          "total_estimated_resources": {
+            "total_gate_est_without_decode": 54,
+            "total_depth_est_without_decode": 15,
+            "total_qubits_est_without_decode": 18,
+            "total_gate_est_with_decode": 1770,
+            "total_depth_est_with_decode": 834,
+            "total_qubits_est_with_decode": 40,
+            "total_gate_est_with_decode_and_weight_register_est": 1786,
+            "total_depth_est_with_decode_and_weight_register_est": 839,
+            "total_qubits_est_with_decode_and_weight_register_est": 41,
+            "total_without_decode": {
+              "gate_est": 54,
+              "depth_est": 15,
+              "qubits_est": 18
+            },
+            "total_with_decode": {
+              "gate_est": 1770,
+              "depth_est": 834,
+              "qubits_est": 40
+            },
+            "total_with_decode_and_weight_register_est": {
+              "gate_est": 1786,
+              "depth_est": 839,
+              "qubits_est": 41
+            }
+          },
+          "prefix_gate_est": 54,
+          "prefix_depth_est": 15,
+          "decode_model_gate_est": 1716,
+          "decode_model_depth_est": 819,
+          "total_gate_est_with_decode": 1770,
+          "total_depth_est_with_decode": 834,
+          "total_qubits_est_with_decode": 40,
+          "coherent_alpha_overhead": {
+            "status": "not_applicable",
+            "weight_register_qubits": null,
+            "coherent_prep_overhead": null,
+            "controlled_sector_overhead": null
+          },
+          "resource_status": {
+            "decode_included": true,
+            "decode_model_status": "analytic_estimate_conservative",
+            "weight_register_status": "not_applicable",
+            "transpiled_subset_available": false
+          },
+          "qiskit_subset_resource_report": {
+            "scope": {
+              "scope": "structural_subset_only",
+              "includes": [
+                "approximate_low_weight_superposition",
+                "phase_kick",
+                "syndrome_compute",
+                "final_hadamards"
+              ],
+              "excludes": [
+                "decode_uncompute"
+              ],
+              "decode_uncompute_included": false,
+              "postselection_stage_present": false,
+              "distribution_basis": "syndrome_register_after_final_hadamards",
+              "subset_path": "implemented_structural_only",
+              "parity_claim": "no_full_end_to_end_parity_claim"
+            },
+            "includes": [
+              "approximate_low_weight_superposition",
+              "phase_kick",
+              "syndrome_compute",
+              "final_hadamards"
+            ],
+            "excludes": [
+              "decode_uncompute"
+            ],
+            "decode_uncompute_included": false,
+            "subset_path": "implemented_structural_only",
+            "distribution_basis": "syndrome_register_after_final_hadamards",
+            "postselection_stage_present": false,
+            "parity_claim": "no_full_end_to_end_parity_claim",
+            "status": "not_available",
+            "reason": "qiskit_not_installed",
+            "transpiled_depth": null,
+            "cx_count": null,
+            "qubit_count": null,
+            "gate_counts": {}
+          },
+          "qiskit_transpiled_structural_count": {
+            "category": "qiskit_transpiled_structural_count",
+            "status": "not_available",
+            "reason": "qiskit_not_installed",
+            "scope": {
+              "scope": "structural_subset_only",
+              "includes": [],
+              "excludes": [
+                "decode_uncompute"
+              ],
+              "decode_uncompute_included": false,
+              "postselection_stage_present": false,
+              "distribution_basis": "syndrome_register_after_final_hadamards",
+              "subset_path": "implemented_structural_only",
+              "parity_claim": "no_full_end_to_end_parity_claim",
+              "dicke_prep_status": "unknown",
+              "category": "implemented_subset_only"
+            },
+            "qubit_count": null,
+            "transpiled_depth": null,
+            "cx_count": null,
+            "gate_counts": {},
+            "basis_gates": [
+              "cx",
+              "rz",
+              "sx",
+              "x"
+            ],
+            "optimization_level": 1
+          },
+          "qiskit_subset_transpiled_depth": null,
+          "qiskit_subset_cx_count": null,
+          "qiskit_subset_qubit_count": null,
+          "qiskit_subset_status": "not_available"
+        },
+        "status": {
+          "decode_confidence": "analytic_upper_bound",
+          "coherent_supported": false
+        }
+      },
+      {
+        "row_id": "P3|d9522c28a59abbbdfc1044ff106461604c877dbbf8364f64fc6939d676b6bd58|bruteforce|uniform|mixture|P3 / wht_truncated / bruteforce / uniform / mixture",
+        "row_status": "complete",
+        "instance_id": "P3",
+        "instance_family": "P",
+        "encoding_artifact_id": "d9522c28a59abbbdfc1044ff106461604c877dbbf8364f64fc6939d676b6bd58",
+        "run_label": "P3 / wht_truncated / bruteforce / uniform / mixture",
+        "provenance": {
+          "encoding_backend": "wht_truncated",
+          "decoder": "bruteforce",
+          "decoder_resource_model": "lookup_table_reversible",
+          "alpha_mode": "uniform",
+          "execution_mode": "mixture"
+        },
+        "quality": {
+          "best_F": 3000.0,
+          "F_star": 3000.0,
+          "best_F_over_F_star": 1.0,
+          "best_G": 25954.6875,
+          "top1_regret": 0.0,
+          "topk_regret": 0.0,
+          "optimum_recall_at_k": 10.0,
+          "best_top_G_sampled_F": 3000.0,
+          "decision_distortion": 0.0,
+          "decode_success": 0.203125,
+          "postselection_success": 1.0
+        },
+        "faithfulness": {
+          "spearman_rho_F_G": 0.9367152916621617,
+          "retained_energy_eta": 0.9943565708724788
+        },
+        "collision_structure": {
+          "n": 6,
+          "m": 12,
+          "rank": 6,
+          "rank_deficiency": 0,
+          "row_weight_mean": 1.8333333333333333,
+          "row_weight_max": 4,
+          "col_weight_mean": 3.6666666666666665,
+          "col_weight_max": 5,
+          "syndrome_density": 1.0,
+          "ambiguous_syndrome_count": 0,
+          "collision_rate": 0.0,
+          "decodable_syndrome_fraction": 0.203125
+        },
+        "resources": {
+          "implemented_resources": {
+            "dicke_prep": {
+              "gate_est": 22,
+              "depth_est": 12,
+              "ancilla_est": 0,
+              "confidence": "analytic_upper_bound"
+            },
+            "phase_kick": {
+              "gate_est": 4,
+              "depth_est": 1,
+              "ancilla_est": 0,
+              "confidence": "exact_formula"
+            },
+            "syndrome_compute": {
+              "gate_est": 22,
+              "depth_est": 1,
+              "ancilla_est": 0,
+              "confidence": "exact_formula"
+            },
+            "hadamards": {
+              "gate_est": 6,
+              "depth_est": 1,
+              "ancilla_est": 0,
+              "confidence": "exact_formula"
+            }
+          },
+          "analytic_estimates": {
+            "decode_uncompute": {
+              "model": "lookup_table_reversible",
+              "status": "analytic_estimate_conservative",
+              "gate_est": 1716,
+              "depth_est": 819,
+              "ancilla_est": 22,
+              "confidence": "analytic_upper_bound",
+              "details": {
+                "mapping_size": 13,
+                "decodable_syndromes": 13,
+                "ambiguous_syndromes": 0,
+                "syndrome_space_size": 64,
+                "assumptions": [
+                  "Serial reversible lookup over populated syndrome rows",
+                  "n-bit comparators per row with explicit uncompute",
+                  "m-bit controlled write for uniquely decodable rows",
+                  "Conservative analytic estimate, not compiled gate synthesis"
+                ]
+              },
+              "cost_drivers": {
+                "estimated_lookup_table_size": 13,
+                "number_of_unique_syndromes_decodable_at_ell": 13,
+                "decoder_collision_rate": 0.0,
+                "collision_guard_gate_est": 0,
+                "collision_guard_depth_est": 0
+              }
+            },
+            "coherent_weight_register_overhead": {
+              "weight_register_qubits": 1,
+              "gate_est": 16,
+              "depth_est": 5,
+              "ancilla_est": 0,
+              "status": "analytic_upper_bound",
+              "confidence": "analytic_upper_bound",
+              "details": {
+                "assumptions": [
+                  "Generic q-qubit amplitude preparation upper bound (not transpiled)",
+                  "No explicit ancilla assumed for the coarse upper-bound model"
+                ]
+              }
+            }
+          },
+          "total_estimated_resources": {
+            "total_gate_est_without_decode": 54,
+            "total_depth_est_without_decode": 15,
+            "total_qubits_est_without_decode": 18,
+            "total_gate_est_with_decode": 1770,
+            "total_depth_est_with_decode": 834,
+            "total_qubits_est_with_decode": 40,
+            "total_gate_est_with_decode_and_weight_register_est": 1786,
+            "total_depth_est_with_decode_and_weight_register_est": 839,
+            "total_qubits_est_with_decode_and_weight_register_est": 41,
+            "total_without_decode": {
+              "gate_est": 54,
+              "depth_est": 15,
+              "qubits_est": 18
+            },
+            "total_with_decode": {
+              "gate_est": 1770,
+              "depth_est": 834,
+              "qubits_est": 40
+            },
+            "total_with_decode_and_weight_register_est": {
+              "gate_est": 1786,
+              "depth_est": 839,
+              "qubits_est": 41
+            }
+          },
+          "prefix_gate_est": 54,
+          "prefix_depth_est": 15,
+          "decode_model_gate_est": 1716,
+          "decode_model_depth_est": 819,
+          "total_gate_est_with_decode": 1770,
+          "total_depth_est_with_decode": 834,
+          "total_qubits_est_with_decode": 40,
+          "coherent_alpha_overhead": {
+            "status": "not_applicable",
+            "weight_register_qubits": null,
+            "coherent_prep_overhead": null,
+            "controlled_sector_overhead": null
+          },
+          "resource_status": {
+            "decode_included": true,
+            "decode_model_status": "analytic_estimate_conservative",
+            "weight_register_status": "not_applicable",
+            "transpiled_subset_available": false
+          },
+          "qiskit_subset_resource_report": {
+            "scope": {
+              "scope": "structural_subset_only",
+              "includes": [
+                "approximate_low_weight_superposition",
+                "phase_kick",
+                "syndrome_compute",
+                "final_hadamards"
+              ],
+              "excludes": [
+                "decode_uncompute"
+              ],
+              "decode_uncompute_included": false,
+              "postselection_stage_present": false,
+              "distribution_basis": "syndrome_register_after_final_hadamards",
+              "subset_path": "implemented_structural_only",
+              "parity_claim": "no_full_end_to_end_parity_claim"
+            },
+            "includes": [
+              "approximate_low_weight_superposition",
+              "phase_kick",
+              "syndrome_compute",
+              "final_hadamards"
+            ],
+            "excludes": [
+              "decode_uncompute"
+            ],
+            "decode_uncompute_included": false,
+            "subset_path": "implemented_structural_only",
+            "distribution_basis": "syndrome_register_after_final_hadamards",
+            "postselection_stage_present": false,
+            "parity_claim": "no_full_end_to_end_parity_claim",
+            "status": "not_available",
+            "reason": "qiskit_not_installed",
+            "transpiled_depth": null,
+            "cx_count": null,
+            "qubit_count": null,
+            "gate_counts": {}
+          },
+          "qiskit_transpiled_structural_count": {
+            "category": "qiskit_transpiled_structural_count",
+            "status": "not_available",
+            "reason": "qiskit_not_installed",
+            "scope": {
+              "scope": "structural_subset_only",
+              "includes": [],
+              "excludes": [
+                "decode_uncompute"
+              ],
+              "decode_uncompute_included": false,
+              "postselection_stage_present": false,
+              "distribution_basis": "syndrome_register_after_final_hadamards",
+              "subset_path": "implemented_structural_only",
+              "parity_claim": "no_full_end_to_end_parity_claim",
+              "dicke_prep_status": "unknown",
+              "category": "implemented_subset_only"
+            },
+            "qubit_count": null,
+            "transpiled_depth": null,
+            "cx_count": null,
+            "gate_counts": {},
+            "basis_gates": [
+              "cx",
+              "rz",
+              "sx",
+              "x"
+            ],
+            "optimization_level": 1
+          },
+          "qiskit_subset_transpiled_depth": null,
+          "qiskit_subset_cx_count": null,
+          "qiskit_subset_qubit_count": null,
+          "qiskit_subset_status": "not_available"
+        },
+        "status": {
+          "decode_confidence": "analytic_upper_bound",
+          "coherent_supported": false
+        }
+      }
+    ],
+    "pareto": {
+      "objective": {
+        "maximize": [
+          "quality.best_F_over_F_star"
+        ],
+        "minimize": [
+          "resources.total_gate_est_with_decode"
+        ]
+      },
+      "row_ids": [
+        "P3|d9522c28a59abbbdfc1044ff106461604c877dbbf8364f64fc6939d676b6bd58|bruteforce|heuristic|mixture|P3 / wht_truncated / bruteforce / heuristic / mixture",
+        "P3|d9522c28a59abbbdfc1044ff106461604c877dbbf8364f64fc6939d676b6bd58|bruteforce|paper|mixture|P3 / wht_truncated / bruteforce / paper / mixture",
+        "P3|d9522c28a59abbbdfc1044ff106461604c877dbbf8364f64fc6939d676b6bd58|bruteforce|paper|mixture|P3 / wht_truncated / bruteforce / paper / mixture",
+        "P3|d9522c28a59abbbdfc1044ff106461604c877dbbf8364f64fc6939d676b6bd58|bruteforce|uniform|mixture|P3 / wht_truncated / bruteforce / uniform / mixture"
+      ]
+    },
+    "notes": [
+      "Embedded quality_vs_cost payload is canonical; no auto-export side effects.",
+      "Rows with missing pareto objective values are excluded from pareto evaluation."
+    ]
+  }
+}

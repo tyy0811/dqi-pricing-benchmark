@@ -1,0 +1,186 @@
+{
+  "schema_version": "1.0",
+  "encoding_type": "ilp_exact_reference",
+  "encoding_label": "toy_pricing_ilp_full_spectrum_reference",
+  "reference_path": "model_table_full_wht",
+  "spectrum_source": "full_exact_wht_of_F_table",
+  "exact_full_spectrum": true,
+  "exact_reconstructable": true,
+  "source_instance_id": "C2_pricing_source",
+  "source_model_hash": "e765363b41704136eb383bfe87b318f43deacc0999ef726553ffe68e678df037",
+  "source_table_hash": "aab5c36d6410914c20422086f6a9971f80c91d384c039e7918f338e16f2757b1",
+  "objective_semantics": "maximize_F_over_feature_major_msb_first_bitstrings",
+  "bit_order": "msb_first",
+  "bitstring_convention": "feature_major_msb_first",
+  "feature_order": [
+    "C2 Feature A",
+    "C2 Feature B"
+  ],
+  "term_indexing_convention": "integer_mask_msb_first_excluding_constant",
+  "parity_semantics": "row_i_applies_sign_factor_minus_one_pow_dot_Bi_x",
+  "weight_sign_convention": "v=0_positive_coeff_v=1_negative_coeff",
+  "n_bits": 4,
+  "m_terms": 15,
+  "constant_offset": 50.0,
+  "B": [
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "v": [
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "term_weights": [
+    125.0,
+    125.0,
+    125.0,
+    225.0,
+    0.0,
+    0.0,
+    0.0,
+    125.0,
+    0.0,
+    0.0,
+    0.0,
+    325.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "indices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "coefficients": [
+    125.0,
+    125.0,
+    -125.0,
+    225.0,
+    0.0,
+    0.0,
+    0.0,
+    125.0,
+    0.0,
+    0.0,
+    0.0,
+    -325.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "artifact_hash": "6f19acfd48489c189a398c2e0e460d80569fe14514a9507e3f8764e076368fc2"
+}

@@ -1,0 +1,249 @@
+{
+  "schema_version": "1.0",
+  "matrix": "matrix_b",
+  "run_id": "matrix_b_C3_wht_exact_bp1_heuristic_coherent_seed43",
+  "run_timestamp_utc": "2026-03-16T17:59:16+00:00",
+  "run_status": "failed",
+  "run_error": "coherent_hilbert_cap_exceeded: joint_state_size=65536 exceeds cap_limit=4096 (joint_num_bits=16, q=2, m=8, n=6, ell=2).",
+  "instance_id": "C3",
+  "family": "C",
+  "encoding": "wht_exact",
+  "decoder": "bp1",
+  "alpha_mode": "heuristic",
+  "execution_mode": "coherent",
+  "seed": 43,
+  "best_sampled_F": null,
+  "best_sampled_G": null,
+  "top1_regret": null,
+  "topk_regret": null,
+  "optimum_recall_at_k": null,
+  "best_top_G_sampled_F": null,
+  "spearman_rho_F_G": null,
+  "retained_energy_eta": null,
+  "decision_distortion": null,
+  "decode_success": null,
+  "postselection_success": null,
+  "runtime_sec": null,
+  "attempted_execution": null,
+  "boundary_reason": null,
+  "error_type": null,
+  "error_message": null,
+  "estimated_qubits": null,
+  "estimated_memory_gb": null,
+  "wall_clock_s": null,
+  "peak_memory_mb": null,
+  "resource_decode_uncompute_model": "bp1_classical_oracle_estimate",
+  "resource_decode_uncompute_status": "analytic_estimate",
+  "resource_decode_uncompute_confidence": "implementation_proxy",
+  "resource_total_gate_est_with_decode": 14274.0,
+  "resource_total_depth_est_with_decode": 971.0,
+  "resource_total_qubits_est_with_decode": 33.0,
+  "resource_prefix_gate_est": 66.0,
+  "resource_prefix_depth_est": 11.0,
+  "resource_decode_model_gate_est": 14208.0,
+  "resource_decode_model_depth_est": 960.0,
+  "resource_weight_register_qubits": 2.0,
+  "resource_coherent_weight_register_gate_est": 48.0,
+  "resource_coherent_weight_register_depth_est": 10.0,
+  "qiskit_subset_resource_report": {
+    "scope": {
+      "scope": "structural_subset_only",
+      "includes": [
+        "approximate_low_weight_superposition",
+        "phase_kick",
+        "syndrome_compute",
+        "final_hadamards"
+      ],
+      "excludes": [
+        "decode_uncompute"
+      ],
+      "decode_uncompute_included": false,
+      "postselection_stage_present": false,
+      "distribution_basis": "syndrome_register_after_final_hadamards",
+      "subset_path": "implemented_structural_only",
+      "parity_claim": "no_full_end_to_end_parity_claim"
+    },
+    "includes": [
+      "approximate_low_weight_superposition",
+      "phase_kick",
+      "syndrome_compute",
+      "final_hadamards"
+    ],
+    "excludes": [
+      "decode_uncompute"
+    ],
+    "decode_uncompute_included": false,
+    "subset_path": "implemented_structural_only",
+    "distribution_basis": "syndrome_register_after_final_hadamards",
+    "postselection_stage_present": false,
+    "parity_claim": "no_full_end_to_end_parity_claim",
+    "status": "ok",
+    "reason": null,
+    "transpiled_depth": 17,
+    "cx_count": 23,
+    "qubit_count": 14,
+    "gate_counts": {
+      "cx": 23,
+      "rz": 22,
+      "sx": 9,
+      "measure": 6,
+      "barrier": 3
+    }
+  },
+  "qiskit_transpiled_structural_count": {
+    "category": "qiskit_transpiled_structural_count",
+    "status": "ok",
+    "reason": null,
+    "scope": {
+      "scope": "structural_subset_only",
+      "includes": [
+        "approximate_low_weight_superposition",
+        "phase_kick",
+        "syndrome_compute",
+        "final_hadamards"
+      ],
+      "excludes": [
+        "decode_uncompute"
+      ],
+      "decode_uncompute_included": false,
+      "postselection_stage_present": false,
+      "distribution_basis": "syndrome_register_after_final_hadamards",
+      "subset_path": "implemented_structural_only",
+      "parity_claim": "no_full_end_to_end_parity_claim",
+      "dicke_prep_status": "approximate_structural",
+      "category": "implemented_subset_only"
+    },
+    "qubit_count": 14,
+    "transpiled_depth": 17,
+    "cx_count": 23,
+    "gate_counts": {
+      "cx": 23,
+      "rz": 22,
+      "sx": 9,
+      "measure": 6,
+      "barrier": 3
+    },
+    "basis_gates": [
+      "cx",
+      "rz",
+      "sx",
+      "x"
+    ],
+    "optimization_level": 1
+  },
+  "qiskit_subset_transpiled_depth": 17,
+  "qiskit_subset_cx_count": 23,
+  "qiskit_subset_qubit_count": 14,
+  "qiskit_subset_status": "ok",
+  "resource_qiskit_subset_resource_report": {
+    "scope": {
+      "scope": "structural_subset_only",
+      "includes": [
+        "approximate_low_weight_superposition",
+        "phase_kick",
+        "syndrome_compute",
+        "final_hadamards"
+      ],
+      "excludes": [
+        "decode_uncompute"
+      ],
+      "decode_uncompute_included": false,
+      "postselection_stage_present": false,
+      "distribution_basis": "syndrome_register_after_final_hadamards",
+      "subset_path": "implemented_structural_only",
+      "parity_claim": "no_full_end_to_end_parity_claim"
+    },
+    "includes": [
+      "approximate_low_weight_superposition",
+      "phase_kick",
+      "syndrome_compute",
+      "final_hadamards"
+    ],
+    "excludes": [
+      "decode_uncompute"
+    ],
+    "decode_uncompute_included": false,
+    "subset_path": "implemented_structural_only",
+    "distribution_basis": "syndrome_register_after_final_hadamards",
+    "postselection_stage_present": false,
+    "parity_claim": "no_full_end_to_end_parity_claim",
+    "status": "ok",
+    "reason": null,
+    "transpiled_depth": 17,
+    "cx_count": 23,
+    "qubit_count": 14,
+    "gate_counts": {
+      "cx": 23,
+      "rz": 22,
+      "sx": 9,
+      "measure": 6,
+      "barrier": 3
+    }
+  },
+  "resource_qiskit_transpiled_structural_count": {
+    "category": "qiskit_transpiled_structural_count",
+    "status": "ok",
+    "reason": null,
+    "scope": {
+      "scope": "structural_subset_only",
+      "includes": [
+        "approximate_low_weight_superposition",
+        "phase_kick",
+        "syndrome_compute",
+        "final_hadamards"
+      ],
+      "excludes": [
+        "decode_uncompute"
+      ],
+      "decode_uncompute_included": false,
+      "postselection_stage_present": false,
+      "distribution_basis": "syndrome_register_after_final_hadamards",
+      "subset_path": "implemented_structural_only",
+      "parity_claim": "no_full_end_to_end_parity_claim",
+      "dicke_prep_status": "approximate_structural",
+      "category": "implemented_subset_only"
+    },
+    "qubit_count": 14,
+    "transpiled_depth": 17,
+    "cx_count": 23,
+    "gate_counts": {
+      "cx": 23,
+      "rz": 22,
+      "sx": 9,
+      "measure": 6,
+      "barrier": 3
+    },
+    "basis_gates": [
+      "cx",
+      "rz",
+      "sx",
+      "x"
+    ],
+    "optimization_level": 1
+  },
+  "resource_qiskit_subset_transpiled_depth": 17.0,
+  "resource_qiskit_subset_cx_count": 23.0,
+  "resource_qiskit_subset_qubit_count": 14.0,
+  "resource_qiskit_subset_status": "ok",
+  "coherent_mode_record": true,
+  "decoder_internal_mode": "bp1",
+  "coherent_vs_mixture_delta_best_F": null,
+  "coherent_vs_mixture_delta_best_top_G_sampled_F": null,
+  "coherent_vs_mixture_delta_postselection_success": null,
+  "coherent_vs_mixture_distribution_distance": null,
+  "coherent_vs_mixture_distribution_metric": "tvd",
+  "metric_availability": {
+    "best_sampled_F": "unavailable",
+    "best_sampled_G": "unavailable",
+    "top1_regret": "unavailable",
+    "topk_regret": "unavailable",
+    "optimum_recall_at_k": "unavailable",
+    "best_top_G_sampled_F": "unavailable",
+    "spearman_rho_F_G": "unavailable",
+    "retained_energy_eta": "unavailable",
+    "decision_distortion": "unavailable",
+    "decode_success": "unavailable",
+    "postselection_success": "unavailable",
+    "runtime_sec": "unavailable"
+  }
+}
