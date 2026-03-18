@@ -26,6 +26,7 @@ from notebooks._helpers import (
     ensure_numeric_columns,
     ensure_optional_columns,
 )
+from src.notebook_utils import FilterPipeline
 
 
 def _find_code_cell(path: str, marker: str) -> str:
@@ -388,6 +389,7 @@ def test_notebook09_loader_metrics_present_matrix_c_absent_no_crash() -> None:
         "np": np,
         "ROOT": Path("."),
         "display": display,
+        "FilterPipeline": FilterPipeline,
         "load_run_manifest": lambda *_a, **_k: {},
         "load_metrics_master": lambda *_a, **_k: pd.DataFrame(
             [
@@ -458,6 +460,7 @@ def test_notebook09_loader_stage_present_but_null_keeps_rows_and_normalizes_stat
         "np": np,
         "ROOT": Path("."),
         "display": display,
+        "FilterPipeline": FilterPipeline,
         "load_run_manifest": lambda *_a, **_k: {},
         "load_metrics_master": lambda *_a, **_k: pd.DataFrame(
             [
@@ -516,6 +519,7 @@ def test_notebook09_missing_structure_gain_columns_inserted_as_nan() -> None:
         "plt": plt,
         "display": display,
         "focus": focus,
+        "FilterPipeline": FilterPipeline,
         "ensure_run_status_norm": ensure_run_status_norm,
         "ensure_optional_columns": ensure_optional_columns,
         "ensure_numeric_columns": ensure_numeric_columns,
@@ -1488,6 +1492,7 @@ def test_notebook06_resources_master_missing_degrades_to_placeholders() -> None:
         "plt": plt,
         "ROOT": Path("."),
         "display": display,
+        "FilterPipeline": FilterPipeline,
         "load_run_manifest": lambda *_a, **_k: {},
         "load_metrics_master": lambda *_a, **_k: pd.DataFrame(),
         "load_resources_master": _raise_missing,
@@ -1534,6 +1539,7 @@ def test_notebook06_metrics_master_missing_degrades_structure_decode_panel() -> 
         "plt": plt,
         "ROOT": Path("."),
         "display": display,
+        "FilterPipeline": FilterPipeline,
         "load_run_manifest": lambda *_a, **_k: {},
         "load_metrics_master": lambda *_a, **_k: pd.DataFrame(),
         "load_resources_master": lambda *_a, **_k: resources_df.copy(),
@@ -1606,6 +1612,7 @@ def test_notebook06_same_model_missing_renders_placeholder_even_if_cross_model_p
         "load_run_manifest": lambda *_a, **_k: {},
         "load_metrics_master": lambda *_a, **_k: metrics_df.copy(),
         "load_resources_master": lambda *_a, **_k: resources_df.copy(),
+        "FilterPipeline": FilterPipeline,
         "ensure_run_status_norm": ensure_run_status_norm,
         "ensure_numeric_columns": ensure_numeric_columns,
         "unavailable_panel_table": unavailable_panel_table,
@@ -1686,6 +1693,7 @@ def test_notebook06_duplicate_aligned_identity_renders_placeholder_without_dedup
         "load_run_manifest": lambda *_a, **_k: {},
         "load_metrics_master": lambda *_a, **_k: metrics_df.copy(),
         "load_resources_master": lambda *_a, **_k: resources_df.copy(),
+        "FilterPipeline": FilterPipeline,
         "ensure_run_status_norm": ensure_run_status_norm,
         "ensure_numeric_columns": ensure_numeric_columns,
         "unavailable_panel_table": unavailable_panel_table,
@@ -1772,6 +1780,7 @@ def test_notebook11_transparency_renders_when_master_empty_and_unavailable_prese
         "plt": plt,
         "ROOT": Path("."),
         "display": display,
+        "Markdown": lambda text: text,
         "load_run_manifest": lambda *_a, **_k: {},
         "load_metrics_master": lambda *_a, **_k: pd.DataFrame(),
         "load_quality_cost_master": lambda *_a, **_k: pd.DataFrame(),
