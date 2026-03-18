@@ -27,7 +27,7 @@ def _code_cell(path: str, marker: str) -> str:
 
 
 def test_notebook08_prefers_master_with_legacy_matrix_a_fallback() -> None:
-    src = _notebook_source("notebooks/08_paired_encoding_comparison.ipynb")
+    src = _notebook_source("notebooks/08a_paired_encoding_comparison.ipynb")
     assert "load_metrics_master" in src
     assert "load_run_manifest" in src
     assert "load_matrix_summary" in src
@@ -36,7 +36,7 @@ def test_notebook08_prefers_master_with_legacy_matrix_a_fallback() -> None:
 
 
 def test_notebook08_uses_normalized_status_and_no_raw_ok_filtering() -> None:
-    src = _notebook_source("notebooks/08_paired_encoding_comparison.ipynb")
+    src = _notebook_source("notebooks/08a_paired_encoding_comparison.ipynb")
     assert "ensure_run_status_norm(" in src
     assert 'run_status"] != "ok"' not in src
     assert 'run_status"] == "ok"' not in src
@@ -44,7 +44,7 @@ def test_notebook08_uses_normalized_status_and_no_raw_ok_filtering() -> None:
 
 
 def test_notebook08_prefers_canonical_comparison_key_pairing() -> None:
-    cell = _code_cell("notebooks/08_paired_encoding_comparison.ipynb", "pair_key_candidates = [")
+    cell = _code_cell("notebooks/08a_paired_encoding_comparison.ipynb", "pair_key_candidates = [")
     assert 'pair_keys = ["comparison_key"]' in cell
     assert "pairing_debug_summary_df" in cell
     assert '"slot_id"' not in cell
@@ -54,7 +54,7 @@ def test_notebook08_prefers_canonical_comparison_key_pairing() -> None:
 
 
 def test_notebook08_pairing_contract_reports_audit_and_fallback_reason() -> None:
-    cell = _code_cell("notebooks/08_paired_encoding_comparison.ipynb", "pair_key_candidates = [")
+    cell = _code_cell("notebooks/08a_paired_encoding_comparison.ipynb", "pair_key_candidates = [")
     assert "pairing_audit_df" in cell
     assert "active_key_strategy" in cell
     assert "fallback_reason" in cell
@@ -66,15 +66,21 @@ def test_notebook08_pairing_contract_reports_audit_and_fallback_reason() -> None
 
 
 def test_notebook08_filters_to_pricing_mixture_completed_rows() -> None:
-    src = _notebook_source("notebooks/08_paired_encoding_comparison.ipynb")
+    src = _notebook_source("notebooks/08a_paired_encoding_comparison.ipynb")
     assert 'focus["family"].fillna("P").astype(str).eq("P")' in src
     assert 'focus["execution_mode_norm"] == "mixture"' in src
     assert 'focus["run_status_norm"] == "completed"' in src
 
 
 def test_notebook08_includes_explicit_p7_exclusion_note() -> None:
-    payload = json.loads(Path("notebooks/08_paired_encoding_comparison.ipynb").read_text())
+    payload = json.loads(Path("notebooks/08a_paired_encoding_comparison.ipynb").read_text())
     text = "\n".join("".join(cell.get("source", [])) for cell in payload.get("cells", []))
     assert "P7 (n=14) is excluded from this paired comparison" in text
     assert "current canonical master" in text
     assert "Notebook 13" in text
+
+
+def test_notebook08b_contains_coherent_family_c_validation() -> None:
+    src = _notebook_source("notebooks/08b_coherent_validation.ipynb")
+    assert "family_c_df" in src
+    assert "coherent" in src.lower()
