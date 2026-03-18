@@ -124,3 +124,189 @@ def compute_paired_delta(df: pd.DataFrame, pair_keys: list[str], metrics: list[s
             result_cols[f"delta_{metric}"] = (
                 pd.to_numeric(merged[comp_col], errors="coerce") - pd.to_numeric(merged[base_col], errors="coerce"))
     return pd.DataFrame(result_cols)
+
+
+# ---------------------------------------------------------------------------
+# Functions moved from notebooks/_helpers.py
+# ---------------------------------------------------------------------------
+
+
+def parse_metric_availability(value: Any) -> dict[str, str]:
+    """Normalize metric-availability payload from dict or serialized JSON."""
+    if isinstance(value, dict):
+        return {str(k): str(v) for k, v in value.items()}
+    if isinstance(value, str):
+        value = value.strip()
+        if not value:
+            return {}
+        try:
+            parsed = json.loads(value)
+        except json.JSONDecodeError:
+            return {}
+        if isinstance(parsed, dict):
+            return {str(k): str(v) for k, v in parsed.items()}
+    return {}
+
+
+def unavailable_panel_table(panel: str, reason: str, details: str = "") -> pd.DataFrame:
+    """Return a standard placeholder row for partially unavailable analysis slices."""
+    payload = {
+        "panel": str(panel),
+        "status": "unavailable",
+        "reason": str(reason),
+        "details": str(details) if details else "",
+    }
+    return pd.DataFrame([payload], columns=["panel", "status", "reason", "details"])
+
+
+def unavailable_or_numeric(df: pd.DataFrame, value_col: str) -> pd.DataFrame:
+    """Annotate rows where a metric is unavailable instead of coercing to zero."""
+    out = df.copy()
+    if value_col not in out.columns:
+        out[value_col] = np.nan
+    numeric = pd.to_numeric(out[value_col], errors="coerce")
+    out[value_col] = numeric
+    out[f"{value_col}_status"] = np.where(numeric.isna(), "unavailable", "available")
+    return out
+
+
+def ensure_numeric_columns(df: pd.DataFrame, cols: list[str]) -> pd.DataFrame:
+    """Ensure requested columns exist and are numeric (missing -> NaN)."""
+    out = df.copy()
+    for col in cols:
+        if col not in out.columns:
+            out[col] = np.nan
+        out[col] = pd.to_numeric(out[col], errors="coerce")
+    return out
+
+
+def ensure_object_columns(
+    df: pd.DataFrame,
+    cols: list[str],
+    default: Any = np.nan,
+) -> pd.DataFrame:
+    """Ensure requested object-like columns exist (missing -> default)."""
+    out = df.copy()
+    for col in cols:
+        if col not in out.columns:
+            out[col] = default
+    return out
+
+
+def ensure_optional_columns(
+    df: pd.DataFrame,
+    *,
+    numeric_cols: Optional[list[str]] = None,
+    object_defaults: Optional[dict[str, Any]] = None,
+) -> pd.DataFrame:
+    """Materialize optional numeric/object columns with stable defaults."""
+    out = df.copy()
+    if numeric_cols:
+        out = ensure_numeric_columns(out, list(numeric_cols))
+    if object_defaults:
+        for col, default in object_defaults.items():
+            if col not in out.columns:
+                out[col] = default
+    return out
+
+
+def placeholder_or_frame(
+    df: pd.DataFrame,
+    *,
+    panel: str,
+    reason: str,
+    details: str = "",
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Return (dataframe, placeholder) where placeholder is populated when df is empty."""
+    if df.empty:
+        return df, unavailable_panel_table(panel=panel, reason=reason, details=details)
+    return df, pd.DataFrame()
+
+
+def normalize_run_status(series_or_scalar: Any) -> Any:
+    """Normalize run-status values while preserving unknown labels."""
+    mapping = {
+        "ok": "completed",
+        "completed": "completed",
+        "error": "failed",
+        "failed": "failed",
+        "skipped": "not_applicable",
+        "unsupported": "not_applicable",
+        "not_applicable": "not_applicable",
+        "unavailable": "unavailable",
+        "not_in_experiment_matrix": "not_in_experiment_matrix",
+    }
+
+    def _normalize_one(status: Any) -> str:
+        if status is None or pd.isna(status):
+            return "unavailable"
+        raw = str(status).strip().lower()
+        if not raw:
+            return "unavailable"
+        return mapping.get(raw, raw)
+
+    if isinstance(series_or_scalar, pd.Series):
+        return series_or_scalar.apply(_normalize_one)
+    return _normalize_one(series_or_scalar)
+
+
+def ensure_run_status_norm(
+    df: pd.DataFrame,
+    *,
+    run_status_col: str = "run_status",
+    out_col: str = "run_status_norm",
+) -> pd.DataFrame:
+    """Materialize normalized run status once per DataFrame."""
+    out = df.copy()
+    if run_status_col in out.columns:
+        source = out[run_status_col]
+    elif out_col in out.columns:
+        source = out[out_col]
+    else:
+        source = pd.Series([np.nan] * len(out), index=out.index, dtype=object)
+    out[out_col] = normalize_run_status(source)
+    return out
+
+
+def normalize_run_status_label(status: Any) -> str:
+    """Normalize run-status labels for notebook display."""
+    raw = str(status).strip().lower() if status is not None else ""
+    if raw in {"completed", "ok"}:
+        return "completed"
+    if raw in {"failed", "error"}:
+        return "failed"
+    if raw in {"skipped", "unsupported"}:
+        return "not_applicable"
+    if raw in {"unavailable", "not_in_experiment_matrix"}:
+        return raw
+    return "unknown"
+
+
+def manifest_slots_dataframe(run_manifest: dict[str, Any]) -> pd.DataFrame:
+    """Extract slot rows from run manifest."""
+    return pd.DataFrame(run_manifest.get("slots", []))
+
+
+def mark_not_in_experiment_matrix(
+    df: pd.DataFrame,
+    *,
+    run_manifest: dict[str, Any],
+    filters: dict[str, Any],
+) -> str:
+    """Return display status for a requested slice against run manifest."""
+    slots = manifest_slots_dataframe(run_manifest)
+    if slots.empty:
+        return "not_in_experiment_matrix"
+    subset = slots.copy()
+    for key, value in filters.items():
+        if key not in subset.columns:
+            continue
+        if isinstance(value, (list, tuple, set)):
+            subset = subset[subset[key].isin(list(value))]
+        else:
+            subset = subset[subset[key] == value]
+    if subset.empty:
+        return "not_in_experiment_matrix"
+    if df.empty:
+        return "planned_but_unobserved_or_filtered"
+    return "in_experiment_matrix"

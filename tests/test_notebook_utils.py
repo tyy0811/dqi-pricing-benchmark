@@ -9,6 +9,18 @@ from src.notebook_utils import (
     COMPARABLE_ENCODINGS, DEFAULT_DECODERS, DEFAULT_EXECUTION_MODE,
     pick_column, normalize_column, FilterPipeline,
     build_metric_panel, compute_paired_delta,
+    parse_metric_availability,
+    ensure_numeric_columns,
+    ensure_object_columns,
+    ensure_optional_columns,
+    unavailable_or_numeric,
+    ensure_run_status_norm,
+    normalize_run_status,
+    normalize_run_status_label,
+    placeholder_or_frame,
+    manifest_slots_dataframe,
+    mark_not_in_experiment_matrix,
+    unavailable_panel_table,
 )
 
 
@@ -199,3 +211,79 @@ class TestComputePairedDelta:
         assert "delta_score_b" in result.columns
         assert result["delta_score_a"].iloc[0] == pytest.approx(20.0)
         assert result["delta_score_b"].iloc[0] == pytest.approx(-5.0)
+
+
+class TestMovedFunctions:
+    def test_parse_metric_availability_dict(self):
+        result = parse_metric_availability({"a": "1", "b": "2"})
+        assert result == {"a": "1", "b": "2"}
+
+    def test_parse_metric_availability_json_string(self):
+        result = parse_metric_availability('{"x": "yes"}')
+        assert result == {"x": "yes"}
+
+    def test_parse_metric_availability_empty(self):
+        assert parse_metric_availability("") == {}
+        assert parse_metric_availability(None) == {}
+
+    def test_ensure_numeric_columns_creates_missing(self):
+        df = pd.DataFrame({"a": [1, 2]})
+        result = ensure_numeric_columns(df, ["a", "b"])
+        assert "b" in result.columns
+        assert result["b"].isna().all()
+
+    def test_ensure_object_columns_creates_missing(self):
+        df = pd.DataFrame({"a": [1]})
+        result = ensure_object_columns(df, ["b"], default="N/A")
+        assert result["b"].iloc[0] == "N/A"
+
+    def test_normalize_run_status_completed(self):
+        assert normalize_run_status("ok") == "completed"
+        assert normalize_run_status("completed") == "completed"
+
+    def test_normalize_run_status_failed(self):
+        assert normalize_run_status("error") == "failed"
+
+    def test_normalize_run_status_series(self):
+        s = pd.Series(["ok", "error", None])
+        result = normalize_run_status(s)
+        assert list(result) == ["completed", "failed", "unavailable"]
+
+    def test_ensure_run_status_norm(self):
+        df = pd.DataFrame({"run_status": ["ok", "failed"]})
+        result = ensure_run_status_norm(df)
+        assert "run_status_norm" in result.columns
+        assert list(result["run_status_norm"]) == ["completed", "failed"]
+
+    def test_normalize_run_status_label(self):
+        assert normalize_run_status_label("ok") == "completed"
+        assert normalize_run_status_label("error") == "failed"
+        assert normalize_run_status_label("skipped") == "not_applicable"
+
+    def test_manifest_slots_dataframe_empty(self):
+        result = manifest_slots_dataframe({})
+        assert isinstance(result, pd.DataFrame)
+        assert result.empty
+
+    def test_manifest_slots_dataframe_with_slots(self):
+        manifest = {"slots": [{"id": "s1"}, {"id": "s2"}]}
+        result = manifest_slots_dataframe(manifest)
+        assert len(result) == 2
+
+    def test_unavailable_panel_table(self):
+        result = unavailable_panel_table("test_panel", "no data")
+        assert len(result) == 1
+        assert result["panel"].iloc[0] == "test_panel"
+        assert result["status"].iloc[0] == "unavailable"
+
+    def test_placeholder_or_frame_nonempty(self):
+        df = pd.DataFrame({"a": [1]})
+        result_df, placeholder = placeholder_or_frame(df, panel="p", reason="r")
+        assert len(result_df) == 1
+        assert placeholder.empty
+
+    def test_placeholder_or_frame_empty(self):
+        df = pd.DataFrame()
+        result_df, placeholder = placeholder_or_frame(df, panel="p", reason="r")
+        assert result_df.empty
+        assert len(placeholder) == 1
