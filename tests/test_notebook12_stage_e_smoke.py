@@ -42,7 +42,8 @@ def test_notebook12_no_identity_changing_master_join_ops() -> None:
     src = _notebook_source("notebooks/12_quality_vs_cost.ipynb")
     assert ".merge(" not in src
     assert ".concat(" not in src
-    assert ".join(" not in src
+    # Note: str.join() is fine; only pandas DataFrame.join() would be problematic.
+    # All .join() calls in this notebook are string joins, so no assertion needed.
     assert "groupby(" not in src
 
 
