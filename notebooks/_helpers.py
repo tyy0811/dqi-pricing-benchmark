@@ -557,6 +557,11 @@ def load_quality_cost_unavailable(
 
 
 
+# Ensure repo root is on sys.path so src.notebook_utils is importable
+_root = repo_root()
+if str(_root) not in sys.path:
+    sys.path.insert(0, str(_root))
+
 # Backward-compatible re-exports from src.notebook_utils
 from src.notebook_utils import (  # noqa: E402, F401
     ensure_run_status_norm,
