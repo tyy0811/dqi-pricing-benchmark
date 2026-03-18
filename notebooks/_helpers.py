@@ -408,15 +408,6 @@ def load_matrix_report(matrix_name: str, results_root: str | Path = "results") -
 
 
 
-# parse_metric_availability — moved to src.notebook_utils
-# unavailable_panel_table — moved to src.notebook_utils
-# unavailable_or_numeric — moved to src.notebook_utils
-# ensure_numeric_columns — moved to src.notebook_utils
-# ensure_object_columns — moved to src.notebook_utils
-# ensure_optional_columns — moved to src.notebook_utils
-# placeholder_or_frame — moved to src.notebook_utils
-
-
 def placeholder_plot(
     title: str,
     reason: str,
@@ -564,13 +555,6 @@ def load_quality_cost_unavailable(
     root = resolve_repo_path(results_root)
     return _load_table_with_fallback(root=root, base_name="quality_cost_unavailable", required=required)
 
-
-
-# normalize_run_status — moved to src.notebook_utils
-# ensure_run_status_norm — moved to src.notebook_utils
-# normalize_run_status_label — moved to src.notebook_utils
-# manifest_slots_dataframe — moved to src.notebook_utils
-# mark_not_in_experiment_matrix — moved to src.notebook_utils
 
 
 # Backward-compatible re-exports from src.notebook_utils
