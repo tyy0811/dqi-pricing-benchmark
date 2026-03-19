@@ -180,9 +180,6 @@ python -m src.benchmark
 
 Notebook 04 requires OR-Tools and intentionally hard-fails if missing because its core purpose is the CP-SAT handoff.
 
-### Notebook 01 Figure
-
-![Toy DQI Histogram](figures/notebook01_toy_histogram.png)
 
 ## Default Parameters
 
