@@ -1,0 +1,190 @@
+{
+  "task": "task3_multiperiod_xorsat_reduction",
+  "description": "Dynamic-pricing sub-problems successfully reduced to max-XORSAT and evaluated via DQI statevector",
+  "generated_at": "2026-03-19T11:13:07.113720+00:00",
+  "methodology": {
+    "source": "3-period dynamic pricing extension (NB09)",
+    "reduction": "ilp_to_xorsat_exact (full-spectrum WHT of period truth table)",
+    "dqi": "statevector simulation with BP1 decoder",
+    "scope": "single-period sub-problems extracted from multiperiod scenario matrix"
+  },
+  "scenarios": [
+    {
+      "scenario_label": "high-tight-smooth-0",
+      "demand_shift": "high",
+      "inventory_regime": "tight",
+      "smoothing_penalty": 0.0,
+      "n_features": 2,
+      "n_bits": 4,
+      "periods": [
+        {
+          "scenario_label": "high-tight-smooth-0",
+          "period_idx": 0,
+          "period_instance_id": "high-tight-smooth-0_period0",
+          "n_features": 2,
+          "n_bits": 4,
+          "m_terms": 15,
+          "full_spectrum_m": 15,
+          "k": 15,
+          "ell": 1,
+          "ground_truth_f_star": 700.0,
+          "ground_truth_x_star": 0,
+          "ground_truth_tiers": [
+            0,
+            0
+          ],
+          "surrogate_preserves_optimizer": true,
+          "dqi_decoder": "bp1",
+          "dqi_best_f": 700.0,
+          "dqi_approx_ratio": 1.0,
+          "dqi_found_optimum": true,
+          "dqi_success_prob": 1.0,
+          "dqi_time_s": 9.4619,
+          "n_samples": 512
+        },
+        {
+          "scenario_label": "high-tight-smooth-0",
+          "period_idx": 1,
+          "period_instance_id": "high-tight-smooth-0_period1",
+          "n_features": 2,
+          "n_bits": 4,
+          "m_terms": 15,
+          "full_spectrum_m": 15,
+          "k": 15,
+          "ell": 1,
+          "ground_truth_f_star": 756.0,
+          "ground_truth_x_star": 0,
+          "ground_truth_tiers": [
+            0,
+            0
+          ],
+          "surrogate_preserves_optimizer": true,
+          "dqi_decoder": "bp1",
+          "dqi_best_f": 756.0,
+          "dqi_approx_ratio": 1.0,
+          "dqi_found_optimum": true,
+          "dqi_success_prob": 1.0,
+          "dqi_time_s": 10.6889,
+          "n_samples": 512
+        },
+        {
+          "scenario_label": "high-tight-smooth-0",
+          "period_idx": 2,
+          "period_instance_id": "high-tight-smooth-0_period2",
+          "n_features": 2,
+          "n_bits": 4,
+          "m_terms": 15,
+          "full_spectrum_m": 15,
+          "k": 15,
+          "ell": 1,
+          "ground_truth_f_star": 780.0000000000001,
+          "ground_truth_x_star": 2,
+          "ground_truth_tiers": [
+            0,
+            2
+          ],
+          "surrogate_preserves_optimizer": true,
+          "dqi_decoder": "bp1",
+          "dqi_best_f": 780.0000000000001,
+          "dqi_approx_ratio": 1.0,
+          "dqi_found_optimum": true,
+          "dqi_success_prob": 1.0,
+          "dqi_time_s": 9.4604,
+          "n_samples": 512
+        }
+      ],
+      "all_periods_found_optimum": true
+    },
+    {
+      "scenario_label": "medium-tight-smooth-0",
+      "demand_shift": "medium",
+      "inventory_regime": "tight",
+      "smoothing_penalty": 0.0,
+      "n_features": 2,
+      "n_bits": 4,
+      "periods": [
+        {
+          "scenario_label": "medium-tight-smooth-0",
+          "period_idx": 0,
+          "period_instance_id": "medium-tight-smooth-0_period0",
+          "n_features": 2,
+          "n_bits": 4,
+          "m_terms": 15,
+          "full_spectrum_m": 15,
+          "k": 15,
+          "ell": 1,
+          "ground_truth_f_star": 700.0,
+          "ground_truth_x_star": 0,
+          "ground_truth_tiers": [
+            0,
+            0
+          ],
+          "surrogate_preserves_optimizer": true,
+          "dqi_decoder": "bp1",
+          "dqi_best_f": 700.0,
+          "dqi_approx_ratio": 1.0,
+          "dqi_found_optimum": true,
+          "dqi_success_prob": 1.0,
+          "dqi_time_s": 8.5653,
+          "n_samples": 512
+        },
+        {
+          "scenario_label": "medium-tight-smooth-0",
+          "period_idx": 1,
+          "period_instance_id": "medium-tight-smooth-0_period1",
+          "n_features": 2,
+          "n_bits": 4,
+          "m_terms": 15,
+          "full_spectrum_m": 15,
+          "k": 15,
+          "ell": 1,
+          "ground_truth_f_star": 728.0,
+          "ground_truth_x_star": 0,
+          "ground_truth_tiers": [
+            0,
+            0
+          ],
+          "surrogate_preserves_optimizer": true,
+          "dqi_decoder": "bp1",
+          "dqi_best_f": 728.0,
+          "dqi_approx_ratio": 1.0,
+          "dqi_found_optimum": true,
+          "dqi_success_prob": 1.0,
+          "dqi_time_s": 8.7654,
+          "n_samples": 512
+        },
+        {
+          "scenario_label": "medium-tight-smooth-0",
+          "period_idx": 2,
+          "period_instance_id": "medium-tight-smooth-0_period2",
+          "n_features": 2,
+          "n_bits": 4,
+          "m_terms": 15,
+          "full_spectrum_m": 15,
+          "k": 15,
+          "ell": 1,
+          "ground_truth_f_star": 676.0,
+          "ground_truth_x_star": 2,
+          "ground_truth_tiers": [
+            0,
+            2
+          ],
+          "surrogate_preserves_optimizer": true,
+          "dqi_decoder": "bp1",
+          "dqi_best_f": 676.0,
+          "dqi_approx_ratio": 1.0,
+          "dqi_found_optimum": true,
+          "dqi_success_prob": 1.0,
+          "dqi_time_s": 11.2725,
+          "n_samples": 512
+        }
+      ],
+      "all_periods_found_optimum": true
+    }
+  ],
+  "summary": {
+    "n_scenarios": 2,
+    "n_periods_total": 6,
+    "all_optimums_found": true
+  }
+}

@@ -158,5 +158,6 @@
     "f_feasible_max": 3100.0,
     "f_feasible_min": 1363.5,
     "f_feasible_mean": 1866.7849842767296
-  }
+  },
+  "weight_normalization_note": "Segment weights are intentionally non-normalized (sum=1.12). Weights encode relative demand intensity, not a probability distribution. The additional Tech-Forward segment extends the 3-segment base without rescaling existing weights."
 }

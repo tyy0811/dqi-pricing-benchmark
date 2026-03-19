@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+*.egg
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Run logs
+run_logs/
+
+# Internal tooling
+.agent/
+.claude/
+.pdf_inspect/
+docs/
+results_tmp*/
+
+# Internal working docs
+FILE_MAP.md
+NOTEBOOK_11_UNAVAILABILITY_CATEGORIZATION.md
+STRUCTURAL_BOUNDARY_HANDLING.md
+
+# Build scripts
+generate_highlight.py
+DQI_Pricing_Benchmark_Project_Highlight.pdf
+DQI_Pricing_Benchmark_Results_and_Validation_Report.md
+Theoretical_Framework.md

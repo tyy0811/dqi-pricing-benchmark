@@ -1,0 +1,119 @@
+{
+  "task": "task1_qiskit_pricing_parity",
+  "description": "Decode-inclusive Qiskit parity verification on pricing instances",
+  "generated_at": "2026-03-19T12:10:40.512490+00:00",
+  "methodology": {
+    "encoding": "ilp_derived_exact_reference",
+    "decoder": "BoundedDistanceDecoder",
+    "reference": "run_dqi_decode_inclusive_reference (NumPy)",
+    "qiskit_path": "qiskit_decode_inclusive_distribution (postselected)",
+    "metric": "total_variation_distance",
+    "scope": "full_end_to_end_with_decode_postselection"
+  },
+  "runs": [
+    {
+      "instance_id": "pricing_3feat_6bit",
+      "n_bits": 6,
+      "m_terms": 8,
+      "full_spectrum_m": 63,
+      "k": 8,
+      "ell": 1,
+      "hilbert_space_dim": 16384,
+      "error_register_dim": 256,
+      "syndrome_register_dim": 64,
+      "alpha": [
+        0.7071067811865475,
+        0.7071067811865475
+      ],
+      "tvd": 0.0,
+      "max_abs_diff": 0.0,
+      "success_prob_reference": 1.0,
+      "success_prob_qiskit": 1.0,
+      "num_decodable_syndromes": 9,
+      "reference_time_s": 0.007,
+      "qiskit_time_s": 0.0351,
+      "total_time_s": 0.0449,
+      "verdict": "PASS"
+    },
+    {
+      "instance_id": "pricing_4feat_8bit",
+      "n_bits": 8,
+      "m_terms": 8,
+      "full_spectrum_m": 255,
+      "k": 8,
+      "ell": 2,
+      "hilbert_space_dim": 65536,
+      "error_register_dim": 256,
+      "syndrome_register_dim": 256,
+      "alpha": [
+        0.5773502691896258,
+        0.5773502691896258,
+        0.5773502691896258
+      ],
+      "tvd": 0.0,
+      "max_abs_diff": 0.0,
+      "success_prob_reference": 0.678571428571429,
+      "success_prob_qiskit": 0.678571428571429,
+      "num_decodable_syndromes": 25,
+      "reference_time_s": 0.0104,
+      "qiskit_time_s": 0.1164,
+      "total_time_s": 0.1328,
+      "verdict": "PASS"
+    },
+    {
+      "instance_id": "pricing_4feat_8bit",
+      "n_bits": 8,
+      "m_terms": 12,
+      "full_spectrum_m": 255,
+      "k": 12,
+      "ell": 2,
+      "hilbert_space_dim": 1048576,
+      "error_register_dim": 4096,
+      "syndrome_register_dim": 256,
+      "alpha": [
+        0.5773502691896258,
+        0.5773502691896258,
+        0.5773502691896258
+      ],
+      "tvd": 0.0,
+      "max_abs_diff": 0.0,
+      "success_prob_reference": 0.6060606060606049,
+      "success_prob_qiskit": 0.6060606060606049,
+      "num_decodable_syndromes": 55,
+      "reference_time_s": 0.1245,
+      "qiskit_time_s": 11.3656,
+      "total_time_s": 11.4957,
+      "verdict": "PASS"
+    },
+    {
+      "instance_id": "pricing_4feat_8bit",
+      "n_bits": 8,
+      "m_terms": 15,
+      "full_spectrum_m": 255,
+      "k": 15,
+      "ell": 2,
+      "hilbert_space_dim": 8388608,
+      "error_register_dim": 32768,
+      "syndrome_register_dim": 256,
+      "alpha": null,
+      "tvd": null,
+      "max_abs_diff": null,
+      "success_prob_reference": null,
+      "success_prob_qiskit": null,
+      "num_decodable_syndromes": null,
+      "reference_time_s": null,
+      "qiskit_time_s": null,
+      "total_time_s": null,
+      "verdict": "BOUNDARY",
+      "boundary_note": "Qiskit initialize() unitary decomposition for 2^15 error register exceeded 3.5 hours and 7.4GB RAM. The NumPy reference path completes in seconds \u2014 the bottleneck is Qiskit's state initialization, not the DQI logic. k=12 (1M amplitudes) is the practical Qiskit parity limit."
+    }
+  ],
+  "summary": {
+    "all_executed_passed": true,
+    "n_runs": 4,
+    "instances_tested": [
+      "pricing_3feat_6bit",
+      "pricing_4feat_8bit"
+    ]
+  }
+}

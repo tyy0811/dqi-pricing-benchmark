@@ -1,0 +1,5 @@
+label,n_bits,cpsat_f_star,cpsat_time_s,dqi_best_f,dqi_time_s,dqi_approx_ratio,dqi_success_prob,dqi_status
+P3,6,3000.0,0.078708,3000.0,0.1262,1.0,1.0,executed
+P4,8,2800.0,0.018884,2800.0,16.7506,1.0,0.892063,executed
+P5,10,3000.0,0.03895,2900.0,28.8001,0.966667,0.862637,executed
+P6,12,3360.0,0.162949,3100.0,42.7221,0.922619,0.961905,executed
